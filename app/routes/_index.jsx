@@ -1,3 +1,5 @@
+import { Link } from "@remix-run/react";
+
 export const meta = () => {
   return [
     { title: "New Remix App" },
@@ -38,6 +40,17 @@ export default function Index() {
             rel="noreferrer"
           >
             Remix Docs
+          </a>
+        </li>
+        <Link to="/route1">
+          <li>Route 1</li>
+        </Link>
+        <li>
+          <a
+            className="text-blue-700 underline visited:text-purple-900"
+            href="/route2"
+          >
+            Route 2
           </a>
         </li>
       </ul>

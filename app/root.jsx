@@ -1,29 +1,39 @@
 import {
   Links,
   Meta,
-  Outlet,
+  LiveReload,
   Scripts,
   ScrollRestoration,
+  useLocation,
+  useOutlet,
 } from "@remix-run/react";
+import { AnimatePresence, motion } from "framer-motion";
 
-export function Layout({ children }) {
+export default function App() {
+  const outlet = useOutlet();
+  const location = useLocation();
   return (
     <html lang="en">
       <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
       </head>
       <body>
-        {children}
+        <AnimatePresence mode="wait">
+          <motion.main
+            key={location.pathname}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 1 }}
+          >
+            {outlet}
+          </motion.main>
+        </AnimatePresence>
         <ScrollRestoration />
         <Scripts />
+        <LiveReload />
       </body>
     </html>
   );
-}
-
-export default function App() {
-  return <Outlet />;
 }
