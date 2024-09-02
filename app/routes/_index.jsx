@@ -1,4 +1,5 @@
 import { Link } from "@remix-run/react";
+import { useEffect, useRef, useState } from "react";
 
 export const meta = () => {
   return [
@@ -7,8 +8,42 @@ export const meta = () => {
   ];
 };
 
+export async function action({ context }) {
+  console.log(context);
+}
+
 export default function Index() {
-  return (
+  const [runAnimation, setRunAnimation] = useState(true);
+  const ran = useRef(false);
+
+  function runAnimationn() {
+    setTimeout(() => {
+      setRunAnimation(false);
+      ran.current = true;
+    }, 1000);
+  }
+
+  // sessionStorage.clear();
+  // useEffect(() => {
+  //   // Check if the user has visited before
+  //   const hasVisited = sessionStorage.getItem("hasVisitedIndex");
+  //   setRunAnimation(!Boolean(hasVisited));
+
+  //   if (!hasVisited) {
+  //     // If not, run the animation
+  //     runAnimationn();
+
+  //     // Set the flag in localStorage to indicate the user has visited
+  //     sessionStorage.setItem("hasVisitedIndex", "true");
+
+  //     // You can reset the animation state after some time if needed
+  //     // setTimeout(() => setShouldAnimate(false), 3000); // 3000ms = 3s
+  //   }
+  // }, []);
+
+  return runAnimation ? (
+    <h2>{`${runAnimation}`}</h2>
+  ) : (
     <div className="font-sans p-4">
       <h1 className="text-3xl">Welcome to Remix</h1>
       <ul className="list-disc mt-4 pl-6 space-y-2">
