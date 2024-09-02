@@ -19,7 +19,7 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           <motion.main
             key={location.pathname}
             initial={{ opacity: 0, y: 20 }}
