@@ -8,6 +8,12 @@ import {
   useOutlet,
 } from "@remix-run/react";
 import { AnimatePresence, motion } from "framer-motion";
+import Header from "./components/Header";
+import appStyles from "./styles/app.css?url";
+
+export function links() {
+  return [{ rel: "stylesheet", href: appStyles }];
+}
 
 export default function App() {
   const outlet = useOutlet();
@@ -19,6 +25,7 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <Header />
         <AnimatePresence mode="wait" initial={false}>
           <motion.main
             key={location.pathname}
@@ -32,7 +39,6 @@ export default function App() {
         </AnimatePresence>
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
       </body>
     </html>
   );
