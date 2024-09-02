@@ -1,0 +1,15 @@
+/* :root {
+} */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.header-left-and-right {
+  width: 30%;
+}
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
