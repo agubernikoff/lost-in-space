@@ -41,5 +41,17 @@ export default function Index() {
     }
   }, []);
 
-  return runAnimation ? <h2>{`${runAnimation}`}</h2> : <div>poop</div>;
+  return runAnimation ? (
+    <h2>{`${runAnimation}`}</h2>
+  ) : (
+    <div className="homepage">
+      <div className="home-header">
+        <p>
+          BOUTIQUE END-TO-END PRODUCTION{" "}
+          <span className="highlight"> & POST-PRODUCTION EXCELLENCE</span> FOR
+          FILMMAKERS AND INDEPENDENT CREATORS.
+        </p>
+      </div>
+    </div>
+  );
 }

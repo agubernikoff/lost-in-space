@@ -35,3 +35,13 @@ body {
   justify-content: flex-end;
   gap: 1rem;
 }
+
+.home-header {
+  font-family: "dunbar";
+  font-size: 5.3125rem;
+  line-height: 5rem;
+}
+
+.highlight {
+  color: #1e176a;
+}
