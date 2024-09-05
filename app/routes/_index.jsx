@@ -1,5 +1,7 @@
-import { Link } from "@remix-run/react";
+import { json } from "@remix-run/react";
 import { useEffect, useRef, useState } from "react";
+import Loading from "../components/Loading";
+// import { getSession, commitSession } from "../sessions";
 
 export const meta = () => {
   return [
@@ -8,8 +10,16 @@ export const meta = () => {
   ];
 };
 
-export async function action({ context }) {
-  console.log(context);
+export async function loader({ request }) {
+  // const session = await getSession(request.headers.get("Cookie"));
+  // session.set("someData", "fuck you stupid ass bitch");
+  // const data = { sessionData: session.get("someData") };
+  // return json(data, {
+  //   headers: {
+  //     "Set-Cookie": await commitSession(session),
+  //   },
+  // });
+  return null;
 }
 
 export default function Index() {
@@ -31,18 +41,17 @@ export default function Index() {
 
     if (!hasVisited) {
       // If not, run the animation
-      runAnimationn();
-
+      // runAnimationn();
       // Set the flag in localStorage to indicate the user has visited
-      sessionStorage.setItem("hasVisitedIndex", "true");
-
+      // sessionStorage.setItem("hasVisitedIndex", "true");
+      // fetch("/", { method: "POST" });
       // You can reset the animation state after some time if needed
       // setTimeout(() => setShouldAnimate(false), 3000); // 3000ms = 3s
     }
   }, []);
 
   return runAnimation ? (
-    <h2>{`${runAnimation}`}</h2>
+    <Loading />
   ) : (
     <div className="homepage">
       <div className="home-header">
