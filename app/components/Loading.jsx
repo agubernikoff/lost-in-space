@@ -16,6 +16,7 @@ function Loading() {
   const randomInt2 = useRef(getRandomInt(77, 88));
 
   useEffect(() => {
+    // console.log(window.matchMedia("(prefers-color-scheme: dark)"));
     if (percent === 95) words.current.splice(0, 1, "WELCOME");
     setTimeout(
       () => {
