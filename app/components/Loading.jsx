@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { animate, AnimatePresence, motion } from "framer-motion";
 
-function Loading() {
+function Loading({ completeAnimation }) {
   const [percent, setPercent] = useState(0);
 
   const numbers = useRef([]);
@@ -30,9 +30,29 @@ function Loading() {
     animate(loadingBar.current, {
       x: `${percent}%`,
     });
+    if (percent === 100) {
+      animate(
+        dropDownDiv.current,
+        {
+          height: "calc(100vh - 2rem)",
+          opacity: 1,
+          scale: 1.1,
+        },
+        {
+          height: { duration: 1, delay: 0.25 },
+          scale: { delay: 1.25, duration: 1.25 },
+        }
+      );
+      setTimeout(() => {
+        fetch("/", { method: "POST" });
+        completeAnimation();
+      }, 1510);
+    }
   }, [percent]);
 
   const loadingBar = useRef();
+
+  const dropDownDiv = useRef();
 
   return (
     <div className="loading-container">
@@ -44,6 +64,7 @@ function Loading() {
           }}
           ref={loadingBar}
         ></motion.div>
+        <motion.div ref={dropDownDiv} className="dropdown-div"></motion.div>
       </div>
       <div className="fourcorners">
         <AnimatePresence>
