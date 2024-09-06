@@ -13,7 +13,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Header from "./components/Header";
 import appStyles from "./styles/app.css?url";
 import { getSession, commitSession, destroySession } from "./sessions";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Loading from "./components/Loading";
 
 export function links() {
@@ -23,6 +23,7 @@ export function links() {
 export async function loader({ request }) {
   const session = await getSession(request.headers.get("cookie"));
   const data = { ran: session.get("ran") };
+  return json(data);
   return json(data, {
     headers: {
       "Set-Cookie": await destroySession(session, {
@@ -59,14 +60,15 @@ export default function App() {
 
   const data = useLoaderData();
 
-  const [runAnimation, setRunAnimation] = useState(
-    data?.ran === "true" ? false : true
-    // false
-  );
+  const [runAnimation, setRunAnimation] = useState(true);
 
   function completeAnimation() {
     setRunAnimation(false);
   }
+
+  useEffect(() => {
+    if (data?.ran === "true") completeAnimation();
+  }, []);
 
   return (
     <html lang="en">
