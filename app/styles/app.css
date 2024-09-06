@@ -17,6 +17,8 @@ body {
 main {
   min-height: 100vh;
 }
+
+/* HEADER */
 .header {
   display: flex;
   justify-content: space-between;
@@ -36,15 +38,7 @@ main {
   gap: 1rem;
 }
 
-.home-header {
-  font-family: "dunbar";
-  font-size: 5.3125rem;
-  line-height: 100%;
-}
-.motion-span {
-  display: block;
-}
-
+/* LOADING */
 .loading-container {
   inset: 0;
   background-color: black;
@@ -98,6 +92,55 @@ main {
   width: 4rem;
 }
 
+/* _index */
+.home-header {
+  font-family: "dunbar";
+  font-size: 5.3125rem;
+  line-height: 100%;
+}
+.motion-span {
+  display: block;
+}
 .highlight {
   color: #1e176a;
+}
+.svg-button-and-words-container {
+  display: flex;
+  justify-content: space-between;
+}
+.svg-button-container {
+  display: flex;
+  gap: 1rem;
+}
+.svg-button {
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 10vw;
+  height: calc(0.33 * 10vw);
+  position: relative;
+  background: transparent;
+  color: black;
+  transition: color 1s, background-color 1s;
+}
+.svg-button:hover {
+  background: #1e176a;
+  color: white;
+}
+.svg-button > svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.word-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 30%;
+}
+.words {
+  background: lightgray;
+  padding: 0.5rem;
+  height: fit-content;
 }
