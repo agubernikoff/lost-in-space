@@ -21,7 +21,7 @@ main {
   display: flex;
   justify-content: space-between;
   font-family: "dunbar";
-  margin-top: 2.5%;
+  margin: 1rem;
 }
 .header-left-and-right {
   width: 30%;
@@ -39,7 +39,10 @@ main {
 .home-header {
   font-family: "dunbar";
   font-size: 5.3125rem;
-  line-height: 5rem;
+  line-height: 100%;
+}
+.motion-span {
+  display: block;
 }
 
 .loading-container {
@@ -60,6 +63,15 @@ main {
   background: white;
   position: relative;
   left: -100%;
+}
+.dropdown-div {
+  position: absolute;
+  background: white;
+  z-index: 3;
+  height: 0;
+  top: 1rem;
+  width: calc(100vw - 2rem);
+  opacity: 0;
 }
 .fourcorners {
   transform: translate(-50%, -50%);
