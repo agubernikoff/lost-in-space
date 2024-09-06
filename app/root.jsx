@@ -10,10 +10,11 @@ import {
   useLoaderData,
 } from "@remix-run/react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useFetcher } from "react-router-dom";
 import Header from "./components/Header";
 import appStyles from "./styles/app.css?url";
-import { getSession, commitSession } from "./sessions";
+import { getSession, commitSession, destroySession } from "./sessions";
+import { useState } from "react";
+import Loading from "./components/Loading";
 
 export function links() {
   return [{ rel: "stylesheet", href: appStyles }];
@@ -21,20 +22,28 @@ export function links() {
 
 export async function loader({ request }) {
   const session = await getSession(request.headers.get("cookie"));
-  const data = { sessionData: session.get("ran") };
-  console.log("yyy", session.get("ran"));
-  return json(data);
+  const data = { ran: session.get("ran") };
+  return json(data, {
+    headers: {
+      "Set-Cookie": await destroySession(session, {
+        domain: "localhost", // Omit this line
+        path: "/",
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax",
+      }),
+    },
+  });
 }
 
 export async function action({ request }) {
   const session = await getSession(request.headers.get("cookie"));
   session.set("ran", "true");
-  const data = { sessionData: session.get("ran") };
-  console.log("xxx", session.get("ran"));
+  const data = { ran: session.get("ran") };
   return json(data, {
     headers: {
       "Set-Cookie": await commitSession(session, {
-        // domain: "localhost", // Omit this line
+        domain: "localhost", // Omit this line
         path: "/",
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
@@ -48,7 +57,17 @@ export default function App() {
   const outlet = useOutlet();
   const location = useLocation();
 
-  const { ran } = useLoaderData();
+  const data = useLoaderData();
+
+  const [runAnimation, setRunAnimation] = useState(
+    data?.ran === "true" ? false : true
+    // false
+  );
+
+  function completeAnimation() {
+    setRunAnimation(false);
+  }
+
   return (
     <html lang="en">
       <head>
@@ -56,7 +75,7 @@ export default function App() {
         <Links />
       </head>
       <body>
-        {Boolean(ran) ? <Header /> : null}
+        {runAnimation ? null : <Header />}
         <AnimatePresence mode="wait" initial={false}>
           <motion.main
             key={location.pathname}
@@ -65,7 +84,11 @@ export default function App() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 1 }}
           >
-            {outlet}
+            {runAnimation ? (
+              <Loading completeAnimation={completeAnimation} />
+            ) : (
+              outlet
+            )}
           </motion.main>
         </AnimatePresence>
         <ScrollRestoration />
