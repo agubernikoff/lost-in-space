@@ -1,9 +1,15 @@
 import { Link } from "@remix-run/react";
 import React from "react";
+import { motion } from "framer-motion";
 
 function Header() {
   return (
-    <div className="header">
+    <motion.div
+      initial={{ scale: 0.9, y: -50 }}
+      animate={{ scale: 1, y: 0 }}
+      transition={{ ease: "linear", duration: 0.5 }}
+      className="header"
+    >
       <div className="header-left-and-right">
         <Link to="/">*INSERT LOGO HERE*</Link>
       </div>
@@ -14,7 +20,7 @@ function Header() {
         <Link to="/team">Team</Link>
         <Link to="/contact">Contact</Link>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
