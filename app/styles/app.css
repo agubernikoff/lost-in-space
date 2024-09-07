@@ -160,6 +160,18 @@ main {
   left: -10%;
   bottom: 0%;
 }
+@media (max-width: 1390px) {
+  .hero-container > img {
+    width: 150%;
+    left: -30%;
+  }
+}
+@media (max-width: 1120px) {
+  .hero-container > img {
+    width: 170%;
+    left: -43%;
+  }
+}
 .crafting-div {
   position: absolute;
   bottom: 1rem;
@@ -177,4 +189,25 @@ main {
   position: absolute;
   top: 1rem;
   left: 1rem;
+}
+@media (max-width: 990px) {
+  .hero-container {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .crafting-div {
+    position: relative;
+    width: 100%;
+    background: black;
+    color: white;
+    inset: 0;
+  }
+  .crafting-div > svg > rect,
+  .crafting-div > .svg-button > svg > rect {
+    fill: white;
+  }
+  .crafting-div > .svg-button {
+    color: white;
+  }
 }

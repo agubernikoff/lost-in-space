@@ -7,7 +7,7 @@ import {
   useTransform,
 } from "framer-motion";
 import hero from "../assets/images/hero.png";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SVGButton from "../components/SVGButton";
 
 export const meta = () => {
@@ -97,6 +97,7 @@ export default function Index() {
         </div>
       </motion.div>
       <HeroContainer />
+      <div style={{ height: "100vh" }} />
     </div>
   );
 }
@@ -127,6 +128,7 @@ function HeroContainer() {
       transition={{ duration: 0.4, delay: 1.2 }}
       className="hero-container"
     >
+      <motion.img src={hero} alt="" style={{ bottom: `${offset}%` }} />
       <div className="crafting-div">
         <svg
           width="100"
@@ -147,7 +149,6 @@ function HeroContainer() {
           path={"/services"}
         />
       </div>
-      <motion.img src={hero} alt="" style={{ bottom: `${offset}%` }} />
     </motion.div>
   );
 }
