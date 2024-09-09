@@ -117,6 +117,7 @@ main {
   gap: 1rem;
 }
 .svg-button {
+  position: relative;
   cursor: pointer;
   padding: 0;
   margin: 0;
@@ -131,11 +132,6 @@ main {
 .svg-button:hover {
   background: #1e176a;
   color: white;
-}
-.svg-button > svg {
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 .word-container {
   display: flex;
@@ -191,6 +187,87 @@ main {
   top: 1rem;
   left: 1rem;
 }
+.clients-container {
+  position: relative;
+  height: calc(100vh - 2rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.centered-clients-container {
+  width: 60%;
+  text-align: center;
+}
+.centered-clients-container > p {
+  font-family: "DM Mono";
+}
+.centered-clients-container > h2 {
+  font-family: "dunbar-bold";
+  font-size: 9vw;
+  margin: 0;
+  margin-top: 3rem;
+  line-height: 100%;
+}
+.client-cards-carousel {
+  display: flex;
+  gap: 1.2rem;
+  width: 100%;
+  position: absolute;
+  left: calc(1rem + 100%);
+  z-index: 2;
+}
+.client-card {
+  background: #efefef;
+  width: 25vw;
+  padding: 1rem;
+}
+.client-card > img {
+  aspect-ratio: 1/1;
+  width: 100%;
+}
+.client-card > p {
+  text-align: center;
+  font-family: "dunbar";
+}
+.clients-arrow-buttons-container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* svgs */
+.clients-container > svg,
+.svg-button > svg {
+  width: 1vw;
+  height: 1vw;
+  position: absolute;
+}
+.clients-container > svg:first-of-type,
+.svg-button > svg:first-of-type {
+  top: 0;
+  left: 0;
+}
+.clients-container > svg:nth-of-type(2),
+.svg-button > svg:nth-of-type(2) {
+  transform: rotate(90deg);
+  top: 0;
+  right: 0;
+}
+.clients-container > svg:nth-of-type(3),
+.svg-button > svg:nth-of-type(3) {
+  transform: rotate(180deg);
+  right: 0;
+  bottom: 0;
+}
+.clients-container > svg:nth-of-type(4),
+.svg-button > svg:nth-of-type(4) {
+  transform: rotate(270deg);
+  left: 0;
+  bottom: 0;
+}
+
+/* MEDIA QUERIES */
 @media (max-width: 990px) {
   .hero-container {
     height: auto;

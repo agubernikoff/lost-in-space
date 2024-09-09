@@ -1,14 +1,19 @@
 import { json } from "@remix-run/react";
 import { getSession } from "../sessions";
 import {
+  animate,
+  AnimatePresence,
   motion,
   useMotionValueEvent,
   useScroll,
   useTransform,
 } from "framer-motion";
 import hero from "../assets/images/hero.png";
-import { useEffect, useRef, useState } from "react";
+import p1 from "../assets/images/placeholder1.png";
+import p2 from "../assets/images/placeholder2.png";
+import { forwardRef, useEffect, useRef, useState } from "react";
 import SVGButton from "../components/SVGButton";
+import SVGCorner from "../components/SVGCorner";
 
 export const meta = () => {
   return [
@@ -97,7 +102,9 @@ export default function Index() {
         </div>
       </motion.div>
       <HeroContainer />
-      <div style={{ height: "100vh" }} />
+      <div className="snap-scroll-container">
+        <ClientsContainer />
+      </div>
     </div>
   );
 }
@@ -148,5 +155,107 @@ function HeroContainer() {
         />
       </div>
     </motion.div>
+  );
+}
+
+function ClientsContainer() {
+  const [cardDisplayed, setCardDisplayed] = useState(0);
+
+  const data = [
+    {
+      title: "A SEAMLESS COLLABORATION WITH OUTSTANDING RESULTS",
+      img: p1,
+      company: "lacoste",
+      year: 2024,
+    },
+    {
+      title: "BRINGING MAGIC TO EVERY PROJECT",
+      img: p2,
+      company: "disney",
+      year: 2024,
+    },
+    {
+      title: "A SEAMLESS COLLABORATION WITH OUTSTANDING RESULTS",
+      img: p1,
+      company: "lacoste",
+      year: 2024,
+    },
+    {
+      title: "BRINGING MAGIC TO EVERY PROJECT",
+      img: p2,
+      company: "disney",
+      year: 2024,
+    },
+  ];
+
+  const mappedCards = data.map((d, index) => (
+    <ClientCard key={index} data={d} />
+  ));
+
+  const carousel = useRef(null);
+  const text = useRef(null);
+
+  function slideRight() {
+    const opacityUnitOfChange = 90 / data.length;
+    const opacity = (100 - opacityUnitOfChange * (cardDisplayed - 1)) / 100;
+    setCardDisplayed(cardDisplayed - 1);
+    animate(carousel.current, {
+      x: `calc((25vw * ${cardDisplayed - 1}) * -1)`,
+    });
+    animate(text.current, {
+      opacity,
+    });
+  }
+
+  function slideLeft() {
+    const opacityUnitOfChange = 90 / data.length;
+    const opacity = (100 - opacityUnitOfChange * (cardDisplayed + 1)) / 100;
+    setCardDisplayed(cardDisplayed + 1);
+    animate(carousel.current, {
+      x: `calc((25vw * ${cardDisplayed + 1}) * -1)`,
+    });
+    animate(text.current, {
+      opacity,
+    });
+  }
+  return (
+    <div className="clients-container">
+      <SVGCorner />
+      <SVGCorner />
+      <SVGCorner />
+      <SVGCorner />
+      <AnimatePresence>
+        <motion.div ref={carousel} className="client-cards-carousel">
+          {mappedCards}
+        </motion.div>
+      </AnimatePresence>
+      <div ref={text} className="centered-clients-container">
+        <p>OUR WORK</p>
+        <h2>
+          CLIENTS WHO <span className="highlight">TRUST US</span>
+        </h2>
+      </div>
+      <div className="clients-arrow-buttons-container">
+        <button onClick={slideRight} disabled={cardDisplayed === 0}>
+          ←
+        </button>
+        <button onClick={slideLeft} disabled={cardDisplayed === data.length}>
+          →
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function ClientCard({ data }) {
+  return (
+    <div className="client-card">
+      <img src={data.img} />
+      {/* <div>
+        <span>{data.company}</span>
+        <span>{data.year}</span>
+      </div> */}
+      <p>{data.title}</p>
+    </div>
   );
 }
