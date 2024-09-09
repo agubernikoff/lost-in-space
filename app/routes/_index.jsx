@@ -136,7 +136,6 @@ function HeroContainer() {
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
           xmlns="http://www.w3.org/2000/svg"
-          // className="fourcorners"
         >
           {/* top left */}
           <rect x="0" y="0" width="10" height="1.65" fill="black" />

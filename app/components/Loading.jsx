@@ -125,7 +125,6 @@ function FourCorners({ randomInt, randomInt2 }) {
       viewBox="0 0 100 100"
       style={{ background: "#151515", zIndex: 2 }}
       xmlns="http://www.w3.org/2000/svg"
-      // className="fourcorners"
       initial={{ opacity: 0, scale: 0.4, x: "-50%" }}
       animate={{
         opacity: 1,

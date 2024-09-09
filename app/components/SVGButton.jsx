@@ -22,7 +22,6 @@ function SVGButton({ text, isNavigational, path, handleClick }) {
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
-        // className="fourcorners"
       >
         {/* top left */}
         <rect x="0%" y="0%" width="5%" height="3.33%" fill="black" />
