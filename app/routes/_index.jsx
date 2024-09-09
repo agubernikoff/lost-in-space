@@ -117,7 +117,6 @@ function HeroContainer() {
 
   useMotionValueEvent(visibility, "change", (latest) => {
     setOffset(latest);
-    console.log(latest);
   });
 
   return (
