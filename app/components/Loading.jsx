@@ -56,6 +56,7 @@ function Loading({ completeAnimation }) {
 
   return (
     <div className="loading-container">
+      <p style={{ color: "white" }}>TEST</p>
       <div className="loading-bar-bg">
         <motion.div
           className="loading-bar"
