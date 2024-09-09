@@ -116,14 +116,14 @@ function FourCorners({ randomInt, randomInt2 }) {
   const firstDuration = randomInt.current * 0.04 + 0.54;
   const secondDuration = 5.12 - firstDuration + 0.54;
 
-  const variableTime = (5.12 - (100 - randomInt2.current) * 0.04) / 5.12;
+  const variableTime = (5.12 - 0.54 - (100 - randomInt2.current) * 0.04) / 5.12;
 
   return (
     <motion.svg
       width="100"
       height="100"
       viewBox="0 0 100 100"
-      style={{ background: "black", zIndex: 2 }}
+      style={{ background: "#151515", zIndex: 2 }}
       xmlns="http://www.w3.org/2000/svg"
       // className="fourcorners"
       initial={{ opacity: 0, scale: 0.4, x: "-50%" }}
@@ -180,7 +180,7 @@ function FourCorners({ randomInt, randomInt2 }) {
         height="10"
         fill="white"
         initial={{ x: -15, y: 15 }}
-        animate={{ x: 1, y: 0 }}
+        animate={{ x: 0, y: 0 }}
         //exit={{}}
         transition={{
           x: { duration: firstDuration },
@@ -346,16 +346,16 @@ function LostInSpace({ randomInt2 }) {
 }
 
 function CoverDiv({ randomInt2 }) {
-  const delay = 5.12 - (100 - randomInt2.current) * 0.04;
-  const duration = (100 - randomInt2.current) * 0.04;
+  const delay = 5.12 - 0.54 - (100 - randomInt2.current) * 0.04;
+  const duration = (100 - randomInt2.current) * 0.04 + 0.54;
   return (
     <motion.div
       style={{
         height: "100%",
         width: "100%",
-        background: "black",
+        background: "#151515",
         position: "absolute",
-        boxShadow: "-10px 0px 30px black",
+        boxShadow: "-10px 0px 10px #151515",
       }}
       initial={{ x: 0 }}
       animate={{ x: "100%" }}

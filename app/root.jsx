@@ -75,6 +75,10 @@ export default function App() {
       <head>
         <Meta />
         <Links />
+        <link
+          href="https://fonts.googleapis.com/css?family=DM Mono"
+          rel="stylesheet"
+        ></link>
       </head>
       <body>
         {runAnimation ? null : <Header />}
