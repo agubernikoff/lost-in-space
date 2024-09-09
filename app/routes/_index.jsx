@@ -199,9 +199,13 @@ function ClientsContainer() {
     const opacityUnitOfChange = 90 / data.length;
     const opacity = (100 - opacityUnitOfChange * (cardDisplayed - 1)) / 100;
     setCardDisplayed(cardDisplayed - 1);
-    animate(carousel.current, {
-      x: `calc((25vw * ${cardDisplayed - 1}) * -1)`,
-    });
+    animate(
+      carousel.current,
+      {
+        x: `calc((25vw * ${cardDisplayed - 1}) * -1)`,
+      },
+      { transition: "easeInOut" }
+    );
     animate(text.current, {
       opacity,
     });
@@ -211,9 +215,13 @@ function ClientsContainer() {
     const opacityUnitOfChange = 90 / data.length;
     const opacity = (100 - opacityUnitOfChange * (cardDisplayed + 1)) / 100;
     setCardDisplayed(cardDisplayed + 1);
-    animate(carousel.current, {
-      x: `calc((25vw * ${cardDisplayed + 1}) * -1)`,
-    });
+    animate(
+      carousel.current,
+      {
+        x: `calc((25vw * ${cardDisplayed + 1}) * -1)`,
+      },
+      { transition: "easeInOut" }
+    );
     animate(text.current, {
       opacity,
     });
