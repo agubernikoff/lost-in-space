@@ -11,6 +11,13 @@
   font-family: "dunbar-bold";
   src: url("../assets/fonts/DUNBARTALLBOLD.TTF") format("truetype");
 }
+
+@font-face {
+  font-family: "agc-bold";
+  src: url("../assets/fonts/AmericanGroteskCondensed-Bold.otf")
+    format("truetype");
+}
+
 body {
   margin: 0;
 }
@@ -22,7 +29,7 @@ main {
 .header {
   display: flex;
   justify-content: space-between;
-  font-family: "dunbar";
+  font-family: "Helvetica";
   margin: 1rem;
 }
 .header-left-and-right {
@@ -98,7 +105,7 @@ main {
   margin: 1rem;
 }
 .home-header {
-  font-family: "dunbar";
+  font-family: "agc-bold";
   font-size: 5.3125rem;
   line-height: 100%;
 }
@@ -117,6 +124,7 @@ main {
   gap: 1rem;
 }
 .svg-button {
+  font-family: "Helvetica";
   position: relative;
   cursor: pointer;
   padding: 0;
@@ -202,7 +210,7 @@ main {
   font-family: "DM Mono";
 }
 .centered-clients-container > h2 {
-  font-family: "dunbar-bold";
+  font-family: "agc-bold";
   font-size: 9vw;
   margin: 0;
   margin-top: 3rem;
@@ -227,7 +235,7 @@ main {
 }
 .client-card > p {
   text-align: center;
-  font-family: "dunbar";
+  font-family: "agc-bold";
 }
 .clients-arrow-buttons-container {
   position: absolute;
