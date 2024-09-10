@@ -3,6 +3,7 @@
   --blue: #1e176a;
   --light-grey: #efefef;
   --low-opacity-white: rgba(255, 255, 255, 0.6);
+  --pearl-river: #d9d9d9;
   /* I THINK THIS METHOD BELOW WILL WORK FOR TOGGLING LIGHT AND DARK MODE
   have some kind of js method that triggers a a change in the css variable
   need to research further*/
@@ -273,20 +274,23 @@ button {
   /* left: 50%; */
   transform: translateX(-50%);
 }
-
 .clients-arrow-buttons-container > button {
   padding: 1rem;
   background: transparent;
-  border: 1px solid #1e176a;
+  border: 1px solid var(--blue);
   margin: 0.5rem;
-  color: #1e176a;
+  color: var(--blue);
   cursor: pointer;
+  transition: color 1s, background-color 1s;
 }
-
+.clients-arrow-buttons-container > button:hover {
+  background: var(--blue);
+  color: white;
+}
 .clients-arrow-buttons-container > button:disabled {
   background: transparent;
-  border: 1px solid #d3d3d3;
-  color: #7d7d7d;
+  border: 1px solid var(--pearl-river);
+  color: var(--pearl-river);
   cursor: not-allowed;
 }
 
