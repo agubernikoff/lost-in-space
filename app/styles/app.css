@@ -2,6 +2,7 @@
   --charcoal: #151515;
   --blue: #1e176a;
   --light-grey: #efefef;
+  --low-opacity-white: rgba(255, 255, 255, 0.6);
   /* I THINK THIS METHOD BELOW WILL WORK FOR TOGGLING LIGHT AND DARK MODE
   have some kind of js method that triggers a a change in the css variable
   need to research further*/
@@ -108,9 +109,10 @@ button {
   gap: 1rem;
   overflow: hidden;
 }
-.loading-container > p {
+.loading-container > p,
+.loading-container > p > span {
   font-family: "DM Mono";
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--low-opacity-white);
 }
 .percent,
 .loading-welcome {
