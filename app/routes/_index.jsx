@@ -198,6 +198,7 @@ function ClientsContainer() {
   const carousel = useRef(null);
   const text = useRef(null);
   const ref = useRef(null);
+  const arrowButton = useRef(null);
   const inView = useInView(ref, { once: true, amount: 0.5 });
 
   function slideRight() {
@@ -235,6 +236,21 @@ function ClientsContainer() {
   useEffect(() => {
     if (inView) {
       smoothScroll(ref.current, 750, 800);
+      setTimeout(
+        () =>
+          animate(
+            arrowButton.current,
+            {
+              y: [0, -10, 0],
+            },
+            {
+              duration: 0.7, // Duration of one flash cycle (from start to reset)
+              repeat: 2, // Flash 3 times
+              repeatType: "loop", // Loops the animation
+            }
+          ),
+        1150
+      );
     }
   }, [inView]);
 
@@ -297,7 +313,11 @@ function ClientsContainer() {
         <button onClick={slideRight} disabled={cardDisplayed === 0}>
           ←
         </button>
-        <button onClick={slideLeft} disabled={cardDisplayed === data.length}>
+        <button
+          onClick={slideLeft}
+          disabled={cardDisplayed === data.length}
+          ref={arrowButton}
+        >
           →
         </button>
       </div>
