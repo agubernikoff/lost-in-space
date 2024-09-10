@@ -1,5 +1,12 @@
-/* :root {
-} */
+:root {
+  --charcoal: #151515;
+  --blue: #1e176a;
+  --light-grey: #efefef;
+  /* I THINK THIS METHOD BELOW WILL WORK FOR TOGGLING LIGHT AND DARK MODE
+  have some kind of js method that triggers a a change in the css variable
+  need to research further*/
+  /* --svg-fill: var(--charcoal) */
+}
 
 @font-face {
   font-family: "dunbar";
@@ -24,6 +31,22 @@ body {
 main {
   min-height: 100vh;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+a,
+p,
+span,
+button {
+  color: var(--charcoal);
+}
+.svg-button > svg > rect,
+.crafting-div > svg > rect,
+.clients-container > svg > rect {
+  fill: var(--charcoal);
+}
 
 /* HEADER */
 .header {
@@ -31,12 +54,12 @@ main {
   justify-content: space-between;
   font-family: "Helvetica";
   margin: 1rem;
+  align-items: center;
 }
 .header-left-and-right {
   width: 30%;
 }
 .header-left-and-right > a {
-  color: black;
   text-decoration: none;
 }
 .header-right {
@@ -48,7 +71,7 @@ main {
 /* LOADING */
 .loading-container {
   inset: 0;
-  background-color: #151515;
+  background-color: var(--charcoal);
   padding: 1rem;
   position: absolute;
 }
@@ -114,7 +137,7 @@ main {
   display: block;
 }
 .highlight {
-  color: #1e176a;
+  color: var(--blue);
 }
 .svg-button-and-words-container {
   display: flex;
@@ -135,11 +158,10 @@ main {
   height: calc(0.33 * 10vw);
   position: relative;
   background: transparent;
-  color: black;
   transition: color 1s, background-color 1s;
 }
 .svg-button:hover {
-  background: #1e176a;
+  background: var(--blue);
   color: white;
 }
 .word-container {
@@ -154,7 +176,6 @@ main {
   height: fit-content;
 }
 .hero-container {
-  border: 1px solid black;
   height: 100vh;
   overflow: hidden;
   margin-block: 1rem;
@@ -227,7 +248,7 @@ main {
   z-index: 2;
 }
 .client-card {
-  background: #efefef;
+  background: var(--light-grey);
   width: 25vw;
   padding: 1rem;
 }
@@ -287,7 +308,7 @@ main {
   .crafting-div {
     position: relative;
     width: 100%;
-    background: black;
+    background: var(--charcoal);
     color: white;
     inset: 0;
   }
