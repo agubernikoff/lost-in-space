@@ -171,18 +171,6 @@ button {
   background: var(--blue);
   color: white;
 }
-.word-container {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  width: 30%;
-  display: none;
-}
-.words {
-  background: lightgray;
-  padding: 0.5rem;
-  height: fit-content;
-}
 .hero-container {
   height: 100vh;
   overflow: hidden;

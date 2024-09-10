@@ -12,13 +12,10 @@ import {
 import hero from "../assets/images/hero.png";
 import p1 from "../assets/images/placeholder1.png";
 import p2 from "../assets/images/placeholder2.png";
-import { forwardRef, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SVGButton from "../components/SVGButton";
 import SVGCorner from "../components/SVGCorner";
-import smoothScroll, {
-  enableScroll,
-  disableScroll,
-} from "../helpers/SmoothScroll";
+import smoothScroll from "../helpers/SmoothScroll";
 
 export const meta = () => {
   return [
@@ -35,11 +32,6 @@ export async function loader({ request }) {
 }
 
 export default function Index() {
-  // const list = {
-  //   visible: { opacity: 1 },
-  //   hidden: { opacity: 0 },
-  // };
-
   const span = {
     animate: { opacity: 1, y: 0, transition: { duration: 0.4 } },
     initial: { opacity: 0, y: 100 },
@@ -97,13 +89,6 @@ export default function Index() {
             isNavigational={true}
             path={"/team"}
           />
-        </div>
-        <div className="word-container">
-          {words.map((word) => (
-            <div key={word} className="words">
-              {word}
-            </div>
-          ))}
         </div>
       </motion.div>
       <HeroContainer />
