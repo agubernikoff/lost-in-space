@@ -103,6 +103,7 @@ main {
 /* _index */
 .homepage {
   margin: 1rem;
+  overflow-x: hidden;
 }
 .home-header {
   font-family: "agc-bold";
@@ -201,6 +202,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 .centered-clients-container {
   width: 60%;
