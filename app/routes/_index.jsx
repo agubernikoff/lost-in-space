@@ -4,6 +4,7 @@ import {
   animate,
   AnimatePresence,
   motion,
+  useInView,
   useMotionValueEvent,
   useScroll,
   useTransform,
@@ -14,6 +15,10 @@ import p2 from "../assets/images/placeholder2.png";
 import { forwardRef, useEffect, useRef, useState } from "react";
 import SVGButton from "../components/SVGButton";
 import SVGCorner from "../components/SVGCorner";
+import smoothScroll, {
+  enableScroll,
+  disableScroll,
+} from "../helpers/SmoothScroll";
 
 export const meta = () => {
   return [
@@ -102,9 +107,7 @@ export default function Index() {
         </div>
       </motion.div>
       <HeroContainer />
-      <div className="snap-scroll-container">
-        <ClientsContainer />
-      </div>
+      <ClientsContainer />
     </div>
   );
 }
@@ -194,6 +197,8 @@ function ClientsContainer() {
 
   const carousel = useRef(null);
   const text = useRef(null);
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.5 });
 
   function slideRight() {
     const opacityUnitOfChange = 90 / data.length;
@@ -226,8 +231,15 @@ function ClientsContainer() {
       opacity,
     });
   }
+
+  useEffect(() => {
+    if (inView) {
+      smoothScroll(ref.current, 750, 800);
+    }
+  }, [inView]);
+
   return (
-    <div className="clients-container">
+    <div className="clients-container" ref={ref}>
       <SVGCorner />
       <SVGCorner />
       <SVGCorner />
@@ -238,12 +250,50 @@ function ClientsContainer() {
         </motion.div>
       </AnimatePresence>
       <div ref={text} className="centered-clients-container">
-        <p>OUR WORK</p>
+        <p
+          style={{
+            transform: inView ? "none" : "translateY(100px)",
+            opacity: inView ? 1 : 0,
+            transition: "all .4s ease .75s",
+          }}
+        >
+          OUR WORK
+        </p>
         <h2>
-          CLIENTS WHO <span className="highlight">TRUST US</span>
+          <div style={{ overflow: "hidden" }}>
+            <span
+              style={{
+                transform: inView ? "none" : "translateY(100px)",
+                opacity: inView ? 1 : 0,
+                transition: "all .4s ease .75s",
+              }}
+              className="motion-span"
+            >
+              CLIENTS WHO{" "}
+            </span>
+          </div>
+          <div style={{ overflow: "hidden" }}>
+            <span
+              style={{
+                transform: inView ? "none" : "translateY(100px)",
+                opacity: inView ? 1 : 0,
+                transition: "all .4s ease 1.15s",
+              }}
+              className="highlight motion-span"
+            >
+              TRUST US
+            </span>
+          </div>
         </h2>
       </div>
-      <div className="clients-arrow-buttons-container">
+      <div
+        style={{
+          transform: inView ? "none" : "translateY(100px)",
+          opacity: inView ? 1 : 0,
+          transition: "all .4s ease .75s",
+        }}
+        className="clients-arrow-buttons-container"
+      >
         <button onClick={slideRight} disabled={cardDisplayed === 0}>
           ←
         </button>
