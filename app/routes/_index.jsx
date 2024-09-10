@@ -25,16 +25,6 @@ export default function Index() {
     initial: { opacity: 0, y: 100 },
   };
 
-  const words = [
-    "Hardware Integration",
-    "Archiving",
-    "Consulting",
-    "Editing",
-    "Onborading",
-    "Technical Support",
-    "Facility Mangement",
-  ];
-
   return (
     <div className="homepage">
       <div className="home-header">
