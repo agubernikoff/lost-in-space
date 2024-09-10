@@ -55,6 +55,7 @@ button {
   font-family: "Helvetica";
   margin: 1rem;
   align-items: center;
+  margin-top: 2%;
 }
 .header-left-and-right {
   width: 30%;
@@ -132,6 +133,8 @@ button {
   font-family: "agc-bold";
   font-size: 5.3125rem;
   line-height: 100%;
+  margin-top: 4%;
+  margin-bottom: 4%;
 }
 .motion-span {
   display: block;
@@ -142,6 +145,7 @@ button {
 .svg-button-and-words-container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 4%;
 }
 .svg-button-container {
   display: flex;
@@ -169,6 +173,7 @@ button {
   gap: 1rem;
   flex-wrap: wrap;
   width: 30%;
+  display: none;
 }
 .words {
   background: lightgray;
@@ -263,8 +268,24 @@ button {
 .clients-arrow-buttons-container {
   position: absolute;
   bottom: 0;
-  left: 50%;
+  /* left: 50%; */
   transform: translateX(-50%);
+}
+
+.clients-arrow-buttons-container > button {
+  padding: 1rem;
+  background: transparent;
+  border: 1px solid #1e176a;
+  margin: 0.5rem;
+  color: #1e176a;
+  cursor: pointer;
+}
+
+.clients-arrow-buttons-container > button:disabled {
+  background: transparent;
+  border: 1px solid #d3d3d3;
+  color: #7d7d7d;
+  cursor: not-allowed;
 }
 
 /* svgs */
