@@ -4,8 +4,9 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import React from "react";
-import { useState } from "react/cjs/react.development";
+import React, { useState, useRef } from "react";
+import hero from "../assets/images/hero.png";
+import SVGButton from "./SVGButton";
 
 function HeroContainer() {
   const [offset, setOffset] = useState(0);
