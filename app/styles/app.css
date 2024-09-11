@@ -4,6 +4,7 @@
   --light-grey: #efefef;
   --low-opacity-white: rgba(255, 255, 255, 0.6);
   --pearl-river: #d9d9d9;
+  --soft-pebble: #5b516d;
   /* I THINK THIS METHOD BELOW WILL WORK FOR TOGGLING LIGHT AND DARK MODE
   have some kind of js method that triggers a a change in the css variable
   need to research further*/
@@ -29,6 +30,7 @@
 
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 main {
   min-height: 100vh;
@@ -130,7 +132,6 @@ button {
 /* _index */
 .homepage {
   margin: 1rem;
-  overflow-x: hidden;
 }
 .home-header {
   font-family: "agc-bold";
@@ -280,6 +281,45 @@ button {
   border: 1px solid var(--pearl-river);
   color: var(--pearl-river);
   cursor: not-allowed;
+}
+
+.introduction-container {
+  display: flex;
+  justify-content: space-between;
+  margin-block: 5rem;
+  height: 80vh;
+  overflow: hidden;
+}
+.introduction-container p,
+.introduction-container h2 {
+  margin: 0;
+}
+.introduction-label {
+  background: var(--light-grey);
+  padding: 1rem;
+  height: fit-content;
+  width: fit-content;
+  font-family: "helvetica";
+}
+.introduction-right {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.introduction-right > h2 {
+  color: var(--charcoal);
+  font-family: "agc-bold";
+  font-size: 3vw;
+}
+.introduction-right > p {
+  color: var(--soft-pebble);
+  font-family: "helvetica";
+  font-size: 1.4vw;
+}
+.svg-quotes > rect,
+.svg-quotes > polygon {
+  fill: var(--soft-pebble);
 }
 
 /* svgs */

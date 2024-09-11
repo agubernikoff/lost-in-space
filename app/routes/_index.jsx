@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import SVGButton from "../components/SVGButton";
 import HeroContainer from "../components/HeroContainer";
 import ClientsContainer from "../components/ClientsContainer";
+import Introduction from "../components/Introduction";
 
 export const meta = () => {
   return [
@@ -71,6 +72,7 @@ export default function Index() {
       </motion.div>
       <HeroContainer />
       <ClientsContainer />
+      <Introduction />
     </div>
   );
 }

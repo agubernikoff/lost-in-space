@@ -42,8 +42,8 @@ function ClientsContainer() {
   const carousel = useRef(null);
   const text = useRef(null);
   const ref = useRef(null);
-  const arrowButton = useRef(null);
   const inView = useInView(ref, { once: true, amount: 0.5 });
+  const arrowButton = useRef(null);
 
   function slideRight() {
     const opacityUnitOfChange = 90 / data.length;
