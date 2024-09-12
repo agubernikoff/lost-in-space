@@ -168,7 +168,8 @@ button {
   background: transparent;
   transition: color 1s, background-color 1s;
 }
-.svg-button:hover {
+.svg-button:hover,
+.selected-svg-button {
   background: var(--blue);
   color: white;
 }
@@ -339,6 +340,10 @@ button {
   justify-content: center;
   align-items: center;
 }
+.vos-video-bg > h2 {
+  font-size: 9vw;
+  text-align: center;
+}
 .vos-video-bg span {
   font-family: "agc-bold";
   color: white;
@@ -452,11 +457,15 @@ button {
 }
 
 /* SERVICES CSS */
-
-.services-page h1 {
-  font-size: 4rem;
+.services-page {
+  height: 100vh;
+  margin-block: 1rem;
+}
+.services-page > h2 {
+  font-size: 9vw;
   font-weight: bold;
-  margin-bottom: 40px;
+  margin-top: 0;
+  margin-bottom: 2rem;
   color: #333;
   text-align: center;
   font-family: "agc-bold";
@@ -478,8 +487,9 @@ button {
   width: 55%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 5rem;
   position: relative;
+  padding: 1rem;
 }
 
 .services-left-section h2 {
@@ -491,8 +501,11 @@ button {
 }
 
 .services-left-section > svg {
-  height: 4%;
-  width: 3%;
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .services-content {
@@ -500,6 +513,7 @@ button {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 0.75rem;
+  width: 80%;
 }
 
 .service-box {
@@ -507,7 +521,7 @@ button {
   padding: 1.5%;
   color: #000;
   text-align: left;
-  font-size: 1.1rem;
+  font-size: 1.3vw;
   margin: 0;
 }
 
