@@ -131,7 +131,7 @@ button {
 
 /* _index */
 .homepage {
-  margin: 1rem;
+  margin-block: 1rem;
 }
 .home-header {
   font-family: "agc-bold";
@@ -324,12 +324,58 @@ button {
   fill: var(--soft-pebble);
 }
 
+.vos-xl-container {
+  height: 500vh;
+  position: relative;
+}
+.vos-video-bg {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: url("../assets/images/videobg.gif"), var(--blue);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.vos-video-bg span {
+  font-family: "agc-bold";
+  color: white;
+}
+.vos-cover {
+  clip-path: polygon(
+    0% 0%,
+    0% 100%,
+    40% 100%,
+    40% 40%,
+    60% 40%,
+    60% 60%,
+    40% 60%,
+    40% 100%,
+    100% 100%,
+    100% 0%
+  );
+  background: white;
+  position: absolute;
+  inset: -1px;
+}
+
 /* svgs */
 .clients-container > svg,
-.svg-button > svg {
+.svg-button > svg,
+.vos-cover > svg,
+.vos-video-bg > svg {
   width: 1vw;
   height: 1vw;
   position: absolute;
+}
+.clients-container > svg > rect,
+.vos-cover > svg > rect {
+  fill: var(--charcoal);
+}
+.vos-video-bg > svg > rect {
+  fill: white;
 }
 .clients-container > svg:first-of-type,
 .svg-button > svg:first-of-type {
@@ -353,6 +399,33 @@ button {
   transform: rotate(270deg);
   left: 0;
   bottom: 0;
+}
+
+.vos-cover > svg:first-of-type,
+.vos-video-bg > svg:first-of-type {
+  top: 1rem;
+  left: 1rem;
+}
+
+.vos-cover > svg:nth-of-type(2),
+.vos-video-bg > svg:nth-of-type(2) {
+  transform: rotate(90deg);
+  top: 1rem;
+  right: 1rem;
+}
+
+.vos-cover > svg:nth-of-type(3),
+.vos-video-bg > svg:nth-of-type(3) {
+  transform: rotate(180deg);
+  right: 1rem;
+  bottom: 1rem;
+}
+
+.vos-cover > svg:nth-of-type(4),
+.vos-video-bg > svg:nth-of-type(4) {
+  transform: rotate(270deg);
+  left: 1rem;
+  bottom: 1rem;
 }
 
 /* MEDIA QUERIES */
