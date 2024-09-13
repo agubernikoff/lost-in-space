@@ -225,18 +225,129 @@ button {
   align-items: center;
   overflow: hidden;
 }
+.team-container {
+  margin: auto;
+  margin-top: 3%;
+}
+.team-container > .team-button {
+  text-align: center;
+  margin-top: 3%;
+}
+.team-members-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin-top: 3%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.team-member {
+  text-align: left;
+  width: 23%;
+  position: relative;
+}
+
+.team-member img {
+  width: 100%;
+  height: auto;
+}
+
+.team-member-name {
+  font-family: "Dunbar";
+  margin-top: 0.5rem;
+}
+
+.team-member-title {
+  font-family: "DM Mono";
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+.image-container {
+  position: relative;
+}
+
+.toggle-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.modal {
+  position: fixed;
+  top: 5%;
+  right: 0;
+  width: 40%;
+  height: 90%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+}
+
+.modal-content {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Grey overlay */
+  z-index: 1000; /* Behind modal */
+}
+
 .centered-clients-container {
   width: 60%;
   text-align: center;
 }
-.centered-clients-container > p {
+.centered-team-container {
+  width: 75%;
+  text-align: center;
+  margin: auto;
+}
+.centered-clients-container > p,
+.centered-team-container > p {
   font-family: "DM Mono";
 }
-.centered-clients-container > h2 {
+.centered-clients-container > h2,
+.centered-team-container > h2 {
   font-family: "agc-bold";
   font-size: 9vw;
   margin: 0;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   line-height: 100%;
 }
 .client-cards-carousel {
