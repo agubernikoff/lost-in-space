@@ -133,6 +133,13 @@ button {
 .homepage {
   margin-block: 1rem;
 }
+.home-header,
+.svg-button-and-words-container,
+.hero-container,
+.clients-container,
+.introduction-container {
+  margin-inline: 1rem;
+}
 .home-header {
   font-family: "agc-bold";
   font-size: 5.3125rem;
