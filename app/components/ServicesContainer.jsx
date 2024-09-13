@@ -39,7 +39,7 @@ function ServicesContainer() {
         className="services-container"
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: true, amount: 0.25 }}
         transition={{ delay: 0.8, duration: 0.4, ease: "easeInOut" }}
       >
         <div
