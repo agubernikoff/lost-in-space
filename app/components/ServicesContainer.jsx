@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import SVGButton from "./SVGButton";
 import SVGCorner from "./SVGCorner";
 import p3 from "../assets/images/placeholder3.png";
 import p4 from "../assets/images/placeholder4.png";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useInView } from "framer-motion";
+import smoothScroll from "../helpers/SmoothScroll";
 
 function ServicesContainer() {
   const [isOurPlace, setIsOurPlace] = useState(true);
   const [inView, setInView] = useState(false);
+  const ref = useRef(null);
+  const inView2 = useInView(ref, { once: true, amount: 0.1 });
   // useEffect(() => setInView(true), []);
   console.log(inView);
 
@@ -20,8 +23,14 @@ function ServicesContainer() {
     setInView(true);
   };
 
+  useEffect(() => {
+    if (inView2) {
+      smoothScroll(ref.current, 1000, 1000);
+    }
+  }, [inView2]);
+
   return (
-    <div className="services-hompage">
+    <div className="services-hompage" ref={ref}>
       <h2>
         <div style={{ overflow: "hidden" }}>
           <motion.span
@@ -39,27 +48,33 @@ function ServicesContainer() {
         className="services-container"
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.25 }}
-        transition={{ delay: 0.8, duration: 0.4, ease: "easeInOut" }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
       >
         <div
           className="services-left-section"
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
           // exit={{}}
-          transition={{ delay: 1.2, duration: 0.4, ease: "easeInOut" }}
+          transition={{ delay: 0.4, duration: 0.4, ease: "easeInOut" }}
         >
           <SVGCorner />
           <AnimatePresence mode="popLayout">
             <motion.h2
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
               exit={{
                 opacity: 0,
                 x: -100,
                 transition: { delay: 0, duration: 0.4 },
               }}
-              transition={{ delay: 1.2, duration: 0.4, ease: "easeInOut" }}
+              transition={{
+                delay: inView ? 1.2 : 0.8,
+                duration: 0.4,
+                ease: "easeInOut",
+              }}
               key={`${isOurPlace}${"h2"}`}
             >
               {isOurPlace ? "Editorial" : "Consulting"}
@@ -67,12 +82,17 @@ function ServicesContainer() {
             <motion.div
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
               exit={{
                 opacity: 0,
                 x: -100,
                 transition: { delay: 0.4, duration: 0.4 },
               }}
-              transition={{ delay: 1.6, duration: 0.4, ease: "easeInOut" }}
+              transition={{
+                delay: inView ? 1.6 : 1.2,
+                duration: 0.4,
+                ease: "easeInOut",
+              }}
               className="services-content"
               key={`${isOurPlace}${"ps"}`}
             >
@@ -107,7 +127,8 @@ function ServicesContainer() {
             <motion.div
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 2, duration: 0.4, ease: "easeInOut" }}
+              viewport={{ once: true }}
+              transition={{ delay: 1.6, duration: 0.4, ease: "easeInOut" }}
             >
               <SVGButton
                 text={"Contact Us"}
@@ -122,13 +143,14 @@ function ServicesContainer() {
             <motion.div
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
               exit={{
                 opacity: 0,
                 x: 100,
                 transition: { delay: 0.8, duration: 0.4 },
               }}
               transition={{
-                delay: inView ? 2 : 2.4,
+                delay: 2,
                 duration: 0.4,
                 ease: "easeInOut",
               }}
@@ -144,10 +166,10 @@ function ServicesContainer() {
       </motion.div>
       <motion.div
         className="services-toggle-buttons"
-        initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ delay: 0.4, duration: 0.4, ease: "easeInOut" }}
+        style={{
+          transform: inView2 ? "none" : "translateY(100px)",
+          transition: "all .4s ease 2.4s",
+        }}
       >
         <SVGButton
           text={"Our Place"}
