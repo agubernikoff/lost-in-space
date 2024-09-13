@@ -70,7 +70,7 @@ function TeamContainer() {
           <div style={{ overflow: "hidden" }}>
             <span
               style={{
-                transform: inView ? "none" : "translateY(100px",
+                transform: inView ? "none" : "translateY(150px)",
                 transition: "all .4s ease .4s",
               }}
               className="motion-span"
@@ -82,7 +82,7 @@ function TeamContainer() {
             <span
               style={{
                 opacity: inView ? 1 : 0,
-                transform: inView ? "none" : "translateY(100px",
+                transform: inView ? "none" : "translateY(150px)",
                 transition: "all .4s ease .8s",
               }}
               className="highlight motion-span"
