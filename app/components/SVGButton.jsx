@@ -3,11 +3,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import SVGCorner from "./SVGCorner";
 
-function SVGButton({ text, isNavigational, path, handleClick }) {
+function SVGButton({ text, isNavigational, path, handleClick, selected }) {
   const nav = useNavigate();
   return (
     <motion.button
-      className="svg-button"
+      className={`svg-button ${selected ? "selected-svg-button" : ""}`}
       onClick={() => {
         if (isNavigational) {
           const options = { preventScrollReset: true };
