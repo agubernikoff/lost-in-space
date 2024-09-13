@@ -79,7 +79,7 @@ function ClientsContainer() {
 
   useEffect(() => {
     if (inView) {
-      smoothScroll(ref.current, 750, 800);
+      smoothScroll(ref.current, 800, 2200);
       setTimeout(
         () =>
           animate(

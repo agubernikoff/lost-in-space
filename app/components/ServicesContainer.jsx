@@ -25,7 +25,7 @@ function ServicesContainer() {
 
   useEffect(() => {
     if (inView2) {
-      smoothScroll(ref.current, 1000, 1000);
+      smoothScroll(ref.current, 1600, 2400);
     }
   }, [inView2]);
 
