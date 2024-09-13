@@ -21,7 +21,7 @@ function ServicesContainer() {
   };
 
   return (
-    <div className="services-page">
+    <div className="services-hompage">
       <h2>
         <div style={{ overflow: "hidden" }}>
           <motion.span
