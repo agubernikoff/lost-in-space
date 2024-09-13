@@ -25,7 +25,7 @@ function VideoOnScroll() {
       if (latest < lastScrollYProgress.current) setHidden(false);
       if (latest > lastScrollYProgress.current) setHidden(true);
     }
-    if (latest >= 0.05 && latest <= 0.1) {
+    if (latest >= 0.1 && latest <= 0.15) {
       if (latest < lastScrollYProgress.current) setHidden(true);
       if (latest > lastScrollYProgress.current) setHidden(false);
     }
@@ -44,7 +44,7 @@ function VideoOnScroll() {
             <span
               className="motion-span"
               style={{
-                transform: !hidden ? "none" : "translateY(100px)",
+                transform: !hidden ? "none" : "translateY(150px)",
                 transition: `all .4s ease ${!hidden ? "" : ".8s"}`,
               }}
             >
@@ -55,7 +55,7 @@ function VideoOnScroll() {
             <span
               className="motion-span"
               style={{
-                transform: !hidden ? "none" : "translateY(100px)",
+                transform: !hidden ? "none" : "translateY(150px)",
                 transition: `all .4s ease .4s`,
               }}
             >
@@ -66,7 +66,7 @@ function VideoOnScroll() {
             <span
               className="motion-span"
               style={{
-                transform: !hidden ? "none" : "translateY(100px)",
+                transform: !hidden ? "none" : "translateY(150px)",
                 transition: `all .4s ease ${!hidden ? ".8s" : ""}`,
               }}
             >
