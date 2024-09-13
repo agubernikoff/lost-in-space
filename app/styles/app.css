@@ -592,6 +592,7 @@ button {
   background-color: #efefef;
   padding: 20px;
   position: relative;
+  overflow: hidden;
 }
 
 .services-left-section {
@@ -601,6 +602,7 @@ button {
   gap: 5rem;
   position: relative;
   padding: 1rem;
+  overflow: hidden;
 }
 
 .services-left-section h2 {
@@ -641,6 +643,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .services-right-section img {

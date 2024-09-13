@@ -6,6 +6,7 @@ import HeroContainer from "../components/HeroContainer";
 import ClientsContainer from "../components/ClientsContainer";
 import Introduction from "../components/Introduction";
 import VideoOnScroll from "../components/VideoOnScroll";
+import ServicesContainer from "../components/ServicesContainer";
 
 export const meta = () => {
   return [
@@ -75,6 +76,10 @@ export default function Index() {
       <ClientsContainer />
       <Introduction />
       <VideoOnScroll />
+      <ServicesContainer />
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
     </div>
   );
 }
