@@ -5,6 +5,7 @@
   --low-opacity-white: rgba(255, 255, 255, 0.6);
   --pearl-river: #d9d9d9;
   --soft-pebble: #5b516d;
+  --seal: #393939;
   /* I THINK THIS METHOD BELOW WILL WORK FOR TOGGLING LIGHT AND DARK MODE
   have some kind of js method that triggers a a change in the css variable
   need to research further*/
@@ -269,7 +270,7 @@ button {
 .team-member-title {
   font-family: "DM Mono";
   font-size: 0.75rem;
-  color: #666;
+  color: var(--seal);
   margin-top: 0.25rem;
 }
 
@@ -284,7 +285,7 @@ button {
   width: 30px;
   height: 30px;
   background-color: white;
-  border: 1px solid #000;
+  border: 1px solid var(--charcoal);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -318,7 +319,7 @@ button {
   width: 30px;
   height: 30px;
   background-color: white;
-  border: 1px solid #000;
+  border: 1px solid var(--charcoal);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -346,11 +347,13 @@ button {
   margin: auto;
 }
 .centered-clients-container > p,
-.centered-team-container > p {
+.centered-team-container > p,
+.contact-form-container > p {
   font-family: "DM Mono";
 }
 .centered-clients-container > h2,
-.centered-team-container > h2 {
+.centered-team-container > h2,
+.contact-form-container > h2 {
   font-family: "agc-bold";
   font-size: 9vw;
   margin: 0;
@@ -551,29 +554,6 @@ button {
   bottom: 1rem;
 }
 
-/* MEDIA QUERIES */
-@media (max-width: 990px) {
-  .hero-container {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-  }
-  .crafting-div {
-    position: relative;
-    width: 100%;
-    background: var(--charcoal);
-    color: white;
-    inset: 0;
-  }
-  .crafting-div > svg > rect,
-  .crafting-div > .svg-button > svg > rect {
-    fill: white;
-  }
-  .crafting-div > .svg-button {
-    color: white;
-  }
-}
-
 /* SERVICES CSS */
 .services-hompage {
   height: 100vh;
@@ -584,7 +564,7 @@ button {
   font-weight: bold;
   margin-top: 0;
   margin-bottom: 2rem;
-  color: #333;
+  color: var(--charcoal);
   text-align: center;
   font-family: "agc-bold";
 }
@@ -596,7 +576,7 @@ button {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  background-color: #efefef;
+  background-color: var(--light-grey);
   padding: 20px;
   position: relative;
   overflow: hidden;
@@ -615,7 +595,7 @@ button {
 .services-left-section h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #333;
+  color: var(--charcoal);
   font-family: "agc-bold";
   margin: 0;
 }
@@ -637,9 +617,9 @@ button {
 }
 
 .service-box {
-  background-color: #ffffff;
+  background-color: white;
   padding: 1.5%;
-  color: #000;
+  color: var(--charcoal);
   text-align: left;
   font-size: 1.3vw;
   margin: 0;
@@ -665,4 +645,95 @@ button {
 
 .services-toggle-buttons > button {
   margin: 0.5%;
+}
+
+.contact-form-container {
+  position: relative;
+  height: calc(100vh - 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+.contact-form-container > h2 {
+  font-size: 5.3125rem;
+  margin: 0;
+}
+.contact-form-container > form {
+  background: var(--light-grey);
+  width: 60%;
+  padding: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.inputs-container,
+.selects-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.inputs-container > input {
+  width: 27.5%;
+  padding: 1rem;
+  font-family: "helvetica";
+}
+.inputs-container > input::placeholder,
+.contact-form-container > form > textarea::placeholder {
+  color: var(--charcoal);
+  font-family: "helvetica";
+}
+.inputs-container > input:focus-visible,
+.contact-form-container > form > textarea:focus-visible {
+  outline-color: var(--blue);
+}
+.selects-container > select {
+  width: 47.5%;
+  padding: 1rem;
+  font-family: "helvetica";
+}
+.contact-form-container > form > textarea {
+  width: calc(100% - 2rem);
+  padding: 1rem;
+  height: 25%;
+  resize: none;
+  font-family: "helvetica";
+}
+.form-button-and-message-container {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  gap: 2.5%;
+}
+.submission-message {
+  font-family: "helvetica";
+  color: var(--blue);
+}
+.error {
+  color: #e96150;
+}
+/* MEDIA QUERIES */
+@media (max-width: 990px) {
+  .hero-container {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .crafting-div {
+    position: relative;
+    width: 100%;
+    background: var(--charcoal);
+    color: white;
+    inset: 0;
+  }
+  .crafting-div > svg > rect,
+  .crafting-div > .svg-button > svg > rect {
+    fill: white;
+  }
+  .crafting-div > .svg-button {
+    color: white;
+  }
 }
