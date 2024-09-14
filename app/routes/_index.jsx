@@ -8,6 +8,7 @@ import Introduction from "../components/Introduction";
 import VideoOnScroll from "../components/VideoOnScroll";
 import ServicesContainer from "../components/ServicesContainer";
 import TeamContainer from "../components/TeamContainer";
+import ContactFormContainer from "../components/ContactFormContainer";
 
 export const meta = () => {
   return [
@@ -34,6 +35,7 @@ export default function Index() {
       <VideoOnScroll />
       <ServicesContainer />
       <TeamContainer />
+      <ContactFormContainer />
     </div>
   );
 }
