@@ -487,73 +487,6 @@ button {
   inset: -1px;
 }
 
-/* svgs */
-.clients-container > svg,
-.svg-button > svg,
-.vos-cover > svg,
-.vos-video-bg > svg {
-  width: 1vw;
-  height: 1vw;
-  position: absolute;
-}
-.clients-container > svg > rect,
-.vos-cover > svg > rect {
-  fill: var(--charcoal);
-}
-.vos-video-bg > svg > rect {
-  fill: white;
-}
-.clients-container > svg:first-of-type,
-.svg-button > svg:first-of-type {
-  top: 0;
-  left: 0;
-}
-.clients-container > svg:nth-of-type(2),
-.svg-button > svg:nth-of-type(2) {
-  transform: rotate(90deg);
-  top: 0;
-  right: 0;
-}
-.clients-container > svg:nth-of-type(3),
-.svg-button > svg:nth-of-type(3) {
-  transform: rotate(180deg);
-  right: 0;
-  bottom: 0;
-}
-.clients-container > svg:nth-of-type(4),
-.svg-button > svg:nth-of-type(4) {
-  transform: rotate(270deg);
-  left: 0;
-  bottom: 0;
-}
-
-.vos-cover > svg:first-of-type,
-.vos-video-bg > svg:first-of-type {
-  top: 1rem;
-  left: 1rem;
-}
-
-.vos-cover > svg:nth-of-type(2),
-.vos-video-bg > svg:nth-of-type(2) {
-  transform: rotate(90deg);
-  top: 1rem;
-  right: 1rem;
-}
-
-.vos-cover > svg:nth-of-type(3),
-.vos-video-bg > svg:nth-of-type(3) {
-  transform: rotate(180deg);
-  right: 1rem;
-  bottom: 1rem;
-}
-
-.vos-cover > svg:nth-of-type(4),
-.vos-video-bg > svg:nth-of-type(4) {
-  transform: rotate(270deg);
-  left: 1rem;
-  bottom: 1rem;
-}
-
 /* SERVICES CSS */
 .services-hompage {
   height: 100vh;
@@ -656,7 +589,7 @@ button {
   justify-content: center;
   align-items: center;
   text-align: center;
-  overflow: hidden;
+  margin: 1rem;
 }
 .contact-form-container > h2 {
   font-size: 5.3125rem;
@@ -715,6 +648,79 @@ button {
 .error {
   color: #e96150;
 }
+
+/* svgs */
+.clients-container > svg,
+.svg-button > svg,
+.vos-cover > svg,
+.vos-video-bg > svg,
+.contact-form-container > svg {
+  width: 1vw;
+  height: 1vw;
+  position: absolute;
+}
+.clients-container > svg > rect,
+.vos-cover > svg > rect {
+  fill: var(--charcoal);
+}
+.vos-video-bg > svg > rect {
+  fill: white;
+}
+.clients-container > svg:first-of-type,
+.svg-button > svg:first-of-type,
+.contact-form-container > svg:first-of-type {
+  top: 0;
+  left: 0;
+}
+.clients-container > svg:nth-of-type(2),
+.contact-form-container > svg:nth-of-type(2),
+.svg-button > svg:nth-of-type(2) {
+  transform: rotate(90deg);
+  top: 0;
+  right: 0;
+}
+.clients-container > svg:nth-of-type(3),
+.contact-form-container > svg:nth-of-type(3),
+.svg-button > svg:nth-of-type(3) {
+  transform: rotate(180deg);
+  right: 0;
+  bottom: 0;
+}
+.clients-container > svg:nth-of-type(4),
+.contact-form-container > svg:nth-of-type(4),
+.svg-button > svg:nth-of-type(4) {
+  transform: rotate(270deg);
+  left: 0;
+  bottom: 0;
+}
+
+.vos-cover > svg:first-of-type,
+.vos-video-bg > svg:first-of-type {
+  top: 1rem;
+  left: 1rem;
+}
+
+.vos-cover > svg:nth-of-type(2),
+.vos-video-bg > svg:nth-of-type(2) {
+  transform: rotate(90deg);
+  top: 1rem;
+  right: 1rem;
+}
+
+.vos-cover > svg:nth-of-type(3),
+.vos-video-bg > svg:nth-of-type(3) {
+  transform: rotate(180deg);
+  right: 1rem;
+  bottom: 1rem;
+}
+
+.vos-cover > svg:nth-of-type(4),
+.vos-video-bg > svg:nth-of-type(4) {
+  transform: rotate(270deg);
+  left: 1rem;
+  bottom: 1rem;
+}
+
 /* MEDIA QUERIES */
 @media (max-width: 990px) {
   .hero-container {

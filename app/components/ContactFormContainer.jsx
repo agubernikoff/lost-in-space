@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
 import SVGButton from "./SVGButton";
+import SVGCorner from "./SVGCorner";
 
 function ContactFormContainer() {
   const [firstName, setFirstName] = useState("");
@@ -43,6 +44,10 @@ function ContactFormContainer() {
   }
   return (
     <div className="contact-form-container">
+      <SVGCorner />
+      <SVGCorner />
+      <SVGCorner />
+      <SVGCorner />
       <p>CONTACT US</p>
       <h2>
         <div style={{ overflow: "hidden" }} />
