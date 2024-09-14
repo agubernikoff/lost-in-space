@@ -25,7 +25,7 @@ function VideoOnScroll() {
       if (latest < lastScrollYProgress.current) setHidden(false);
       if (latest > lastScrollYProgress.current) setHidden(true);
     }
-    if (latest >= 0.1 && latest <= 0.15) {
+    if (latest >= 0.15 && latest <= 0.2) {
       if (latest < lastScrollYProgress.current) setHidden(true);
       if (latest > lastScrollYProgress.current) setHidden(false);
     }
