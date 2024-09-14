@@ -11,8 +11,6 @@ function ServicesContainer() {
   const [inView, setInView] = useState(false);
   const ref = useRef(null);
   const inView2 = useInView(ref, { once: true, amount: 0.1 });
-  // useEffect(() => setInView(true), []);
-  console.log(inView);
 
   const handleOurPlaceClick = () => {
     setIsOurPlace(true);
