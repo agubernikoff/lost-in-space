@@ -34,7 +34,7 @@ body {
   overflow-x: hidden;
 }
 main {
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 h1,
 h2,
@@ -60,7 +60,6 @@ button {
   font-family: "Helvetica";
   margin: 1rem;
   align-items: center;
-  margin-top: 2%;
 }
 .header-left-and-right {
   width: 30%;
@@ -613,6 +612,7 @@ button {
   width: 27.5%;
   padding: 1rem;
   font-family: "helvetica";
+  border: none;
 }
 .inputs-container > input::placeholder,
 .contact-form-container > form > textarea::placeholder {
@@ -627,6 +627,7 @@ button {
   width: 47.5%;
   padding: 1rem;
   font-family: "helvetica";
+  border: none;
 }
 .contact-form-container > form > textarea {
   width: calc(100% - 2rem);
@@ -634,6 +635,7 @@ button {
   height: 25%;
   resize: none;
   font-family: "helvetica";
+  border: none;
 }
 .form-button-and-message-container {
   width: 100%;
