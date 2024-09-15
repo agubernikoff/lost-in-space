@@ -1,5 +1,6 @@
-import { AnimatePresence, motion } from "framer-motion";
-import React, { useState } from "react";
+import { useLocation } from "@remix-run/react";
+import { AnimatePresence, motion, useInView } from "framer-motion";
+import React, { useState, useRef } from "react";
 import SVGButton from "./SVGButton";
 import SVGCorner from "./SVGCorner";
 
@@ -42,22 +43,59 @@ function ContactFormContainer() {
       );
     }
   }
+
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.4 });
+
+  const { pathname } = useLocation();
+
   return (
-    <div className="contact-form-container">
+    <div className="contact-form-container" ref={ref}>
+      <SVGCorner hidden={pathname === "/contact"} />
+      <SVGCorner hidden={pathname === "/contact"} />
       <SVGCorner />
       <SVGCorner />
-      <SVGCorner />
-      <SVGCorner />
-      <p>CONTACT US</p>
+      <p
+        style={{
+          opacity: inView ? 1 : 0,
+          transform: inView ? "none" : "translateY(100px)",
+          transition: "all .4s ease",
+        }}
+      >
+        CONTACT US
+      </p>
       <h2>
-        <div style={{ overflow: "hidden" }} />
-        <span className="motion-span">
-          <span className="highlight">FOR PROJECT INQUIRES</span>, PLEASE
-        </span>
-        <div style={{ overflow: "hidden" }} />
-        <span className="motion-span">USE THE CONTACT FORM</span>
+        <div style={{ overflow: "hidden" }}>
+          <span
+            className="motion-span"
+            style={{
+              transform: inView ? "none" : "translateY(100px)",
+              transition: "all .4s ease .8s",
+            }}
+          >
+            <span className="highlight">FOR PROJECT INQUIRES</span>, PLEASE
+          </span>
+        </div>
+        <div style={{ overflow: "hidden" }}>
+          <span
+            className="motion-span"
+            style={{
+              transform: inView ? "none" : "translateY(100px)",
+              transition: "all .4s ease 1.2s",
+            }}
+          >
+            USE THE CONTACT FORM
+          </span>
+        </div>
       </h2>
-      <form onSubmit={handleSubmit}>
+      <form
+        onSubmit={handleSubmit}
+        style={{
+          opacity: inView ? 1 : 0,
+          transform: inView ? "none" : "translateY(100px)",
+          transition: "all .4s ease 1.6s",
+        }}
+      >
         <div className="inputs-container">
           <input
             placeholder="First Name"
