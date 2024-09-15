@@ -10,7 +10,7 @@ function ServicesContainer() {
   const [isOurPlace, setIsOurPlace] = useState(true);
   const [inView, setInView] = useState(false);
   const ref = useRef(null);
-  const inView2 = useInView(ref, { once: true, amount: 0.1 });
+  const inView2 = useInView(ref, { once: true, amount: 0.2 });
 
   const handleOurPlaceClick = () => {
     setIsOurPlace(true);
