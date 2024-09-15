@@ -3,7 +3,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import SVGCorner from "./SVGCorner";
 
-function SVGButton({ text, isNavigational, path, handleClick, selected }) {
+function SVGButton({
+  text,
+  isNavigational,
+  path,
+  handleClick,
+  selected,
+  style,
+}) {
   const nav = useNavigate();
   return (
     <motion.button
@@ -15,6 +22,7 @@ function SVGButton({ text, isNavigational, path, handleClick, selected }) {
           nav(path, options);
         } else handleClick();
       }}
+      style={style}
     >
       {text}
       <SVGCorner />

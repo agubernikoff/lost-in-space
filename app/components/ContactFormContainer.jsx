@@ -101,22 +101,38 @@ function ContactFormContainer() {
             placeholder="First Name"
             onChange={(e) => setFirstName(e.target.value)}
             type="text"
+            style={{
+              transform: inView ? "none" : "translateX(-100%)",
+              transition: "all .4s ease 1.4s",
+            }}
           ></input>
           <input
-            placeholder="First Name"
+            placeholder="Last Name"
             onChange={(e) => setLastName(e.target.value)}
             type="text"
+            style={{
+              transform: inView ? "none" : "translateY(100%)",
+              transition: "all .4s ease 1.4s",
+            }}
           ></input>
           <input
             placeholder="Your Email"
             onChange={(e) => setEmail(e.target.value)}
             type="text"
+            style={{
+              transform: inView ? "none" : "translateX(100%)",
+              transition: "all .4s ease 1.4s",
+            }}
           ></input>
         </div>
         <div className="selects-container">
           <select
             defaultValue="placeholder"
             onChange={(e) => setService(e.target.value)}
+            style={{
+              transform: inView ? "none" : "translateX(-100%)",
+              transition: "all .4s ease 1.6s",
+            }}
           >
             <option value="placeholder" disabled hidden>
               Choose A Service
@@ -128,6 +144,10 @@ function ContactFormContainer() {
           <select
             defaultValue="placeholder"
             onChange={(e) => setBudget(e.target.value)}
+            style={{
+              transform: inView ? "none" : "translateX(100%)",
+              transition: "all .4s ease 1.6s",
+            }}
           >
             <option value="placeholder" disabled hidden>
               Choose A Service
@@ -135,16 +155,26 @@ function ContactFormContainer() {
             <option value="$5,000-10,000">$ 5000 - 10000</option>
           </select>
         </div>
-        <textarea
-          placeholder="Your Message (Optional)"
-          onChange={(e) => setMessage(e.target.value)}
-          rows={10}
-        ></textarea>
+        <div className="textarea-container">
+          <textarea
+            placeholder="Your Message (Optional)"
+            onChange={(e) => setMessage(e.target.value)}
+            rows={8}
+            style={{
+              transform: inView ? "none" : "translateY(105%)",
+              transition: "all .4s ease 1.8s",
+            }}
+          ></textarea>
+        </div>
         <div className="form-button-and-message-container">
           <SVGButton
             isSubmitButton={true}
             text={"Submit form"}
             handleClick={() => {}}
+            style={{
+              transform: inView ? "none" : "translateX(-100%)",
+              transition: "transform .4s ease 2s,color 1s,background-color 1s",
+            }}
           />
           <AnimatePresence>
             {submissionMessage ? (

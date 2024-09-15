@@ -607,20 +607,21 @@ button {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
 }
-.inputs-container > input {
+.inputs-container input {
   width: 27.5%;
   padding: 1rem;
   font-family: "helvetica";
   border: none;
 }
 .inputs-container > input::placeholder,
-.contact-form-container > form > textarea::placeholder {
+.textarea-container > textarea::placeholder {
   color: var(--charcoal);
   font-family: "helvetica";
 }
 .inputs-container > input:focus-visible,
-.contact-form-container > form > textarea:focus-visible {
+.textarea-container > textarea:focus-visible {
   outline-color: var(--blue);
 }
 .selects-container > select {
@@ -629,10 +630,13 @@ button {
   font-family: "helvetica";
   border: none;
 }
-.contact-form-container > form > textarea {
-  width: calc(100% - 2rem);
+.textarea-container {
+  width: 100%;
+  overflow: hidden;
+}
+.textarea-container > textarea {
+  width: 100%;
   padding: 1rem;
-  height: 25%;
   resize: none;
   font-family: "helvetica";
   border: none;
@@ -642,6 +646,7 @@ button {
   display: flex;
   justify-content: start;
   gap: 2.5%;
+  overflow: hidden;
 }
 .submission-message {
   font-family: "helvetica";
