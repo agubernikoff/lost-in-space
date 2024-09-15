@@ -70,7 +70,7 @@ function ContactFormContainer() {
             className="motion-span"
             style={{
               transform: inView ? "none" : "translateY(100px)",
-              transition: "all .4s ease .8s",
+              transition: "all .4s ease .4s",
             }}
           >
             <span className="highlight">FOR PROJECT INQUIRES</span>, PLEASE
@@ -81,7 +81,7 @@ function ContactFormContainer() {
             className="motion-span"
             style={{
               transform: inView ? "none" : "translateY(100px)",
-              transition: "all .4s ease 1.2s",
+              transition: "all .4s ease .8s",
             }}
           >
             USE THE CONTACT FORM
@@ -93,7 +93,7 @@ function ContactFormContainer() {
         style={{
           opacity: inView ? 1 : 0,
           transform: inView ? "none" : "translateY(100px)",
-          transition: "all .4s ease 1.6s",
+          transition: "all .4s ease 1.2s",
         }}
       >
         <div className="inputs-container">
