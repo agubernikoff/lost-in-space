@@ -1,6 +1,6 @@
 import React from "react";
 
-function SVGCorner() {
+function SVGCorner({ hidden }) {
   return (
     <svg
       width="100"
@@ -8,6 +8,7 @@ function SVGCorner() {
       viewBox="0 0 100 100"
       preserveAspectRatio="none"
       xmlns="http://www.w3.org/2000/svg"
+      style={{ display: hidden ? "none" : "block" }}
     >
       {/* top left */}
       <rect x="0" y="0" width="100" height="10" fill="black" />
