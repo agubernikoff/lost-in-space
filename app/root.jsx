@@ -13,7 +13,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Header from "./components/Header";
 import appStyles from "./styles/app.css?url";
 import { getSession, commitSession, destroySession } from "./sessions";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Loading from "./components/Loading";
 
 export function links() {
@@ -62,8 +62,12 @@ export default function App() {
 
   const [runAnimation, setRunAnimation] = useState(true);
 
+  const main = useRef(null);
+
   function completeAnimation() {
     setRunAnimation(false);
+    console.log(main);
+    main.current.style.minHeight = "0vh";
   }
 
   useEffect(() => {
@@ -84,12 +88,12 @@ export default function App() {
         {runAnimation ? null : <Header />}
         <AnimatePresence mode="wait" initial={false}>
           <motion.main
+            ref={main}
             key={location.pathname}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 1 }}
-            style={{ minHeight: location.pathname === "/" ? "100vh" : "" }}
           >
             {runAnimation ? (
               <Loading completeAnimation={completeAnimation} />
