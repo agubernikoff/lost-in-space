@@ -30,7 +30,7 @@ function Header() {
       className="header"
     >
       <div className="header-left-and-right">
-        <Link to="/">
+        <Link to="/" className="logo-link">
           <StaticLogo />
         </Link>
       </div>

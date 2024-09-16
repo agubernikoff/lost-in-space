@@ -73,8 +73,9 @@ button {
   justify-content: flex-end;
   gap: 1rem;
 }
-.header-left-and-right a {
+.logo-link {
   height: calc(12vw * (414 / 1400));
+  display: block;
 }
 .header-left-and-right svg {
   width: 12vw;
@@ -185,6 +186,7 @@ button {
   padding-block: 1rem;
   margin: 0;
   border: 0;
+  width: fit-content;
   position: relative;
   background: transparent;
   transition: color 1s, background-color 1s;
