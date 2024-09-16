@@ -60,7 +60,7 @@ function HomepageHeader() {
         </div>
         <div style={{ overflow: "hidden" }}>
           <motion.span variants={span} className="motion-span">
-            <span className="highlight">{" PRODUCTION EXCELLENCE"}</span>FOR
+            <span className="highlight">{" PRODUCTION EXCELLENCE "}</span>FOR
             FILMMAKERS
           </motion.span>
         </div>
