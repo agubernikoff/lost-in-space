@@ -48,9 +48,9 @@ span,
 button {
   color: var(--charcoal);
 }
-.svg-button > svg > rect,
-.crafting-div > svg > rect,
-.clients-container > svg > rect {
+.svg-button > svg > path,
+.crafting-div > svg > path,
+.clients-container > svg > path {
   fill: var(--charcoal);
 }
 
@@ -253,6 +253,8 @@ button {
 .team-container > .team-button {
   text-align: center;
   margin-top: 3%;
+  width: fit-content;
+  margin-inline: auto;
 }
 .team-members-container {
   display: flex;
@@ -584,7 +586,10 @@ button {
 }
 
 .services-toggle-buttons {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   margin: 1%;
   margin-top: 2%;
 }
@@ -853,11 +858,11 @@ footer {
   width: 0.5vw;
   height: 0.5vw;
 }
-.clients-container > svg > rect,
-.vos-cover > svg > rect {
+.clients-container > svg > path,
+.vos-cover > svg > path {
   fill: var(--charcoal);
 }
-.vos-video-bg > svg > rect {
+.vos-video-bg > svg > path {
   fill: white;
 }
 .clients-container > svg:first-of-type,
@@ -929,8 +934,8 @@ footer {
     color: white;
     inset: 0;
   }
-  .crafting-div > svg > rect,
-  .crafting-div > .svg-button > svg > rect {
+  .crafting-div > svg > path,
+  .crafting-div > .svg-button > svg > path {
     fill: white;
   }
   .crafting-div > .svg-button {
