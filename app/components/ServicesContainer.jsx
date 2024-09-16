@@ -10,7 +10,7 @@ function ServicesContainer() {
   const [isOurPlace, setIsOurPlace] = useState(true);
   const [inView, setInView] = useState(false);
   const ref = useRef(null);
-  const inView2 = useInView(ref, { once: true, amount: 0.2 });
+  const inView2 = useInView(ref, { once: true, amount: 0.5 });
 
   const handleOurPlaceClick = () => {
     setIsOurPlace(true);
@@ -21,6 +21,7 @@ function ServicesContainer() {
     setInView(true);
   };
 
+  console.log(inView2, ref);
   useEffect(() => {
     if (inView2) {
       smoothScroll(ref.current, 1600, 2400);
@@ -66,10 +67,10 @@ function ServicesContainer() {
               exit={{
                 opacity: 0,
                 x: -100,
-                transition: { delay: 0, duration: 0.4 },
+                transition: { delay: 0, duration: 0.2 },
               }}
               transition={{
-                delay: inView ? 1.2 : 0.8,
+                delay: inView ? 0.8 : 0.6,
                 duration: 0.4,
                 ease: "easeInOut",
               }}
@@ -84,10 +85,10 @@ function ServicesContainer() {
               exit={{
                 opacity: 0,
                 x: -100,
-                transition: { delay: 0.4, duration: 0.4 },
+                transition: { delay: 0.2, duration: 0.2 },
               }}
               transition={{
-                delay: inView ? 1.6 : 1.2,
+                delay: inView ? 1 : 0.7,
                 duration: 0.4,
                 ease: "easeInOut",
               }}
@@ -126,7 +127,7 @@ function ServicesContainer() {
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 1.6, duration: 0.4, ease: "easeInOut" }}
+              transition={{ delay: 0.8, duration: 0.4, ease: "easeInOut" }}
             >
               <SVGButton
                 text={"Contact Us"}
@@ -145,14 +146,15 @@ function ServicesContainer() {
               exit={{
                 opacity: 0,
                 x: 100,
-                transition: { delay: 0.8, duration: 0.4 },
+                transition: { delay: 0.4, duration: 0.4 },
               }}
               transition={{
-                delay: 2,
+                delay: inView ? 1.2 : 1.3,
                 duration: 0.4,
                 ease: "easeInOut",
               }}
               key={isOurPlace}
+              style={{ overflow: "hidden", height: "100%" }}
             >
               <img
                 src={isOurPlace ? p4 : p3}
@@ -166,7 +168,7 @@ function ServicesContainer() {
         className="services-toggle-buttons"
         style={{
           transform: inView2 ? "none" : "translateY(100px)",
-          transition: "all .4s ease 2.4s",
+          transition: "all .4s ease 2s",
         }}
       >
         <SVGButton

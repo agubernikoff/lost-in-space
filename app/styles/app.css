@@ -702,6 +702,7 @@ button {
   font-family: "agc-bold";
   font-size: 3.4rem;
   line-height: 100%;
+  margin-top: 0;
   margin-bottom: 3rem;
 }
 
