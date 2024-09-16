@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../components/Footer";
 import ServicesContainer from "../components/ServicesContainer";
 import ServicesHero from "../components/ServicesHero";
 
@@ -8,7 +7,6 @@ function services() {
     <div>
       <ServicesHero />
       <ServicesContainer />
-      <Footer />
     </div>
   );
 }

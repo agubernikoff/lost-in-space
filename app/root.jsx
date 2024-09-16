@@ -11,6 +11,7 @@ import {
 } from "@remix-run/react";
 import { AnimatePresence, motion } from "framer-motion";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import appStyles from "./styles/app.css?url";
 import { getSession, commitSession, destroySession } from "./sessions";
 import { useEffect, useState, useRef } from "react";
@@ -102,6 +103,7 @@ export default function App() {
             )}
           </motion.main>
         </AnimatePresence>
+        {runAnimation ? null : <Footer />}
         <ScrollRestoration />
         <Scripts />
       </body>
