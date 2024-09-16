@@ -1,6 +1,12 @@
 import React from "react";
 
 function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <footer>
       <div className="footer-header">
@@ -90,7 +96,9 @@ function Footer() {
       <hr className="footer-divider" />
       <div className="footer-bottom">
         <div className="footer-bottom-left">
-          <a href="#top">BACK TO TOP</a>
+          <button onClick={scrollToTop} className="back-to-top">
+            BACK TO TOP
+          </button>
         </div>
         <div className="footer-bottom-center">2024 © ALL RIGHTS RESERVED</div>
         <div className="footer-bottom-right">

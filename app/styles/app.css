@@ -731,7 +731,7 @@ button {
 /* FOOTER */
 
 footer {
-  padding: 20px;
+  padding: 1rem;
   background-color: black;
   color: #ffffff;
   font-family: "helvetica";
@@ -823,7 +823,19 @@ footer {
   text-transform: uppercase;
   font-family: "dm mono";
 }
-
+.back-to-top {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: transparent;
+  border: none;
+  font-family: "dm mono";
+  font-size: 1rem;
+}
+.back-to-top:hover {
+  text-decoration: underline;
+}
 .footer-bottom-left,
 .footer-bottom-center,
 .footer-bottom-right {
