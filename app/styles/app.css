@@ -881,13 +881,6 @@ footer {
   line-height: 100%;
   margin-bottom: 3rem;
 }
-.services-blue {
-  text-transform: uppercase;
-  color: var(--blue);
-  font-family: "agc-bold";
-  font-size: 3.4rem;
-  line-height: 100%;
-}
 
 .scroll-to-explore {
   margin-top: auto;

@@ -7,12 +7,12 @@ function ServicesHero() {
     <div className="services-hero-container">
       {/* Left Side */}
       <div className="services-left">
-        <h1 className="services-header">
+        <h2 className="services-header">
           Explore our comprehensive range of production and post-production{" "}
-          <span className="services-blue">
+          <span className="highlight">
             services tailored to your creative needs.
           </span>
-        </h1>
+        </h2>
         <SVGButton
           text={"Contact Us"}
           isNavigational={true}
