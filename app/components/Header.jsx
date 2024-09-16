@@ -1,6 +1,7 @@
 import { Link } from "@remix-run/react";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import StaticLogo from "./StaticLogo";
 
 function Header() {
   const [time, setTime] = useState("");
@@ -29,7 +30,9 @@ function Header() {
       className="header"
     >
       <div className="header-left-and-right">
-        <Link to="/">*INSERT LOGO HERE*</Link>
+        <Link to="/">
+          <StaticLogo />
+        </Link>
       </div>
       <div>{time}</div> {/* Clock */}
       <div className="header-left-and-right header-right">

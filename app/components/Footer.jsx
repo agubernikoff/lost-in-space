@@ -1,4 +1,5 @@
 import React from "react";
+import StaticLogo from "./StaticLogo";
 
 function Footer() {
   const scrollToTop = () => {
@@ -91,7 +92,7 @@ function Footer() {
       </div>
       <hr className="footer-divider" />
       <div className="footer-logo">
-        <img src="/" alt="logo" className="footer-logo-image" />
+        <StaticLogo />
       </div>
       <hr className="footer-divider" />
       <div className="footer-bottom">
