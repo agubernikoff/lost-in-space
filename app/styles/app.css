@@ -1,6 +1,7 @@
 :root {
   --charcoal: #151515;
   --blue: #1e176a;
+  --white: #ffffff
   --light-grey: #efefef;
   --low-opacity-white: rgba(255, 255, 255, 0.6);
   --pearl-river: #d9d9d9;
@@ -732,7 +733,7 @@ button {
 
 footer {
   padding: 1rem;
-  background-color: black;
+  background-color: var(--charcoal);
   color: #ffffff;
   font-family: "helvetica";
 }
@@ -741,7 +742,7 @@ footer {
   display: flex;
   justify-content: space-between;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--white);
   font-family: "dm mono";
 }
 
@@ -757,7 +758,7 @@ footer {
 .footer-main {
   display: flex;
   justify-content: space-between;
-  color: #ffffff;
+  color: var(--white);
 }
 
 .footer-left {
@@ -770,7 +771,7 @@ footer {
 .footer-right > p,
 .footer-nav > p,
 .footer-follow > p {
-  color: #ffffff;
+  color: var(--white);
 }
 .footer-left > p {
   line-height: 1.5rem;
@@ -790,12 +791,12 @@ footer {
 .footer-follow ul {
   list-style-type: none;
   padding: 0;
-  color: #ffffff;
+  color: var(--white);
 }
 
 .footer-nav li > a,
 .footer-follow li > a {
-  color: #ffffff;
+  color: var(--white);
   text-decoration: none;
 }
 .footer-nav li > a:hover,
@@ -825,7 +826,7 @@ footer {
 }
 .back-to-top {
   cursor: pointer;
-  color: inherit;
+  color: var(--white);
   text-decoration: none;
   text-transform: uppercase;
   background: transparent;
@@ -845,7 +846,7 @@ footer {
 .footer-bottom-left a,
 .footer-bottom-right a {
   text-decoration: none;
-  color: #ffffff;
+  color: var(--white);
 }
 
 .footer-bottom-left a:hover,
@@ -874,7 +875,7 @@ footer {
 
 .services-header {
   text-transform: uppercase;
-  color: black;
+  color: var(--charcoal);
   font-family: "agc-bold";
   font-size: 3.4rem;
   line-height: 100%;
@@ -882,7 +883,7 @@ footer {
 }
 .services-blue {
   text-transform: uppercase;
-  color: #1e176a;
+  color: var(--blue);
   font-family: "agc-bold";
   font-size: 3.4rem;
   line-height: 100%;
@@ -893,7 +894,7 @@ footer {
   text-transform: uppercase;
   font-family: "dm mono";
   font-size: 1rem;
-  color: gray;
+  color: var(--light-grey);
   margin-bottom: 0;
   padding-bottom: 0;
 }
