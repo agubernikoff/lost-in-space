@@ -54,17 +54,19 @@ function HomepageHeader() {
       >
         <div style={{ overflow: "hidden" }}>
           <motion.span variants={span} className="motion-span">
-            {"BOUTIQUE END-TO-END PRODUCTION "}
-          </motion.span>
-        </div>
-        <div style={{ overflow: "hidden" }}>
-          <motion.span variants={span} className="highlight motion-span">
-            {" & POST-PRODUCTION EXCELLENCE"}
+            {"BOUTIQUE END-TO-END "}
+            <span className="highlight">PRODUCTION & POST-</span>
           </motion.span>
         </div>
         <div style={{ overflow: "hidden" }}>
           <motion.span variants={span} className="motion-span">
-            {" FOR FILMMAKERS AND INDEPENDENT CREATORS."}
+            <span className="highlight">{" PRODUCTION EXCELLENCE"}</span>FOR
+            FILMMAKERS
+          </motion.span>
+        </div>
+        <div style={{ overflow: "hidden" }}>
+          <motion.span variants={span} className="motion-span">
+            {" AND INDEPENDENT CREATORS."}
           </motion.span>
         </div>
       </motion.div>
