@@ -174,14 +174,17 @@ button {
   gap: 1rem;
 }
 .svg-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "Helvetica";
+  font-size: clamp(17px, 1.18vw, 24px);
   position: relative;
   cursor: pointer;
-  padding: 0;
+  padding: 1.5rem;
+  padding-block: 1rem;
   margin: 0;
   border: 0;
-  width: 10vw;
-  height: calc(0.33 * 10vw);
   position: relative;
   background: transparent;
   transition: color 1s, background-color 1s;
@@ -700,7 +703,7 @@ button {
   text-transform: uppercase;
   font-family: "dm mono";
   font-size: 1rem;
-  color: var(--lt-gray);
+  color: var(--seal);
   margin-bottom: 0;
   padding-bottom: 0;
 }
@@ -845,6 +848,10 @@ footer {
   width: 1vw;
   height: 1vw;
   position: absolute;
+}
+.svg-button > svg {
+  width: 0.5vw;
+  height: 0.5vw;
 }
 .clients-container > svg > rect,
 .vos-cover > svg > rect {
