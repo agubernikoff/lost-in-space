@@ -509,7 +509,7 @@ button {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  background-color: var(--light-grey);
+  background-color: #efefef;
   padding: 20px;
   position: relative;
   overflow: hidden;
