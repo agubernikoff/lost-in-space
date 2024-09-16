@@ -5,6 +5,7 @@ function team() {
   return (
     <div>
       <TeamHero />
+      <Footer />
     </div>
   );
 }
