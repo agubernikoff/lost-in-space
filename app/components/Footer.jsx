@@ -30,19 +30,19 @@ function Footer() {
             <p>NAVIGATION</p>
             <ul>
               <li>
-                <a href="/index">INDEX</a>
+                <a href="/index">Index</a>
               </li>
               <li>
-                <a href="/services">SERVICES</a>
+                <a href="/services">Services</a>
               </li>
               <li>
-                <a href="/about">ABOUT</a>
+                <a href="/about">About</a>
               </li>
               <li>
-                <a href="/team">TEAM</a>
+                <a href="/team">Team</a>
               </li>
               <li>
-                <a href="/contact">CONTACT</a>
+                <a href="/contact">Contact</a>
               </li>
             </ul>
           </div>
@@ -55,7 +55,7 @@ function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  INSTAGRAM
+                  Instagram
                 </a>
               </li>
               <li>
@@ -64,7 +64,7 @@ function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  LINKEDIN
+                  Linkedin
                 </a>
               </li>
               <li>
@@ -73,7 +73,7 @@ function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  TWITTER
+                  Twitter
                 </a>
               </li>
               <li>
@@ -82,7 +82,7 @@ function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  YOUTUBE
+                  Youtube
                 </a>
               </li>
             </ul>

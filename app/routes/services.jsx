@@ -1,7 +1,12 @@
 import React from "react";
+import ServicesHero from "../components/ServicesHero";
 
 function services() {
-  return <div>Services</div>;
+  return (
+    <div>
+      <ServicesHero />
+    </div>
+  );
 }
 
 export default services;
