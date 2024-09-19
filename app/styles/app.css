@@ -389,6 +389,7 @@ button {
 .client-card > p {
   text-align: center;
   font-family: "agc-bold";
+  color: var(--charcoal);
 }
 .clients-arrow-buttons-container {
   position: absolute;
