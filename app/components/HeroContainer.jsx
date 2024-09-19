@@ -7,9 +7,9 @@ import {
 import React, { useState, useRef } from "react";
 import hero from "../assets/images/hero.png";
 import SVGButton from "./SVGButton";
+import SVGCorner from "./SVGCorner";
 
 function HeroContainer() {
-  const [offset, setOffset] = useState(0);
   const ref = useRef(null);
 
   // Get scroll progress of the element
@@ -19,11 +19,8 @@ function HeroContainer() {
   });
 
   // Map scroll progress to a value between 0 and 1
-  const visibility = useTransform(scrollYProgress, [0, 1], [0, 20]);
-
-  useMotionValueEvent(visibility, "change", (latest) => {
-    setOffset(latest);
-  });
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, 180]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.4, 1, 0.4]);
 
   return (
     <motion.div
@@ -33,19 +30,9 @@ function HeroContainer() {
       transition={{ duration: 0.4, delay: 1.2 }}
       className="hero-container"
     >
-      <motion.img src={hero} alt="" style={{ bottom: `${offset}%` }} />
+      <motion.img src={hero} alt="" style={{ rotate, scale }} />
       <div className="crafting-div">
-        <svg
-          width="100"
-          height="100"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {/* top left */}
-          <rect x="0" y="0" width="10" height="1.65" fill="black" />
-          <rect x="0" y="0" width="1.65" height="10" fill="black" />
-        </svg>
+        <SVGCorner />
         <p>CRAFTING EXCEPTIONAL EXPERIENCES FROM START TO FINISH</p>
         <SVGButton
           text={"Our Services"}
