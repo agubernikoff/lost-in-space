@@ -4,7 +4,15 @@ import { motion } from "framer-motion";
 import StaticLogo from "./StaticLogo";
 
 function Header() {
-  const [time, setTime] = useState("");
+  const [time, setTime] = useState(
+    new Date().toLocaleTimeString("en-US", {
+      timeZone: "America/New_York",
+      hour12: true,
+      hour: "numeric",
+      minute: "numeric",
+      second: "numeric",
+    })
+  );
 
   useEffect(() => {
     const updateTime = () => {
