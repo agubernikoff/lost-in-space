@@ -234,7 +234,7 @@ button {
 }
 .clients-container {
   position: relative;
-  height: calc(100vh - 2rem);
+  min-height: calc(100vh - 2rem);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -595,7 +595,7 @@ button {
 
 .contact-form-container {
   position: relative;
-  height: calc(100vh - 2rem);
+  min-height: calc(100vh - 2rem);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -659,6 +659,7 @@ button {
   width: 100%;
   display: flex;
   justify-content: start;
+  align-items: center;
   gap: 2.5%;
   overflow: hidden;
 }
@@ -926,7 +927,7 @@ footer {
     width: 100%;
     background: var(--charcoal);
     color: white;
-    inset: 0;
+    inset-block: 0;
   }
   .crafting-div > svg > path,
   .crafting-div > .svg-button > svg > path {
@@ -934,5 +935,18 @@ footer {
   }
   .crafting-div > .svg-button {
     color: white;
+  }
+  .inputs-container,
+  .selects-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .inputs-container input,
+  .selects-container > select {
+    width: 100%;
+  }
+  .form-button-and-message-container > p {
+    width: 60%;
+    margin: 0;
   }
 }
