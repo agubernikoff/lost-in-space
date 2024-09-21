@@ -8,6 +8,8 @@
   --pearl-river: #d9d9d9;
   --soft-pebble: #5b516d;
   --seal: #393939;
+  --card-width: 25vw;
+  --card-adjustment: 3rem;
   /* I THINK THIS METHOD BELOW WILL WORK FOR TOGGLING LIGHT AND DARK MODE
   have some kind of js method that triggers a a change in the css variable
   need to research further*/
@@ -371,15 +373,15 @@ button {
 }
 .client-cards-carousel {
   display: flex;
-  gap: 1.2rem;
-  width: 100%;
+  gap: 1rem;
+  /* width: 100%; */
   position: absolute;
   left: calc(1rem + 100%);
   z-index: 2;
 }
 .client-card {
   background: var(--lt-gray);
-  width: 25vw;
+  width: var(--card-width);
   padding: 1rem;
 }
 .client-card > img {
@@ -917,6 +919,10 @@ footer {
 
 /* MEDIA QUERIES */
 @media (max-width: 990px) {
+  :root {
+    --card-width: 44vw;
+    --card-adjustment: 33vw;
+  }
   .hero-container {
     height: auto;
     display: flex;
@@ -935,6 +941,19 @@ footer {
   }
   .crafting-div > .svg-button {
     color: white;
+  }
+
+  .clients-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .client-cards-carousel {
+    position: relative;
+    left: 121%;
+    gap: calc(33vw - 2rem);
+  }
+  .clients-arrow-buttons-container {
+    position: static;
   }
   .inputs-container,
   .selects-container {
