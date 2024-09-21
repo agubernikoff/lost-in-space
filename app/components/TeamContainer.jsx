@@ -33,7 +33,37 @@ function TeamContainer() {
       name: "Monisha Roychoudhury",
       title: "Associate Producer",
     },
+    {
+      image: alexImage,
+      name: "Alexander Santoro",
+      title: "CEO & Co-Founder",
+    },
+    {
+      image: caroImage,
+      name: "Carolyn LaVeglia",
+      title: "CEO & Co-Founder",
+    },
+    {
+      image: artieImage,
+      name: "Artie Dossick",
+      title: "Co-Producer",
+    },
+    {
+      image: monishaImage,
+      name: "Monisha Roychoudhury",
+      title: "Associate Producer",
+    },
   ];
+
+  function splitArray(arr, chunkSize = 4) {
+    const result = [];
+
+    for (let i = 0; i < arr.length; i += chunkSize) {
+      result.push(arr.slice(i, i + chunkSize));
+    }
+
+    return result;
+  }
 
   return (
     <div className="team-container">
@@ -92,38 +122,39 @@ function TeamContainer() {
           </div>
         </h2>
       </div>
-      <motion.div
-        initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.4 }}
-        className="team-button"
-      >
-        <SVGButton text={"See Everyone"} isNavigational={true} path={"/team"} />
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, x: "97vw" }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, amount: 0.005 }}
-        transition={{ duration: 0.8 }}
-        className="team-members-container"
-      >
-        {teamMembers.map((member, index) => (
-          <div key={index} className="team-member">
-            <div className="image-container">
-              <img src={member.image} alt={member.name} />
-              <div
-                className="toggle-button"
-                onClick={() => setActiveModal(index)}
-              >
-                +
-              </div>
-            </div>
-            <div className="team-member-name">{member.name}</div>
-            <div className="team-member-title">{member.title}</div>
-          </div>
-        ))}
-      </motion.div>
+
+      {splitArray(teamMembers).map((arrayOf4) => (
+        <motion.div
+          initial={{ opacity: 0, x: "97vw" }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.005 }}
+          transition={{ duration: 0.8 }}
+          className="team-members-container"
+        >
+          {arrayOf4.map((member, index) => (
+            <TeamMember
+              key={index}
+              member={member}
+              onClick={() => setActiveModal(index)}
+            />
+          ))}
+        </motion.div>
+      ))}
+    </div>
+  );
+}
+
+function TeamMember({ member, onClick }) {
+  return (
+    <div className="team-member">
+      <div className="image-container">
+        <img src={member.image} alt={member.name} />
+        <div className="toggle-button" onClick={onClick}>
+          +
+        </div>
+      </div>
+      <div className="team-member-name">{member.name}</div>
+      <div className="team-member-title">{member.title}</div>
     </div>
   );
 }
