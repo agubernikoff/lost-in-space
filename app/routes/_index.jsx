@@ -43,7 +43,7 @@ export default function Index() {
 function HomepageHeader() {
   const span = {
     animate: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-    initial: { opacity: 0, y: 200 },
+    initial: { opacity: 0, y: "100%" },
   };
   return (
     <div className="home-header">
