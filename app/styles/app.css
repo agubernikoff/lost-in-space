@@ -242,6 +242,16 @@ button {
   align-items: center;
   overflow: hidden;
 }
+
+/* team */
+.team-hero-container .home-header {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.team-hero {
+  width: 100%;
+  padding-inline: 1rem;
+}
 .team-container {
   margin: auto;
   margin-top: 3%;
@@ -281,7 +291,7 @@ button {
 .team-member-title {
   font-family: "DM Mono";
   font-size: 0.75rem;
-  color: var(--seal);
+  color: var(--lt-gray);
   margin-top: 0.25rem;
 }
 
@@ -302,6 +312,7 @@ button {
   align-items: center;
   cursor: pointer;
   z-index: 10;
+  color: var(--charcoal);
 }
 
 .modal {
@@ -348,6 +359,7 @@ button {
   z-index: 1000; /* Behind modal */
 }
 
+/*  */
 .centered-clients-container {
   width: 60%;
   text-align: center;
