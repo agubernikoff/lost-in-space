@@ -40,7 +40,6 @@ function Header() {
         <Link to="/about">About</Link>
         <Link to="/team">Team</Link>
         <Link to="/contact">Contact</Link>
-        <Link to="/contact">Space Mode</Link>
       </div>
     </motion.div>
   );
