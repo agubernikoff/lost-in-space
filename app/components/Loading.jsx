@@ -31,32 +31,43 @@ function Loading({ completeAnimation }) {
       x: `${percent}%`,
     });
     if (percent === 100) {
-      animate(
-        dropDownDiv.current,
-        {
-          height: "calc(100vh - 2rem)",
-          opacity: 1,
-          scale: 1.1,
-        },
-        {
-          height: { duration: 1, delay: 0.25 },
-          scale: { delay: 1.25, duration: 1.25 },
-        }
-      );
+      animate(sequence);
       setTimeout(() => {
         fetch("/", { method: "POST" });
         completeAnimation();
-      }, 1510);
+      }, 1555);
     }
   }, [percent]);
 
   const loadingBar = useRef();
+  const loadingBarBG = useRef();
 
   const dropDownDiv = useRef();
 
+  const sequence = [
+    [
+      dropDownDiv.current,
+      {
+        // height: "calc(100vh - 2rem)",
+        opacity: 1,
+        scale: 1.1,
+      },
+      {
+        // height: { duration: 1, delay: 0.25 },
+        scale: { delay: 1.25, duration: 1.25 },
+        at: 0.3,
+      },
+    ],
+    [
+      loadingBarBG.current,
+      { y: "100vh", height: "100vh" },
+      { height: { duration: 0 }, duration: 1, dealy: 0.25, at: 0.3 },
+    ],
+  ];
+
   return (
     <div className="loading-container">
-      <div className="loading-bar-bg">
+      <div className="loading-bar-bg" ref={loadingBarBG}>
         <motion.div
           className="loading-bar"
           transition={{

@@ -10,11 +10,12 @@ function Footer() {
   };
   return (
     <footer>
+      {/* <hr className="footer-divider" />
       <div className="footer-header">
         <div className="footer-header-item">END-TO-END</div>
         <div className="footer-header-item">PRODUCTION & POST-PRODUCTION</div>
         <div className="footer-header-item">STUDIO</div>
-      </div>
+      </div> */}
       <hr className="footer-divider" />
       <div className="footer-main">
         <div className="footer-left">
@@ -25,6 +26,9 @@ function Footer() {
             services for filmmakers and independent creators, ensuring every
             project reaches its full potential.
           </p>
+          <div className="footer-logo">
+            <StaticLogo />
+          </div>
         </div>
         <div className="footer-right">
           <div className="footer-nav">
@@ -89,10 +93,6 @@ function Footer() {
             </ul>
           </div>
         </div>
-      </div>
-      <hr className="footer-divider" />
-      <div className="footer-logo">
-        <StaticLogo />
       </div>
       <hr className="footer-divider" />
       <div className="footer-bottom">

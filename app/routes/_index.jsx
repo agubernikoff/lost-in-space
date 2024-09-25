@@ -31,10 +31,10 @@ export default function Index() {
       <Buttons />
       <HeroContainer />
       <ClientsContainer />
-      <Introduction />
-      <VideoOnScroll />
-      <ServicesContainer />
-      <TeamContainer />
+      {/* <Introduction /> */}
+      {/* <VideoOnScroll /> */}
+      {/* <ServicesContainer /> */}
+      {/* <TeamContainer /> */}
       <ContactFormContainer />
     </div>
   );
@@ -43,7 +43,7 @@ export default function Index() {
 function HomepageHeader() {
   const span = {
     animate: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-    initial: { opacity: 0, y: 100 },
+    initial: { opacity: 0, y: "100%" },
   };
   return (
     <div className="home-header">

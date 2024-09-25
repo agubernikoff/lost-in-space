@@ -6,6 +6,14 @@ import p1 from "../assets/images/placeholder1.png";
 import p2 from "../assets/images/placeholder2.png";
 
 function ClientsContainer() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    window
+      .matchMedia("(max-width:990px)")
+      .addEventListener("change", (e) => setIsMobile(e.matches));
+    if (window.matchMedia("(max-width:990px)").matches) setIsMobile(true);
+  }, []);
+
   const [cardDisplayed, setCardDisplayed] = useState(0);
 
   const data = [
@@ -52,13 +60,17 @@ function ClientsContainer() {
     animate(
       carousel.current,
       {
-        x: `calc((25vw * ${cardDisplayed - 1}) * -1)`,
+        x: `calc(((var(--card-width) * ${
+          cardDisplayed - 1
+        }) + var(--card-adjustment) * ${cardDisplayed - 1}) * -1)`,
       },
       { transition: "easeInOut" }
     );
-    animate(text.current, {
-      opacity,
-    });
+    if (!isMobile) {
+      animate(text.current, {
+        opacity,
+      });
+    }
   }
 
   function slideLeft() {
@@ -68,13 +80,17 @@ function ClientsContainer() {
     animate(
       carousel.current,
       {
-        x: `calc((25vw * ${cardDisplayed + 1}) * -1)`,
+        x: `calc(((var(--card-width) * ${
+          cardDisplayed + 1
+        }) + var(--card-adjustment) * ${cardDisplayed + 1}) * -1)`,
       },
       { transition: "easeInOut" }
     );
-    animate(text.current, {
-      opacity,
-    });
+    if (!isMobile) {
+      animate(text.current, {
+        opacity,
+      });
+    }
   }
 
   useEffect(() => {
@@ -104,17 +120,12 @@ function ClientsContainer() {
       <SVGCorner />
       <SVGCorner />
       <SVGCorner />
-      <AnimatePresence>
-        <motion.div ref={carousel} className="client-cards-carousel">
-          {mappedCards}
-        </motion.div>
-      </AnimatePresence>
       <div ref={text} className="centered-clients-container">
         <p
           style={{
             transform: inView ? "none" : "translateY(100px)",
             opacity: inView ? 1 : 0,
-            transition: "all .4s ease .75s",
+            transition: "transform .4s ease .75s, opacity .4s ease .75s",
           }}
         >
           OUR WORK
@@ -123,9 +134,9 @@ function ClientsContainer() {
           <div style={{ overflow: "hidden" }}>
             <span
               style={{
-                transform: inView ? "none" : "translateY(100px)",
+                transform: inView ? "none" : "translateY(100%)",
                 opacity: inView ? 1 : 0,
-                transition: "all .4s ease .75s",
+                transition: "transform .4s ease .75s, opacity .4s ease .75s",
               }}
               className="motion-span"
             >
@@ -135,9 +146,9 @@ function ClientsContainer() {
           <div style={{ overflow: "hidden" }}>
             <span
               style={{
-                transform: inView ? "none" : "translateY(100px)",
+                transform: inView ? "none" : "translateY(100%)",
                 opacity: inView ? 1 : 0,
-                transition: "all .4s ease 1.15s",
+                transition: "transform .4s ease 1.15s, opacity .4s ease 1.15s",
               }}
               className="highlight motion-span"
             >
@@ -146,6 +157,19 @@ function ClientsContainer() {
           </div>
         </h2>
       </div>
+      <AnimatePresence>
+        <motion.div
+          ref={carousel}
+          className="client-cards-carousel"
+          style={{
+            left: inView ? "121%" : "200%",
+            opacity: inView ? 1 : 0,
+            transition: "left .4s ease 1.55s, opacity .4s ease 1.55s",
+          }}
+        >
+          {mappedCards}
+        </motion.div>
+      </AnimatePresence>
       <div
         style={{
           transform: inView ? "none" : "translateY(100px)",
@@ -159,7 +183,11 @@ function ClientsContainer() {
         </button>
         <button
           onClick={slideLeft}
-          disabled={cardDisplayed === data.length}
+          disabled={
+            !isMobile
+              ? cardDisplayed === data.length
+              : cardDisplayed === data.length - 1
+          }
           ref={arrowButton}
         >
           →

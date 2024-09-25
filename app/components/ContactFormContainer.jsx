@@ -69,7 +69,7 @@ function ContactFormContainer() {
           <span
             className="motion-span"
             style={{
-              transform: inView ? "none" : "translateY(100px)",
+              transform: inView ? "none" : "translateY(100%)",
               transition: "all .4s ease .4s",
             }}
           >
@@ -80,7 +80,7 @@ function ContactFormContainer() {
           <span
             className="motion-span"
             style={{
-              transform: inView ? "none" : "translateY(100px)",
+              transform: inView ? "none" : "translateY(100%)",
               transition: "all .4s ease .8s",
             }}
           >
