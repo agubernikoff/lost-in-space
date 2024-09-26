@@ -103,7 +103,7 @@ function Footer() {
         </div>
         <div className="footer-bottom-center">2024 © ALL RIGHTS RESERVED</div>
         <div className="footer-bottom-right">
-          <a href="/privacy-policy">PRIVACY POLICY</a>
+          <a href="/privacypolicy">PRIVACY POLICY</a>
         </div>
       </div>
     </footer>
