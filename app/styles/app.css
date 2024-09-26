@@ -734,6 +734,50 @@ button {
   width: 100%;
 }
 
+.goals-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: "helvetica";
+  margin-top: 5rem;
+}
+
+.goal-item {
+  flex: 0 1 calc(33.333% - 0.75rem);
+  border: 1px solid #ffffff;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.grey-box {
+  width: 3rem;
+  height: 3rem;
+  background-color: #393939;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.grey-box img {
+  width: 1rem;
+  height: 1rem;
+}
+
+.goal-title {
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+.goal-description {
+  font-size: 1rem;
+}
+
 /* FOOTER */
 
 footer {
