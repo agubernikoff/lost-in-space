@@ -35,7 +35,7 @@ function Footer() {
             <p>NAVIGATION</p>
             <ul>
               <li>
-                <a href="/index">Index</a>
+                <a href="/">Index</a>
               </li>
               <li>
                 <a href="/services">Services</a>
