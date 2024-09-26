@@ -147,19 +147,16 @@ function PrivacyPolicy() {
         your privacy rights, please contact us at:
       </p>
       <p>
-        <strong>Lost In Space Post-Production Studio</strong>
+        <strong>Lost In Space Studio</strong>
         <br />
-        [Insert Address]
         <br />
-        Email: [Insert Email]
-        <br />
-        Phone: [Insert Phone Number]
+        Email: info@lostinspace.studio
       </p>
       <p>
         This Privacy Policy is intended to provide transparency regarding the
-        collection and use of personal information by Lost In Space
-        Post-Production Studio. By continuing to use our website and services,
-        you acknowledge that you have read and understood this policy.
+        collection and use of personal information by Lost In Space Studio. By
+        continuing to use our website and services, you acknowledge that you
+        have read and understood this policy.
       </p>
     </div>
   );
