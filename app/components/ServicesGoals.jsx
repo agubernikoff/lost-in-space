@@ -51,7 +51,16 @@ function ServicesGoals() {
   ];
 
   return (
-    <div style={{ padding: "1rem" }}>
+    <div style={{ padding: "1rem", marginTop: "7rem" }}>
+      <motion.p
+        className="about-header"
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
+      >
+        OUR GOALS
+      </motion.p>
       <div className="home-header" style={{ textAlign: "center" }}>
         <motion.div ref={text}>
           <div style={{ overflow: "hidden" }}>
