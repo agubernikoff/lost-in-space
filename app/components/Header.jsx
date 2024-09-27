@@ -44,6 +44,7 @@ function Header() {
       </div>
       <div>{time}</div> {/* Clock */}
       <div className="header-left-and-right header-right">
+        <Link to="/">Home</Link>
         <Link to="/services">Services</Link>
         <Link to="/about">About</Link>
         <Link to="/team">Team</Link>
