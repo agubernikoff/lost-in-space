@@ -60,6 +60,10 @@ button {
   fill: white;
 }
 
+.services-container .svg-button > svg > path {
+  fill: black !important;
+}
+
 /* HEADER */
 .header {
   display: flex;
