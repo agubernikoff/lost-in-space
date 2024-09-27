@@ -1029,3 +1029,58 @@ footer {
     margin: 0;
   }
 }
+
+/* ABOUT PAGE */
+
+.about-hero-container {
+  padding: 1rem;
+}
+
+.about-header {
+  font-size: 1rem;
+  text-align: center;
+  color: white;
+  font-family: "dm mono";
+}
+
+.about-hero-container .home-header {
+  width: 50%;
+  margin-left: auto !important;
+  text-align: left;
+  font-size: 4rem;
+  margin-top: 1rem;
+}
+
+.mission-section {
+  padding: 2rem 0;
+}
+
+.mission-content {
+  display: flex;
+  align-items: flex-start;
+}
+
+.mission-number {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "agc-bold";
+}
+
+.mission-text {
+  width: 50%;
+  margin-left: auto;
+  text-align: left;
+}
+
+.mission-text h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+  font-family: "agc-bold";
+}
+
+.mission-text p {
+  font-size: 1.125rem;
+  width: 50%;
+  font-family: helvetica;
+}
