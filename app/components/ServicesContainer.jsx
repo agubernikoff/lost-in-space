@@ -142,7 +142,7 @@ function ServicesContainer() {
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.6, duration: 0.4, ease: "easeInOut" }}
+              transition={{ delay: 1.8, duration: 0.4, ease: "easeInOut" }}
             >
               <SVGButton
                 text={"Contact Us"}

@@ -80,7 +80,7 @@ function ServicesGoals() {
               style={{
                 transform: inView ? "none" : "translateY(100%)",
                 opacity: inView ? 1 : 0,
-                transition: "transform .4s ease .2s, opacity .4s ease .2s",
+                transition: "transform .4s ease .4s, opacity .4s ease .2s",
               }}
               className="motion-span"
             >
@@ -93,7 +93,7 @@ function ServicesGoals() {
               style={{
                 transform: inView ? "none" : "translateY(100%)",
                 opacity: inView ? 1 : 0,
-                transition: "transform .4s ease .4s, opacity .4s ease .4s",
+                transition: "transform .4s ease .8s, opacity .4s ease .4s",
               }}
               className="motion-span highlight"
             >
