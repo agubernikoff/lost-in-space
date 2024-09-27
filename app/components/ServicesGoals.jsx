@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import SVGButton from "./SVGButton";
 import shape from "../assets/images/shape.png";
 import warning from "../assets/images/warning.png";
@@ -9,6 +9,8 @@ import settings from "../assets/images/settings.png";
 import chart from "../assets/images/chart.png";
 
 function ServicesGoals() {
+  const text = useRef(null);
+  const inView = useInView(text, { once: true, amount: 0.25 });
   const content = [
     {
       title: "Streamlined Project Workflows",
@@ -48,51 +50,78 @@ function ServicesGoals() {
     },
   ];
 
-  const span = {
-    animate: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-    initial: { opacity: 0, y: "100%" },
-  };
   return (
     <div style={{ padding: "1rem" }}>
       <div className="home-header" style={{ textAlign: "center" }}>
-        <motion.div
-          initial="initial"
-          animate="animate"
-          transition={{ staggerChildren: 0.4 }}
-        >
+        <motion.div ref={text}>
           <div style={{ overflow: "hidden" }}>
-            <motion.span variants={span} className="motion-span">
+            <motion.span
+              style={{
+                transform: inView ? "none" : "translateY(100%)",
+                opacity: inView ? 1 : 0,
+                transition: "transform .4s ease , opacity .4s ease ",
+              }}
+              className="motion-span"
+            >
               EMPOWERING CREATIVE
             </motion.span>
           </div>
           <div style={{ overflow: "hidden" }}>
-            <motion.span variants={span} className="motion-span">
+            <motion.span
+              style={{
+                transform: inView ? "none" : "translateY(100%)",
+                opacity: inView ? 1 : 0,
+                transition: "transform .4s ease .2s, opacity .4s ease .2s",
+              }}
+              className="motion-span"
+            >
               EXCELLENCE
               <span className="highlight">{" THROUGH "}</span>
             </motion.span>
           </div>
           <div style={{ overflow: "hidden" }}>
-            <motion.span variants={span} className="motion-span highlight">
+            <motion.span
+              style={{
+                transform: inView ? "none" : "translateY(100%)",
+                opacity: inView ? 1 : 0,
+                transition: "transform .4s ease .4s, opacity .4s ease .4s",
+              }}
+              className="motion-span highlight"
+            >
               TAILORED SOLUTIONS.
             </motion.span>
           </div>
         </motion.div>
       </div>
-      <SVGButton
-        text={"Contact Us"}
-        isNavigational={true}
-        path={"/contact"}
-        style={{ margin: "auto" }}
-      />
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
+      >
+        <SVGButton
+          text={"Contact Us"}
+          isNavigational={true}
+          path={"/contact"}
+          style={{ margin: "auto" }}
+        />
+      </motion.div>
       <div className="goals-grid">
         {content.map((item, index) => (
-          <div key={index} className="goal-item">
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            key={index}
+            className="goal-item"
+          >
             <div className="grey-box">
               <img src={item.icon} alt="icon" />
             </div>
             <h3 className="goal-title">{item.title}</h3>
             <p className="goal-description">{item.description}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

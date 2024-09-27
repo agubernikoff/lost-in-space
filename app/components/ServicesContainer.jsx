@@ -21,13 +21,6 @@ function ServicesContainer() {
     setInView(true);
   };
 
-  console.log(inView2, ref);
-  useEffect(() => {
-    if (inView2) {
-      smoothScroll(ref.current, 1600, 2400);
-    }
-  }, [inView2]);
-
   return (
     <div className="services-hompage" ref={ref}>
       <h2>
@@ -43,12 +36,34 @@ function ServicesContainer() {
           </motion.span>
         </div>
       </h2>
+      <div style={{ overflow: "hidden" }}>
+        <motion.div
+          className="services-toggle-buttons"
+          style={{
+            transform: inView2 ? "none" : "translateY(100px)",
+            transition: "all .4s ease .6s",
+          }}
+        >
+          <SVGButton
+            text={"Our Place"}
+            isNavigational={false}
+            handleClick={handleOurPlaceClick}
+            selected={isOurPlace}
+          />
+          <SVGButton
+            text={"Or Yours"}
+            isNavigational={false}
+            handleClick={handleOrYoursClick}
+            selected={!isOurPlace}
+          />
+        </motion.div>
+      </div>
       <motion.div
         className="services-container"
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
-        transition={{ duration: 0.4, ease: "easeInOut" }}
+        transition={{ duration: 0.4, delay: 0.8, ease: "easeInOut" }}
       >
         <div
           className="services-left-section"
@@ -56,7 +71,7 @@ function ServicesContainer() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           // exit={{}}
-          transition={{ delay: 0.4, duration: 0.4, ease: "easeInOut" }}
+          transition={{ delay: 1.2, duration: 0.4, ease: "easeInOut" }}
         >
           <SVGCorner />
           <AnimatePresence mode="popLayout">
@@ -70,7 +85,7 @@ function ServicesContainer() {
                 transition: { delay: 0, duration: 0.2 },
               }}
               transition={{
-                delay: inView ? 0.8 : 0.6,
+                delay: inView ? 0.8 : 1.2,
                 duration: 0.4,
                 ease: "easeInOut",
               }}
@@ -88,7 +103,7 @@ function ServicesContainer() {
                 transition: { delay: 0.2, duration: 0.2 },
               }}
               transition={{
-                delay: inView ? 1 : 0.7,
+                delay: inView ? 1 : 1.4,
                 duration: 0.4,
                 ease: "easeInOut",
               }}
@@ -127,7 +142,7 @@ function ServicesContainer() {
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.8, duration: 0.4, ease: "easeInOut" }}
+              transition={{ delay: 0.6, duration: 0.4, ease: "easeInOut" }}
             >
               <SVGButton
                 text={"Contact Us"}
@@ -150,7 +165,7 @@ function ServicesContainer() {
                 transition: { delay: 0.4, duration: 0.4 },
               }}
               transition={{
-                delay: inView ? 1.2 : 1.3,
+                delay: inView ? 1.2 : 2,
                 duration: 0.4,
                 ease: "easeInOut",
               }}
@@ -164,26 +179,6 @@ function ServicesContainer() {
             </motion.div>
           </AnimatePresence>
         </div>
-      </motion.div>
-      <motion.div
-        className="services-toggle-buttons"
-        style={{
-          transform: inView2 ? "none" : "translateY(100px)",
-          transition: "all .4s ease 2s",
-        }}
-      >
-        <SVGButton
-          text={"Our Place"}
-          isNavigational={false}
-          handleClick={handleOurPlaceClick}
-          selected={isOurPlace}
-        />
-        <SVGButton
-          text={"Or Yours"}
-          isNavigational={false}
-          handleClick={handleOrYoursClick}
-          selected={!isOurPlace}
-        />
       </motion.div>
     </div>
   );
