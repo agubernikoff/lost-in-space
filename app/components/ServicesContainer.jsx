@@ -148,7 +148,6 @@ function ServicesContainer() {
                 text={"Contact Us"}
                 isNavigational={true}
                 path={"/contact"}
-                style={{ color: "black" }}
               />
             </motion.div>
           </AnimatePresence>

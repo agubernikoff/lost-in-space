@@ -63,10 +63,6 @@ button {
   fill: white;
 }
 
-.services-container .svg-button > svg > path {
-  fill: black !important;
-}
-
 /* HEADER */
 .header {
   display: flex;
@@ -539,7 +535,7 @@ button {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  background-color: #efefef;
+  background-color: var(--seal);
   padding: 20px;
   position: relative;
   overflow: hidden;
@@ -558,7 +554,6 @@ button {
 .services-left-section h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: var(--charcoal);
   font-family: "agc-bold";
   margin: 0;
 }
@@ -925,7 +920,8 @@ footer {
   width: 0.5vw;
   height: 0.5vw;
 }
-.vos-video-bg > svg > path {
+.vos-video-bg > svg > path,
+.services-left-section > svg > path {
   fill: white;
 }
 .clients-container > svg:first-of-type,
