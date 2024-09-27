@@ -287,7 +287,7 @@ button {
 }
 
 .team-member-name {
-  font-family: "Dunbar";
+  font-family: "helvetica";
   margin-top: 0.5rem;
 }
 
@@ -446,7 +446,7 @@ button {
   margin: 0;
 }
 .introduction-label {
-  background: var(--lt-gray);
+  background: var(--seal);
   padding: 1rem;
   height: fit-content;
   width: fit-content;
@@ -461,10 +461,10 @@ button {
 .introduction-right > h2 {
   color: var(--charcoal);
   font-family: "agc-bold";
-  font-size: 3vw;
+  font-size: 4vw;
 }
 .introduction-right > p {
-  color: var(--soft-pebble);
+  color: var(--highlight);
   font-family: "helvetica";
   font-size: 1.4vw;
 }

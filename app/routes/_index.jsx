@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import SVGButton from "../components/SVGButton";
 import HeroContainer from "../components/HeroContainer";
 import ClientsContainer from "../components/ClientsContainer";
-import Introduction from "../components/Introduction";
 import VideoOnScroll from "../components/VideoOnScroll";
 import ServicesContainer from "../components/ServicesContainer";
 import TeamContainer from "../components/TeamContainer";
@@ -31,7 +30,6 @@ export default function Index() {
       <Buttons />
       <HeroContainer />
       <ClientsContainer />
-      {/* <Introduction /> */}
       {/* <VideoOnScroll /> */}
       {/* <ServicesContainer /> */}
       {/* <TeamContainer /> */}

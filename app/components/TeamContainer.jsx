@@ -154,7 +154,7 @@ function TeamMember({ member, onClick }) {
         </div>
       </div>
       <div className="team-member-name">{member.name}</div>
-      <div className="team-member-title">{member.title}</div>
+      <div className="team-member-title">{member.title.toUpperCase()}</div>
     </div>
   );
 }
