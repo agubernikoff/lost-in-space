@@ -55,8 +55,11 @@ button {
 }
 .svg-button > svg > path,
 .crafting-div > svg > path,
-.clients-container > svg > path,
 .clients-container > svg > path {
+  fill: white;
+}
+.contact-form-container > svg:nth-of-type(3) > path,
+.contact-form-container > svg:nth-of-type(4) > path {
   fill: white;
 }
 
@@ -633,6 +636,7 @@ button {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  margin-bottom: 2rem;
 }
 .inputs-container,
 .selects-container {
@@ -640,24 +644,27 @@ button {
   display: flex;
   justify-content: space-between;
   overflow: hidden;
+  gap: 1rem;
 }
 .inputs-container input {
-  width: 27.5%;
+  width: 100%;
   padding: 1rem;
   font-family: "helvetica";
   border: none;
 }
 .inputs-container > input::placeholder,
-.textarea-container > textarea::placeholder {
+.textarea-container > textarea::placeholder,
+.selects-container > input::placeholder {
   color: var(--charcoal);
   font-family: "helvetica";
 }
 .inputs-container > input:focus-visible,
-.textarea-container > textarea:focus-visible {
+.textarea-container > textarea:focus-visible,
+.selects-container > input:focus-visible {
   outline-color: var(--blue);
 }
-.selects-container > select {
-  width: 47.5%;
+.selects-container > input {
+  width: 100%;
   padding: 1rem;
   font-family: "helvetica";
   border: none;
@@ -680,6 +687,7 @@ button {
   align-items: center;
   gap: 2.5%;
   overflow: hidden;
+  margin-top: 1rem;
 }
 .submission-message {
   font-family: "helvetica";

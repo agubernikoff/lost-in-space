@@ -8,8 +8,8 @@ function ContactFormContainer() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [service, setService] = useState("");
-  const [budget, setBudget] = useState("");
+  const [company, setCompany] = useState("");
+  const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [submissionMessage, setSubmissionMessage] = useState();
 
@@ -28,8 +28,8 @@ function ContactFormContainer() {
       !firstName ||
       !lastName ||
       !email ||
-      !service ||
-      !budget ||
+      !company ||
+      !phone ||
       !emailRegex.test(email)
     ) {
       setAndResetSubmissionMessage(
@@ -55,7 +55,7 @@ function ContactFormContainer() {
       <SVGCorner hidden={pathname === "/contact"} />
       <SVGCorner />
       <SVGCorner />
-      <p
+      {/* <p
         style={{
           opacity: inView ? 1 : 0,
           transform: inView ? "none" : "translateY(100px)",
@@ -63,7 +63,7 @@ function ContactFormContainer() {
         }}
       >
         CONTACT US
-      </p>
+      </p> */}
       <h2>
         <div style={{ overflow: "hidden" }}>
           <span
@@ -126,34 +126,24 @@ function ContactFormContainer() {
           ></input>
         </div>
         <div className="selects-container">
-          <select
-            defaultValue="placeholder"
-            onChange={(e) => setService(e.target.value)}
+          <input
+            placeholder="Company"
+            onChange={(e) => setCompany(e.target.value)}
+            type="text"
             style={{
-              transform: inView ? "none" : "translateX(-100%)",
-              transition: "all .4s ease 1.6s",
+              transform: inView ? "none" : "translateY(100%)",
+              transition: "all .4s ease 1.4s",
             }}
-          >
-            <option value="placeholder" disabled hidden>
-              Choose A Service
-            </option>
-            <option value="Post Supervisor Services">
-              Post Supervisor Services
-            </option>
-          </select>
-          <select
-            defaultValue="placeholder"
-            onChange={(e) => setBudget(e.target.value)}
+          ></input>
+          <input
+            placeholder="Your Email"
+            onChange={(e) => setPhone(e.target.value)}
+            type="text"
             style={{
               transform: inView ? "none" : "translateX(100%)",
-              transition: "all .4s ease 1.6s",
+              transition: "all .4s ease 1.4s",
             }}
-          >
-            <option value="placeholder" disabled hidden>
-              Choose A Service
-            </option>
-            <option value="$5,000-10,000">$ 5000 - 10000</option>
-          </select>
+          ></input>
         </div>
         <div className="textarea-container">
           <textarea
