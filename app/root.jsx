@@ -67,7 +67,6 @@ export default function App() {
 
   function completeAnimation() {
     setRunAnimation(false);
-    console.log(main);
     main.current.style.minHeight = "0vh";
   }
 

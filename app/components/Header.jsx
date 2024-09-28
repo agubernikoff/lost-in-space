@@ -1,5 +1,5 @@
 import { Link } from "@remix-run/react";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, forwardRef } from "react";
 import { motion } from "framer-motion";
 import StaticLogo from "./StaticLogo";
 
@@ -42,7 +42,7 @@ function Header() {
           <StaticLogo />
         </Link>
       </div>
-      <div>{time}</div> {/* Clock */}
+      <div id="time">{time}</div> {/* Clock */}
       <div className="header-left-and-right header-right">
         <Link to="/">Home</Link>
         <Link to="/services">Services</Link>
