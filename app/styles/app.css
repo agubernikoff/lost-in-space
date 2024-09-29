@@ -1192,11 +1192,10 @@ footer {
 }
 
 .about-hero-image-container {
-  width: 98%;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  width: calc(100% - 2rem);
   height: 100vh;
   overflow: hidden;
+  margin: auto;
 }
 
 .about-hero-image {
