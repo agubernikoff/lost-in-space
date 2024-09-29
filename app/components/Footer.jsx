@@ -23,9 +23,9 @@ function Footer() {
     <footer>
       {isMobile ? (
         <>
-          <div className="footer-mobile-header">
+          {/* <div className="footer-mobile-header">
             <p>END-TO-END & POST-PRODUCTION STUDIO</p>
-          </div>
+          </div> */}
           <hr className="footer-divider" />
           <div className="footer-main-mobile">
             <div className="footer-left-mobile" style={{ width: "100%" }}>
