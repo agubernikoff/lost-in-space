@@ -99,7 +99,7 @@ button {
 
 @media (max-width: 44em) {
   .static-logo {
-    width: 15% !important;
+    width: 25% !important;
     height: auto !important;
   }
 }
