@@ -83,10 +83,10 @@ button {
   justify-content: flex-end;
   gap: 1rem;
 }
-.logo-link {
+/* .logo-link {
   height: calc(12vw * (414 / 1400));
   display: block;
-}
+} */
 .header-left-and-right svg {
   width: 12vw;
   height: calc(12vw * (414 / 1400));
@@ -118,29 +118,29 @@ button {
     border: none;
     cursor: pointer;
     padding: 0;
-    color: white; /* Ensure visibility */
+    color: white;
   }
 
   .menu {
     background-color: #151515;
     position: fixed;
-    top: 0; /* Full height from the top */
+    top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
     z-index: 999;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align items to the start */
+    justify-content: flex-start;
   }
 
   .menu-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem; /* Add some padding */
-    background-color: #151515; /* Same background for consistency */
-    border-bottom: 1px solid #525252; /* Optional border */
+    padding: 1rem;
+    background-color: #151515;
+    border-bottom: 1px solid #525252;
   }
 
   .menu ul {
@@ -168,7 +168,7 @@ button {
     text-decoration: none;
     font-family: "agc-bold";
     font-size: 2rem;
-    color: white; /* Make link text visible */
+    color: white;
   }
 }
 
