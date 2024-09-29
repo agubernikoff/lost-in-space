@@ -106,13 +106,9 @@ function Footer() {
             <StaticLogo />
           </div>
           <hr className="footer-divider" />
-          <div className="footer-bottom">
-            <div className="footer-bottom-center">
-              2024 © ALL RIGHTS RESERVED
-            </div>
-            <div className="footer-bottom-right">
-              <a href="/privacypolicy">PRIVACY POLICY</a>
-            </div>
+          <div className="footer-bottom-mobile">
+            <p>2024 © ALL RIGHTS RESERVED</p>
+            <a href="/privacypolicy">PRIVACY POLICY</a>
           </div>
         </>
       ) : (

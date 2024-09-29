@@ -1043,6 +1043,20 @@ footer {
   font-family: "dm mono";
 }
 
+.footer-bottom-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-bottom-mobile > a,
+.footer-bottom-mobile > p {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  font-family: "dm mono";
+  font-size: 0.9rem;
+}
+
 /* svgs */
 .clients-container > svg,
 .svg-button > svg,
