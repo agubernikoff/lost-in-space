@@ -254,6 +254,7 @@ button {
 .team-hero {
   width: 100%;
   padding-inline: 1rem;
+  box-sizing: border-box;
 }
 .team-container {
   margin: auto;
