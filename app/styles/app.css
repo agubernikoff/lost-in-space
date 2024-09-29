@@ -1027,6 +1027,10 @@ footer {
   gap: 10rem;
 }
 
+.footer-left-mobile > p {
+  line-height: 1.75rem;
+}
+
 .footer-logo-mobile {
   width: 100% !important;
 }
