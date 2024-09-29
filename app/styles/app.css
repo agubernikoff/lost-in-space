@@ -1209,6 +1209,10 @@ footer {
   .about-hero-image-container {
     height: auto;
   }
+  .about-hero-container .svg-button {
+    margin: 0 !important;
+    transform: none !important;
+  }
 }
 
 .about-header {
@@ -1216,6 +1220,40 @@ footer {
   text-align: center;
   color: white;
   font-family: "dm mono";
+}
+
+@media (max-width: 44em) {
+  .about-header {
+    text-align: left;
+    transform: none !important;
+  }
+  .mission-section {
+    padding: 1rem 0 !important;
+  }
+  .mission-content {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .mission-text {
+    width: 75% !important;
+    text-align: left !important;
+    margin-left: 0 !important;
+    padding-left: 0;
+  }
+  .mission-text p {
+    width: 75% !important;
+  }
+  .mission-text h2 {
+    margin-top: 1rem !important;
+  }
+  .about-hero-container .home-header {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+  .about-hero-container .home-header div {
+    transform: none !important;
+  }
 }
 
 .about-hero-container .home-header {
