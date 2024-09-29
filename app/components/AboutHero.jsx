@@ -21,7 +21,7 @@ function AboutHero() {
       setOffsets({
         offset: `translateX(calc(${offsetWidth / -2}px + 1rem))`,
         offset2: `translateX(${offsetWidth / -2}px)`,
-        offset3: `translateX(calc(${offsetWidth / 2}px - 1rem))`,
+        offset3: `translateX(calc(${offsetWidth / 2}px - 2rem))`,
       });
     }
   }, [timeDiv.current]); // Ensure it runs when timeDiv is available
