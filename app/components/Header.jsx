@@ -53,7 +53,7 @@ function Header() {
       transition={{ ease: "linear", duration: 0.5 }}
       className="header"
     >
-      {/* {isMobile ? (
+      {isMobile ? (
         <>
           <div className="header-left-and-right">
             <Link to="/" className="logo-link">
@@ -112,21 +112,22 @@ function Header() {
           )}
         </>
       ) : (
-        <> */}
-      <div className="header-left-and-right">
-        <Link to="/" className="logo-link">
-          <StaticLogo />
-        </Link>
-      </div>
-      <div id="time">{time}</div>
-      <div className="header-left-and-right header-right">
-        <Link to="/">Home</Link>
-        <Link to="/services">Services</Link>
-        <Link to="/about">About</Link>
-        <Link to="/team">Team</Link>
-        <Link to="/contact">Contact</Link>
-      </div>
-      {/* </> */})
+        <>
+          <div className="header-left-and-right">
+            <Link to="/" className="logo-link">
+              <StaticLogo />
+            </Link>
+          </div>
+          <div id="time">{time}</div>
+          <div className="header-left-and-right header-right">
+            <Link to="/">Home</Link>
+            <Link to="/services">Services</Link>
+            <Link to="/about">About</Link>
+            <Link to="/team">Team</Link>
+            <Link to="/contact">Contact</Link>
+          </div>
+        </>
+      )}
     </motion.div>
   );
 }
