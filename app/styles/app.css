@@ -1259,6 +1259,12 @@ footer {
   .about-hero-container .home-header div {
     transform: none !important;
   }
+  .home-header .text-wrapper {
+    font-size: 4.5rem;
+  }
+  .home-header {
+    margin-bottom: 3rem !important;
+  }
 }
 
 .about-hero-container .home-header {
