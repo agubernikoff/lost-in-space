@@ -119,6 +119,7 @@ button {
     cursor: pointer;
     padding: 0;
     color: white;
+    padding-bottom: 0.5rem;
   }
 
   .menu {
