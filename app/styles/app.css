@@ -1208,10 +1208,14 @@ footer {
 @media (max-width: 44em) {
   .about-hero-image-container {
     height: auto;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
   }
   .about-hero-container .svg-button {
     margin: 0 !important;
     transform: none !important;
+    margin-top: 3rem !important;
+    margin-bottom: 0rem !important;
   }
 }
 
@@ -1226,6 +1230,7 @@ footer {
   .about-header {
     text-align: left;
     transform: none !important;
+    margin-bottom: 3rem !important;
   }
   .mission-section {
     padding: 1rem 0 !important;
