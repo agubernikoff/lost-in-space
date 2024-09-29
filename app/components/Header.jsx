@@ -77,19 +77,34 @@ function Header() {
               <nav>
                 <ul>
                   <li>
-                    <span>01</span> <Link to="/">Homepage</Link>
+                    <span>01</span>{" "}
+                    <Link to="/" onClick={toggleMenu}>
+                      Homepage
+                    </Link>
                   </li>
                   <li>
-                    <span>02</span> <Link to="/services">Services</Link>
+                    <span>02</span>{" "}
+                    <Link to="/services" onClick={toggleMenu}>
+                      Services
+                    </Link>
                   </li>
                   <li>
-                    <span>03</span> <Link to="/about">About</Link>
+                    <span>03</span>{" "}
+                    <Link to="/about" onClick={toggleMenu}>
+                      About
+                    </Link>
                   </li>
                   <li>
-                    <span>04</span> <Link to="/team">Team</Link>
+                    <span>04</span>{" "}
+                    <Link to="/team" onClick={toggleMenu}>
+                      Team
+                    </Link>
                   </li>
                   <li>
-                    <span>05</span> <Link to="/contact">Contact</Link>
+                    <span>05</span>{" "}
+                    <Link to="/contact" onClick={toggleMenu}>
+                      Contact
+                    </Link>
                   </li>
                 </ul>
               </nav>
