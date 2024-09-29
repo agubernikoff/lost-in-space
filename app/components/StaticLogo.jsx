@@ -3,6 +3,7 @@ import React from "react";
 function StaticLogo() {
   return (
     <svg
+      className="static-logo"
       width="1400"
       height="414"
       viewBox="0 0 1400 414"

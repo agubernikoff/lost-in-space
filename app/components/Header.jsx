@@ -43,18 +43,8 @@ function Header() {
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-
-    if (!menuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = menuOpen ? "auto" : "hidden"; // Disable scroll when menu is open
   };
-  useEffect(() => {
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, []);
 
   return (
     <motion.div
@@ -76,6 +66,14 @@ function Header() {
 
           {menuOpen && (
             <div className="menu">
+              <div className="menu-header">
+                <Link to="/" className="logo-link">
+                  <StaticLogo />
+                </Link>
+                <button className="hamburger" onClick={toggleMenu}>
+                  {menuOpen ? "✕" : "☰"}
+                </button>
+              </div>
               <nav>
                 <ul>
                   <li>
@@ -95,9 +93,6 @@ function Header() {
                   </li>
                 </ul>
               </nav>
-              <div className="bottom-time">
-                <div className="time">{time}</div>
-              </div>
             </div>
           )}
         </>

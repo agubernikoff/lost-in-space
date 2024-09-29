@@ -92,13 +92,19 @@ button {
   height: calc(12vw * (414 / 1400));
 }
 
-@media (max-width: 44em) {
-  /* Hide the right-side links on mobile */
-  .header-right {
-    display: none;
-  }
+.static-logo {
+  width: 100%;
+  height: auto;
+}
 
-  /* Style the header for mobile with hamburger and logo */
+@media (max-width: 44em) {
+  .static-logo {
+    width: 15% !important;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 44em) {
   .header-left-and-right {
     display: flex;
     justify-content: space-between;
@@ -106,46 +112,49 @@ button {
     align-items: center;
   }
 
-  /* Hamburger button styling */
   .hamburger {
     font-size: 2rem;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0;
+    color: white; /* Ensure visibility */
   }
 
-  /* Fullscreen mobile menu */
   .menu {
-    background-color: #151515; /* Set the menu background to black */
+    background-color: #151515;
     position: fixed;
-    top: 4.5rem;
+    top: 0; /* Full height from the top */
     left: 0;
-    width: 100vw; /* Ensure the menu takes up full width */
-    height: calc(100vh - 4.5rem); /* Full height of the viewport */
-    z-index: 999; /* Bring it above other content */
+    width: 100vw;
+    height: 100vh; /* Full viewport height */
+    z-index: 999;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start; /* Align items to the start */
+  }
+
+  .menu-header {
+    display: flex;
     justify-content: space-between;
-    overflow: hidden; /* Prevent scrolling */
+    align-items: center;
+    padding: 1rem; /* Add some padding */
+    background-color: #151515; /* Same background for consistency */
+    border-bottom: 1px solid #525252; /* Optional border */
   }
 
   .menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 100%; /* Ensure the ul stays within bounds */
+    width: 100%;
   }
 
   .menu li {
     display: flex;
     justify-content: space-between;
     padding: 1rem 0;
-    border-bottom: 1px solid #525252; /* Grey underline */
-  }
-
-  .menu li:first-child {
-    border-top: 1px solid #525252;
+    border-bottom: 1px solid #525252;
   }
 
   .menu li > span {
@@ -159,33 +168,29 @@ button {
     text-decoration: none;
     font-family: "agc-bold";
     font-size: 2rem;
+    color: white; /* Make link text visible */
   }
+}
 
-  .hamburger {
-    color: white; /* Make hamburger (or X) visible */
-    font-size: 2rem;
-  }
-
-  .bottom-time {
+/* .bottom-time {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-  }
+  } */
 
-  .bottom-time hr {
+/* .bottom-time hr {
     flex: 1;
     border: none;
     border-top: 1px solid #525252; /* Add a grey horizontal line */
-  }
+/* }  */
 
-  .time {
+/* .time {
     border-top: 1px solid #525252;
     padding: 1rem;
     color: var(--low-opacity-white);
     width: 100%;
-  }
-}
+  } */
 
 /* LOADING */
 .loading-container {
