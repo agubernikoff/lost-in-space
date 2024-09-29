@@ -1027,8 +1027,12 @@ footer {
   gap: 10rem;
 }
 
+.footer-logo-mobile {
+  width: 100% !important;
+}
+
 .footer-logo-mobile .static-logo {
-  width: 100%;
+  width: 100% !important;
 }
 
 .footer-mobile-header {
