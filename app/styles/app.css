@@ -1055,6 +1055,8 @@ footer {
 
 .mission-section {
   padding: 2rem 0;
+  overflow: hidden;
+  min-height: 5rem;
 }
 
 .mission-content {
@@ -1085,4 +1087,7 @@ footer {
   font-size: 1rem;
   width: 50%;
   font-family: helvetica;
+}
+.text-wrapper {
+  overflow: hidden;
 }

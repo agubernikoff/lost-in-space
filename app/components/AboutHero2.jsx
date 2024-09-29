@@ -27,7 +27,7 @@ function AboutHero() {
   }, [timeDiv.current]); // Ensure it runs when timeDiv is available
   const span = {
     initial: { y: "100%" },
-    animate: { y: 0 },
+    animate: { y: 0, transition: { duration: 0.4, ease: "easeInOut" } },
   };
 
   return (
@@ -38,8 +38,9 @@ function AboutHero() {
       <div className="home-header">
         <motion.div
           initial="initial"
-          animate="animate"
+          whileInView="animate"
           transition={{ staggerChildren: 0.4 }}
+          viewport={{ once: true }}
           style={{ transform: offsets.offset }}
         >
           <div className="text-wrapper">
@@ -64,7 +65,13 @@ function AboutHero() {
       <hr className="footer-divider" />
 
       <div className="mission-section">
-        <div className="mission-content">
+        <motion.div
+          className="mission-content"
+          initial={{ opacity: 0, y: "100%" }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+        >
           <span className="mission-number">01</span>
           <div
             className="mission-text"
@@ -78,13 +85,19 @@ function AboutHero() {
               ahead in the post-production industry.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <hr className="footer-divider" />
 
       <div className="mission-section">
-        <div className="mission-content">
+        <motion.div
+          className="mission-content"
+          initial={{ opacity: 0, y: "100%" }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+        >
           <span className="mission-number">02</span>
           <div
             className="mission-text"
@@ -98,13 +111,19 @@ function AboutHero() {
               highest industry standards.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <hr className="footer-divider" />
 
       <div className="mission-section">
-        <div className="mission-content">
+        <motion.div
+          className="mission-content"
+          initial={{ opacity: 0, y: "100%" }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+        >
           <span className="mission-number">03</span>
           <div
             className="mission-text"
@@ -118,14 +137,20 @@ function AboutHero() {
               personalized experience.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <hr className="footer-divider" />
 
       <div className="mission-section">
-        <div className="mission-content">
-          <span className="mission-number">02</span>
+        <motion.div
+          className="mission-content"
+          initial={{ opacity: 0, y: "100%" }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+        >
+          <span className="mission-number">04</span>
           <div
             className="mission-text"
             style={{
@@ -138,7 +163,7 @@ function AboutHero() {
               services for all project sizes.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
       <hr className="footer-divider" />
       <SVGButton
