@@ -1013,20 +1013,20 @@ footer {
   text-decoration: underline;
 }
 
-.footer-main {
+.footer-main-mobile {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.footer-right {
+.footer-right-mobile {
   flex: 1;
   display: flex;
   justify-content: flex-start;
   flex-direction: row;
 }
 
-.footer-logo .static-logo {
+.footer-logo-mobile .static-logo {
   width: 100%;
 }
 

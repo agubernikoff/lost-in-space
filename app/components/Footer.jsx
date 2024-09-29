@@ -27,8 +27,8 @@ function Footer() {
             <p>END-TO-END & POST-PRODUCTION STUDIO</p>
           </div>
           <hr className="footer-divider" />
-          <div className="footer-main">
-            <div className="footer-left" style={{ width: "100%" }}>
+          <div className="footer-main-mobile">
+            <div className="footer-left-mobile" style={{ width: "100%" }}>
               <p>COMPANY</p>
               <p>
                 Lost in Space is a boutique production and post-production
@@ -37,7 +37,7 @@ function Footer() {
                 ensuring every project reaches its full potential.
               </p>
             </div>
-            <div className="footer-right">
+            <div className="footer-right-mobile">
               <div className="footer-nav">
                 <p>NAVIGATION</p>
                 <ul>
@@ -102,7 +102,7 @@ function Footer() {
             </div>
           </div>
           <hr className="footer-divider" />
-          <div className="footer-logo">
+          <div className="footer-logo-mobile">
             <StaticLogo />
           </div>
           <hr className="footer-divider" />
@@ -131,10 +131,7 @@ function Footer() {
                 <StaticLogo />
               </div>
             </div>
-            <div
-              className="footer-right"
-              style={{ display: "flex", flexDirection: "column" }}
-            >
+            <div className="footer-right">
               <div className="footer-nav">
                 <p>NAVIGATION</p>
                 <ul>
