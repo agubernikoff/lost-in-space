@@ -163,7 +163,7 @@ button {
 }
 .home-header {
   font-family: "agc-bold";
-  font-size: 5.3125rem;
+  font-size: 5.6vw;
   line-height: 100%;
   margin-top: 4%;
   margin-bottom: 4%;
@@ -620,7 +620,7 @@ button {
   margin: 1rem;
 }
 .contact-form-container > h2 {
-  font-size: 5.3125rem;
+  font-size: 5.9vw;
   margin: 0;
 }
 .contact-form-container > form {
@@ -1030,6 +1030,26 @@ footer {
   .form-button-and-message-container > p {
     width: 60%;
     margin: 0;
+  }
+}
+@media (max-width: 793px) {
+  .home-header {
+    font-size: 5.5vw;
+  }
+}
+@media (max-width: 556px) {
+  .home-header {
+    font-size: 5.4vw;
+  }
+}
+@media (max-width: 427px) {
+  .home-header {
+    font-size: 5.3vw;
+  }
+}
+@media (max-width: 348px) {
+  .home-header {
+    font-size: 5.2vw;
   }
 }
 
