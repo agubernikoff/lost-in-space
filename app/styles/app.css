@@ -1089,6 +1089,15 @@ footer {
     width: 2vw;
     height: 2vw;
   }
+  .clients-container > svg,
+  .svg-button > svg,
+  .vos-cover > svg,
+  .vos-video-bg > svg,
+  .contact-form-container > svg,
+  .crafting-div > svg {
+    width: 2vw;
+    height: 2vw;
+  }
 }
 .vos-video-bg > svg > path,
 .services-left-section > svg > path {
