@@ -5,6 +5,10 @@ import alexImage from "../assets/images/alex.png";
 import caroImage from "../assets/images/caro.png";
 import artieImage from "../assets/images/artie.png";
 import monishaImage from "../assets/images/monisha.png";
+import elfImage from "../assets/images/elf.png";
+import gusImage from "../assets/images/gus.png";
+import nawImage from "../assets/images/naw.png";
+import spaceImage from "../assets/images/spaceman.png";
 
 function TeamContainer() {
   const text = useRef(null);
@@ -34,24 +38,24 @@ function TeamContainer() {
       title: "Associate Producer",
     },
     {
-      image: alexImage,
-      name: "Alexander Santoro",
-      title: "CEO & Co-Founder",
+      image: elfImage,
+      name: "Efrain Rivera",
+      title: "Post Production Liaison",
     },
     {
-      image: caroImage,
-      name: "Carolyn LaVeglia",
-      title: "CEO & Co-Founder",
+      image: gusImage,
+      name: "Giuseppe de Matteis",
+      title: "Assistant Editor",
     },
     {
-      image: artieImage,
-      name: "Artie Dossick",
-      title: "Co-Producer",
+      image: nawImage,
+      name: "Nawal Mubin",
+      title: "Post Coordinator",
     },
     {
-      image: monishaImage,
-      name: "Monisha Roychoudhury",
-      title: "Associate Producer",
+      image: spaceImage,
+      name: "Next Space Cadet",
+      title: "This Could Be You",
     },
   ];
 
