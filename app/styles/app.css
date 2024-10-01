@@ -908,6 +908,9 @@ button {
   .goals-grid {
     flex-direction: column;
   }
+  .services-hompage .home-header {
+    font-size: 3rem;
+  }
 }
 
 .grey-box {
