@@ -58,6 +58,7 @@ function ServicesGoals() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
+        style={{ textAlign: "center" }}
       >
         OUR GOALS
       </motion.p>

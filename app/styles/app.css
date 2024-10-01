@@ -904,6 +904,12 @@ button {
   align-items: flex-start;
 }
 
+@media (max-width: 44em) {
+  .goals-grid {
+    flex-direction: column;
+  }
+}
+
 .grey-box {
   width: 3rem;
   height: 3rem;
