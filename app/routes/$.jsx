@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import movie from "../assets/images/404.mp4";
 import SVGButton from "../components/SVGButton";
 
 function BackgroundVideo() {
+  useEffect(() => {
+    // Disable scrolling on /404 page
+    document.body.style.overflow = "hidden";
+
+    // Cleanup function to enable scrolling when the component unmounts
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
   return (
     <div className="fourohfour-container">
       <video autoPlay loop muted className="background-video">

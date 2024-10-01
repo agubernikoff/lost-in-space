@@ -1381,3 +1381,10 @@ footer {
 .fourohfour-overlay > button {
   margin: auto;
 }
+
+@media (max-width: 44em) {
+  .fourohfour-overlay {
+    line-height: 1rem;
+    font-size: 2rem;
+  }
+}
