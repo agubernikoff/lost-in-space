@@ -77,7 +77,11 @@ function Header() {
                   <StaticLogo />
                 </Link>
                 <button className="hamburger" onClick={toggleMenu}>
-                  {menuOpen ? "✕" : "☰"}
+                  <img
+                    src={menuOpen ? xicon : hamburger}
+                    alt={menuOpen ? "Close menu" : "Open menu"}
+                    className="hamburger-icon"
+                  />
                 </button>
               </div>
               <nav>
