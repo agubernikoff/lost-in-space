@@ -745,13 +745,13 @@ button {
     margin-bottom: 1.5rem;
   }
 
-  /* .services-image-container > img {
+  .services-image-container > img {
     width: 100%;
   }
   .services-toggle-buttons {
     gap: 1rem;
   }
-  .service-box {
+  /* .service-box {
     font-size: 0.75rem;
   } */
 }
