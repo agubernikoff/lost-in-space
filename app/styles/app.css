@@ -725,7 +725,7 @@ button {
 .services-toggle-buttons > button {
   margin: 0.5%;
 }
-/* @media (max-width: 44em) {
+@media (max-width: 44em) {
   .services-container {
     height: 75vh;
   }
@@ -745,7 +745,7 @@ button {
     margin-bottom: 1.5rem;
   }
 
-  .services-image-container > img {
+  /* .services-image-container > img {
     width: 100%;
   }
   .services-toggle-buttons {
@@ -753,8 +753,8 @@ button {
   }
   .service-box {
     font-size: 0.75rem;
-  }
-} */
+  } */
+}
 
 .contact-form-container {
   position: relative;
