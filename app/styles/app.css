@@ -1390,11 +1390,11 @@ footer {
   .mobile-black-background {
     display: block;
     position: absolute;
-    top: 0;
+    top: -10rem;
     left: 0;
-    height: 100vh;
+    height: 150vh;
     width: 100vw;
     background-color: black;
-    z-index: 0;
+    z-index: -100;
   }
 }
