@@ -1387,4 +1387,14 @@ footer {
     line-height: 1rem;
     font-size: 2rem;
   }
+  .mobile-black-background {
+    display: block; /* Show on mobile */
+    position: absolute; /* Position absolutely within the container */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    height: 100vh; /* Full height */
+    width: 100vw; /* Full width */
+    background-color: black; /* Black background */
+    z-index: 0; /* Ensure it’s behind other content */
+  }
 }

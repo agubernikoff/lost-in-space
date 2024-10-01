@@ -14,6 +14,7 @@ function BackgroundVideo() {
   }, []);
   return (
     <div className="fourohfour-container">
+      <div className="mobile-black-background"></div>
       <video autoPlay loop muted className="background-video">
         <source src={movie} type="video/mp4" />
         Your browser does not support the video tag.
