@@ -4,16 +4,13 @@ import SVGButton from "../components/SVGButton";
 
 function BackgroundVideo() {
   useEffect(() => {
-    // Disable scrolling on /404 page
+    window.scrollTo(0, 0);
     document.body.style.overflow = "hidden";
 
-    // Set the body background to black
     document.body.style.backgroundColor = "black";
-
-    // Cleanup function to enable scrolling and reset background when the component unmounts
     return () => {
       document.body.style.overflow = "auto";
-      document.body.style.backgroundColor = ""; // Reset to default
+      document.body.style.backgroundColor = "";
     };
   }, []);
   return (
