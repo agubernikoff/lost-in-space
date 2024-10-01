@@ -51,7 +51,10 @@ function ServicesGoals() {
   ];
 
   return (
-    <div style={{ padding: "1rem", marginTop: "7rem" }}>
+    <div
+      className="services-grid-page"
+      style={{ padding: "1rem", marginTop: "7rem" }}
+    >
       <motion.p
         className="about-header"
         initial={{ opacity: 0, y: 100 }}
