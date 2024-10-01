@@ -64,31 +64,60 @@ function ContactFormContainer() {
       >
         CONTACT US
       </p> */}
-      <p>CONTACT US</p>
-      <h2>
-        <div style={{ overflow: "hidden" }}>
-          <span
-            className="motion-span"
-            style={{
-              transform: inView ? "none" : "translateY(100%)",
-              transition: "all .4s ease .4s",
-            }}
-          >
-            <span className="highlight">FOR PROJECT INQUIRES</span>, PLEASE
-          </span>
-        </div>
-        <div style={{ overflow: "hidden" }}>
-          <span
-            className="motion-span"
-            style={{
-              transform: inView ? "none" : "translateY(100%)",
-              transition: "all .4s ease .8s",
-            }}
-          >
-            USE THE CONTACT FORM
-          </span>
-        </div>
-      </h2>
+      {pathname !== "/contact" && <p>CONTACT US</p>}
+      {pathname === "/contact" ? (
+        <h2>
+          <div style={{ overflow: "hidden" }}>
+            <span
+              className="motion-span"
+              style={{
+                transform: inView ? "none" : "translateY(100%)",
+                transition: "all .4s ease .4s",
+              }}
+            >
+              TO CONTACT US <span className="highlight">FOR PROJECT</span>
+            </span>
+          </div>
+
+          <div style={{ overflow: "hidden" }}>
+            <span
+              className="motion-span"
+              style={{
+                transform: inView ? "none" : "translateY(100%)",
+                transition: "all .4s ease .5s",
+              }}
+            >
+              INQUIRIES, USE THIS FORM
+            </span>
+          </div>
+        </h2>
+      ) : (
+        <h2>
+          <div style={{ overflow: "hidden" }}>
+            <span
+              className="motion-span"
+              style={{
+                transform: inView ? "none" : "translateY(100%)",
+                transition: "all .4s ease .4s",
+              }}
+            >
+              <span className="highlight">FOR PROJECT INQUIRIES</span>, PLEASE
+            </span>
+          </div>
+
+          <div style={{ overflow: "hidden" }}>
+            <span
+              className="motion-span"
+              style={{
+                transform: inView ? "none" : "translateY(100%)",
+                transition: "all .4s ease .8s",
+              }}
+            >
+              USE THE CONTACT FORM
+            </span>
+          </div>
+        </h2>
+      )}
       <form
         onSubmit={handleSubmit}
         style={{
