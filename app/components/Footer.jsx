@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import StaticLogo from "./StaticLogo";
 
 function Footer() {
   const [isMobile, setIsMobile] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width:44em)");
@@ -18,6 +20,10 @@ function Footer() {
       behavior: "smooth",
     });
   };
+
+  if (location.pathname === "/404") {
+    return null;
+  }
 
   return (
     <footer>
