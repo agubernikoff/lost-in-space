@@ -751,9 +751,6 @@ button {
   .services-toggle-buttons {
     gap: 1rem;
   }
-  .service-box {
-    font-size: 0.75rem;
-  }
 }
 
 .contact-form-container {

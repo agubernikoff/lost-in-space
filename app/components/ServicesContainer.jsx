@@ -115,29 +115,45 @@ function ServicesContainer() {
               >
                 {isOurPlace ? (
                   <>
-                    <p className="service-box">Professional Onboarding</p>
-                    <p className="service-box">Delivery</p>
-                    <p className="service-box">Archive Services</p>
-                    <p className="service-box">Professional Media Storage</p>
-                    <p className="service-box">Post Supervisor Services</p>
-                    <p className="service-box">First Class Tech Support</p>
-                    <p className="service-box">
+                    <p className="service-box" style={{ fontSize: "1.5rem" }}>
+                      Professional Onboarding
+                    </p>
+                    <p className="service-box" style={{ fontSize: "1.5rem" }}>
+                      Delivery
+                    </p>
+                    <p className="service-box" style={{ fontSize: "1.5rem" }}>
+                      Archive Services
+                    </p>
+                    <p className="service-box" style={{ fontSize: "1.5rem" }}>
+                      Professional Media Storage
+                    </p>
+                    <p className="service-box" style={{ fontSize: "1.5rem" }}>
+                      Post Supervisor Services
+                    </p>
+                    <p className="service-box" style={{ fontSize: "1.5rem" }}>
+                      First Class Tech Support
+                    </p>
+                    <p className="service-box" style={{ fontSize: "1.5rem" }}>
                       Mac-Based Remote Editing Systems
                     </p>
                   </>
                 ) : (
                   <>
-                    <p className="service-box">
+                    <p className="service-box" style={{ fontSize: "1.5rem" }}>
                       Hardware Purchasing and Integration
                     </p>
-                    <p className="service-box">
+                    <p className="service-box" style={{ fontSize: "1.5rem" }}>
                       Facility Management & Maintenance
                     </p>
-                    <p className="service-box">Troubleshooting</p>
-                    <p className="service-box">
+                    <p className="service-box" style={{ fontSize: "1.5rem" }}>
+                      Troubleshooting
+                    </p>
+                    <p className="service-box" style={{ fontSize: "1.5rem" }}>
                       Field to Delivery Workflow Consultation
                     </p>
-                    <p className="service-box">Technical Support</p>
+                    <p className="service-box" style={{ fontSize: "1.5rem" }}>
+                      Technical Support
+                    </p>
                   </>
                 )}
               </motion.div>
@@ -181,7 +197,6 @@ function ServicesContainer() {
             </AnimatePresence>
           </div>
         ) : (
-          // Desktop layout (existing layout)
           <div className="services-left-section">
             <SVGCorner />
             <AnimatePresence mode="popLayout">
