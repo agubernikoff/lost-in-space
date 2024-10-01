@@ -727,7 +727,7 @@ button {
 }
 @media (max-width: 44em) {
   .services-container {
-    height: 50vh;
+    height: 75vh;
   }
 
   .services-left-section {
@@ -750,6 +750,10 @@ button {
   }
   .services-toggle-buttons {
     gap: 1rem;
+  }
+
+  .service-box {
+    font-size: 0.75rem;
   }
 }
 
