@@ -725,7 +725,7 @@ button {
 .services-toggle-buttons > button {
   margin: 0.5%;
 }
-@media (max-width: 44em) {
+/* @media (max-width: 44em) {
   .services-container {
     height: 75vh;
   }
@@ -751,11 +751,10 @@ button {
   .services-toggle-buttons {
     gap: 1rem;
   }
-
   .service-box {
     font-size: 0.75rem;
   }
-}
+} */
 
 .contact-form-container {
   position: relative;
