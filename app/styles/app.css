@@ -92,6 +92,10 @@ button {
   height: calc(12vw * (414 / 1400));
 }
 
+.hamburger-icon {
+  width: 20%;
+}
+
 .static-logo {
   width: 100%;
   height: auto;
@@ -113,13 +117,12 @@ button {
   }
 
   .hamburger {
-    font-size: 2rem;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0;
     color: white;
-    padding-bottom: 0.5rem;
+    text-align: right;
   }
 
   .menu {

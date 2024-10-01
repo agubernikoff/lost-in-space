@@ -2,6 +2,8 @@ import { Link } from "@remix-run/react";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import StaticLogo from "./StaticLogo";
+import hamburger from "../assets/images/hamburger.png";
+import xicon from "../assets/images/x.png";
 
 function Header() {
   const [time, setTime] = useState(
@@ -60,7 +62,11 @@ function Header() {
               <StaticLogo />
             </Link>
             <button className="hamburger" onClick={toggleMenu}>
-              {menuOpen ? "✕" : "☰"}
+              <img
+                src={menuOpen ? xicon : hamburger}
+                alt={menuOpen ? "Close menu" : "Open menu"}
+                className="hamburger-icon"
+              />
             </button>
           </div>
 
