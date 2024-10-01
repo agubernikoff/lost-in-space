@@ -64,6 +64,7 @@ function ContactFormContainer() {
       >
         CONTACT US
       </p> */}
+      <p>CONTACT US</p>
       <h2>
         <div style={{ overflow: "hidden" }}>
           <span
