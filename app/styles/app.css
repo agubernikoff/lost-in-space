@@ -74,6 +74,7 @@ button {
 
 .header-left-and-right {
   width: 30%;
+  z-index: 10;
 }
 .header-left-and-right > a {
   text-decoration: none;
@@ -90,6 +91,10 @@ button {
 .header-left-and-right svg {
   width: 12vw;
   height: calc(12vw * (414 / 1400));
+}
+
+#time {
+  z-index: 10;
 }
 
 .hamburger-icon {
@@ -1337,4 +1342,42 @@ footer {
 }
 .text-wrapper {
   overflow: hidden;
+}
+
+/* 404 */
+
+.fourohfour-container {
+  position: absolute;
+  top: -5.5rem;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.fourohfour-overlay {
+  line-height: 1.75rem;
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  top: 45%;
+  transform: translateY(-50%);
+  font-size: 4rem;
+  font-family: "agc-bold";
+}
+
+.fourohfour-overlay > button {
+  margin: auto;
 }
