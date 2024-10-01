@@ -727,7 +727,7 @@ button {
 }
 @media (max-width: 44em) {
   .services-container {
-    height: 85vh;
+    height: 80vh;
   }
 
   .services-left-section {
