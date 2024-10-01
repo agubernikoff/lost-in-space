@@ -1084,6 +1084,12 @@ footer {
   width: 0.5vw;
   height: 0.5vw;
 }
+@media (max-width: 44em) {
+  .svg-button > svg {
+    width: 2vw;
+    height: 2vw;
+  }
+}
 .vos-video-bg > svg > path,
 .services-left-section > svg > path {
   fill: white;
