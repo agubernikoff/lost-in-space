@@ -98,7 +98,7 @@ function TeamContainer() {
             transition: "all .4s ease",
           }}
         >
-          OUR WORK
+          MEET THE TEAM
         </p>
         <h2>
           <div style={{ overflow: "hidden" }}>

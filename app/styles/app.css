@@ -725,6 +725,33 @@ button {
 .services-toggle-buttons > button {
   margin: 0.5%;
 }
+@media (max-width: 44em) {
+  .services-container {
+    height: 50vh;
+  }
+
+  .services-left-section {
+    width: 100%;
+    display: initial !important;
+  }
+
+  .services-content {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .services-image-container {
+    height: 25vh !important;
+    margin-bottom: 1.5rem;
+  }
+
+  .services-image-container > img {
+    width: 100%;
+  }
+  .services-toggle-buttons {
+    gap: 1rem;
+  }
+}
 
 .contact-form-container {
   position: relative;

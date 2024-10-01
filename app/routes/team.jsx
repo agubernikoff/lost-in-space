@@ -8,7 +8,7 @@ function team() {
     <div>
       <TeamHero />
       <TeamContainer />
-      <JoinTheTeam />
+      {/* <JoinTheTeam /> */}
     </div>
   );
 }
