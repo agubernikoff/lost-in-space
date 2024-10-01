@@ -7,9 +7,13 @@ function BackgroundVideo() {
     // Disable scrolling on /404 page
     document.body.style.overflow = "hidden";
 
-    // Cleanup function to enable scrolling when the component unmounts
+    // Set the body background to black
+    document.body.style.backgroundColor = "black";
+
+    // Cleanup function to enable scrolling and reset background when the component unmounts
     return () => {
       document.body.style.overflow = "auto";
+      document.body.style.backgroundColor = ""; // Reset to default
     };
   }, []);
   return (
