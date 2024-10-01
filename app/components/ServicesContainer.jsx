@@ -115,43 +115,43 @@ function ServicesContainer() {
               >
                 {isOurPlace ? (
                   <>
-                    <p className="service-box" style={{ fontSize: "1.5rem" }}>
+                    <p className="service-box" style={{ fontSize: "1rem" }}>
                       Professional Onboarding
                     </p>
-                    <p className="service-box" style={{ fontSize: "1.5rem" }}>
+                    <p className="service-box" style={{ fontSize: "1rem" }}>
                       Delivery
                     </p>
-                    <p className="service-box" style={{ fontSize: "1.5rem" }}>
+                    <p className="service-box" style={{ fontSize: "1rem" }}>
                       Archive Services
                     </p>
-                    <p className="service-box" style={{ fontSize: "1.5rem" }}>
+                    <p className="service-box" style={{ fontSize: "1rem" }}>
                       Professional Media Storage
                     </p>
-                    <p className="service-box" style={{ fontSize: "1.5rem" }}>
+                    <p className="service-box" style={{ fontSize: "1rem" }}>
                       Post Supervisor Services
                     </p>
-                    <p className="service-box" style={{ fontSize: "1.5rem" }}>
+                    <p className="service-box" style={{ fontSize: "1rem" }}>
                       First Class Tech Support
                     </p>
-                    <p className="service-box" style={{ fontSize: "1.5rem" }}>
+                    <p className="service-box" style={{ fontSize: "1rem" }}>
                       Mac-Based Remote Editing Systems
                     </p>
                   </>
                 ) : (
                   <>
-                    <p className="service-box" style={{ fontSize: "1.5rem" }}>
+                    <p className="service-box" style={{ fontSize: "1rem" }}>
                       Hardware Purchasing and Integration
                     </p>
-                    <p className="service-box" style={{ fontSize: "1.5rem" }}>
+                    <p className="service-box" style={{ fontSize: "1rem" }}>
                       Facility Management & Maintenance
                     </p>
-                    <p className="service-box" style={{ fontSize: "1.5rem" }}>
+                    <p className="service-box" style={{ fontSize: "1rem" }}>
                       Troubleshooting
                     </p>
-                    <p className="service-box" style={{ fontSize: "1.5rem" }}>
+                    <p className="service-box" style={{ fontSize: "1rem" }}>
                       Field to Delivery Workflow Consultation
                     </p>
-                    <p className="service-box" style={{ fontSize: "1.5rem" }}>
+                    <p className="service-box" style={{ fontSize: "1rem" }}>
                       Technical Support
                     </p>
                   </>
