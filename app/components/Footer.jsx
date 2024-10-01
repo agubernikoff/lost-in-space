@@ -48,7 +48,7 @@ function Footer() {
                 <p>NAVIGATION</p>
                 <ul>
                   <li>
-                    <a href="/">Index</a>
+                    <a href="/">Home</a>
                   </li>
                   <li>
                     <a href="/services">Services</a>
