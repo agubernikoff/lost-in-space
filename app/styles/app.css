@@ -1215,12 +1215,15 @@ footer {
     display: flex;
     flex-direction: column;
   }
+  .hero-container > img {
+    width: 90%;
+  }
   .crafting-div {
-    position: relative;
     width: 100%;
-    background: var(--charcoal);
+    background: var(--seal);
     color: white;
-    inset-block: 0;
+    inset-inline: 0;
+    box-sizing: border-box;
   }
   .crafting-div > svg > path,
   .crafting-div > .svg-button > svg > path {
