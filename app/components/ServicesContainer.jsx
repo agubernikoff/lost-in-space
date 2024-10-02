@@ -34,7 +34,7 @@ function ServicesContainer() {
         <div style={{ overflow: "hidden" }}>
           <motion.span
             initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.4, ease: "easeInOut" }}
             className="motion-span"
