@@ -752,10 +752,6 @@ button {
   .services-toggle-buttons {
     gap: 1rem;
   }
-
-  .services-grid-page {
-    margin-top: 3rem !important;
-  }
 }
 
 .contact-form-container {
@@ -916,6 +912,9 @@ button {
   }
   .services-grid-page .home-header {
     font-size: 2.25rem !important;
+  }
+  .services-grid-page {
+    margin-top: 3rem !important;
   }
 }
 
