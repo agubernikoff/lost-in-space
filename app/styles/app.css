@@ -731,7 +731,7 @@ textarea {
 .services-toggle-buttons > button {
   margin: 0.5%;
 }
-@media (max-width: 44em) {
+@media (max-width: 990px) {
   .services-container {
     height: auto;
   }
@@ -910,7 +910,7 @@ textarea {
   align-items: flex-start;
 }
 
-@media (max-width: 44em) {
+@media (max-width: 990px) {
   .goals-grid {
     flex-direction: column;
     margin-top: 3rem;
@@ -919,7 +919,7 @@ textarea {
     font-size: 2.25rem !important;
   }
   .services-grid-page {
-    margin-top: 3rem !important;
+    margin-top: 0rem !important;
   }
 }
 
