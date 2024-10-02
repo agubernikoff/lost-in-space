@@ -53,6 +53,9 @@ span,
 button {
   color: white;
 }
+input {
+  border-radius: 0;
+}
 .svg-button > svg > path,
 .crafting-div > svg > path,
 .clients-container > svg > path {
