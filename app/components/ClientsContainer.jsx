@@ -121,7 +121,7 @@ function ClientsContainer() {
           style={{
             transform: inView ? "none" : "translateY(100px)",
             opacity: inView ? 1 : 0,
-            transition: "transform .4s ease .75s, opacity .4s ease .75s",
+            transition: "transform .4s ease .35s, opacity .4s ease .35s",
           }}
         >
           OUR WORK
