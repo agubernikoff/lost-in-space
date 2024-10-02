@@ -1049,6 +1049,7 @@ footer {
   border: none;
   font-family: "dm mono";
   font-size: 1rem;
+  padding-left: 0;
 }
 .back-to-top:hover {
   text-decoration: underline;
@@ -1257,6 +1258,10 @@ footer {
   .form-button-and-message-container > p {
     width: 60%;
     margin: 0;
+  }
+  .contact-form-container > form {
+    width: calc(100vw - 2rem);
+    box-sizing: border-box;
   }
 }
 @media (max-width: 793px) {
