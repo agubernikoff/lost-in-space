@@ -727,7 +727,7 @@ button {
 }
 @media (max-width: 44em) {
   .services-container {
-    height: 80vh;
+    height: auto;
   }
 
   .services-left-section {
@@ -907,6 +907,7 @@ button {
 @media (max-width: 44em) {
   .goals-grid {
     flex-direction: column;
+    margin-top: 3rem;
   }
   .services-grid-page .home-header {
     font-size: 2.25rem !important;
