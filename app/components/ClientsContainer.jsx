@@ -50,7 +50,8 @@ function ClientsContainer() {
   const carousel = useRef(null);
   const text = useRef(null);
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, amount: 0.5 });
+  const fullyInView = useInView(text, { once: true, amount: 0.9 });
+  const inView = useInView(text, { once: true, amount: 0.5 });
   const arrowButton = useRef(null);
 
   function slideRight() {
@@ -94,25 +95,20 @@ function ClientsContainer() {
   }
 
   useEffect(() => {
-    if (inView) {
-      smoothScroll(ref.current, 800, 2200);
-      setTimeout(
-        () =>
-          animate(
-            arrowButton.current,
-            {
-              y: [0, -10, 0],
-            },
-            {
-              duration: 0.7, // Duration of one flash cycle (from start to reset)
-              repeat: 2, // Flash 3 times
-              repeatType: "loop", // Loops the animation
-            }
-          ),
-        1150
+    if (fullyInView) {
+      animate(
+        arrowButton.current,
+        {
+          y: [0, -10, 0],
+        },
+        {
+          duration: 0.7, // Duration of one flash cycle (from start to reset)
+          repeat: 2, // Flash 3 times
+          repeatType: "loop", // Loops the animation
+        }
       );
     }
-  }, [inView]);
+  }, [fullyInView]);
 
   return (
     <div className="clients-container" ref={ref}>
@@ -162,18 +158,24 @@ function ClientsContainer() {
           ref={carousel}
           className="client-cards-carousel"
           style={{
-            left: inView ? "121%" : "200%",
+            left: inView
+              ? isMobile
+                ? "calc(3 * var(--card-width) - var(--card-adjustment) * .5)"
+                : "100%"
+              : "200%",
             opacity: inView ? 1 : 0,
             transition: "left .4s ease 1.55s, opacity .4s ease 1.55s",
           }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, ease: "easeInOut", delay: 1.55 }}
         >
           {mappedCards}
         </motion.div>
       </AnimatePresence>
       <div
         style={{
-          transform: inView ? "none" : "translateY(100px)",
-          opacity: inView ? 1 : 0,
+          transform: fullyInView ? "none" : "translateY(100px)",
+          opacity: fullyInView ? 1 : 0,
           transition: "all .4s ease .75s",
         }}
         className="clients-arrow-buttons-container"
