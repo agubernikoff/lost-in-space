@@ -53,8 +53,10 @@ span,
 button {
   color: white;
 }
-input {
+input,
+textarea {
   border-radius: 0;
+  box-sizing: border-box;
 }
 .svg-button > svg > path,
 .crafting-div > svg > path,
