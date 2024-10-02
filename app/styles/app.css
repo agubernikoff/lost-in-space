@@ -1271,12 +1271,12 @@ footer {
 }
 @media (max-width: 427px) {
   .home-header {
-    font-size: 5.3vw;
+    font-size: 5.1vw;
   }
 }
 @media (max-width: 348px) {
   .home-header {
-    font-size: 5.2vw;
+    font-size: 5vw;
   }
 }
 
