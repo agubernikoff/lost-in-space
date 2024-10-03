@@ -1341,13 +1341,13 @@ footer {
     flex-direction: column;
   }
   .mission-text {
-    width: 75% !important;
+    width: 100% !important;
     text-align: left !important;
     margin-left: 0 !important;
     padding-left: 0;
   }
   .mission-text p {
-    width: 75% !important;
+    width: 100% !important;
   }
   .mission-text h2 {
     margin-top: 1rem !important;
