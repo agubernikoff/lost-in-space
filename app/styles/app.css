@@ -10,6 +10,7 @@
   --seal: #393939;
   --card-width: 25vw;
   --card-adjustment: 3rem;
+  --home-header: 5.6vw;
   /* I THINK THIS METHOD BELOW WILL WORK FOR TOGGLING LIGHT AND DARK MODE
   have some kind of js method that triggers a a change in the css variable
   need to research further*/
@@ -283,7 +284,7 @@ textarea {
 }
 .home-header {
   font-family: "agc-bold";
-  font-size: 5.6vw;
+  font-size: var(--home-header);
   line-height: 100%;
   margin-top: 4%;
   margin-bottom: 4%;
@@ -1210,6 +1211,7 @@ footer {
   :root {
     --card-width: 44vw;
     --card-adjustment: 33vw;
+    --home-header: 9vw;
   }
   .hero-container {
     height: auto;
@@ -1262,26 +1264,6 @@ footer {
   .contact-form-container > form {
     width: calc(100vw - 2rem);
     box-sizing: border-box;
-  }
-}
-@media (max-width: 793px) {
-  .home-header {
-    font-size: 5.5vw;
-  }
-}
-@media (max-width: 556px) {
-  .home-header {
-    font-size: 5.4vw;
-  }
-}
-@media (max-width: 427px) {
-  .home-header {
-    font-size: 5.1vw;
-  }
-}
-@media (max-width: 348px) {
-  .home-header {
-    font-size: 5vw;
   }
 }
 

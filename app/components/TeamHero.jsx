@@ -1,8 +1,20 @@
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import team from "../assets/images/team.png";
 
 export default function TeamPage() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width:990px)");
+    const handleMediaChange = (e) => setIsMobile(e.matches);
+
+    mediaQuery.addEventListener("change", handleMediaChange);
+    if (mediaQuery.matches) setIsMobile(true);
+
+    return () => mediaQuery.removeEventListener("change", handleMediaChange);
+  }, []);
+
   const span = {
     animate: { opacity: 1, y: 0, transition: { duration: 0.4 } },
     initial: { opacity: 0, y: "100%" },
@@ -15,22 +27,50 @@ export default function TeamPage() {
           animate="animate"
           transition={{ staggerChildren: 0.4 }}
         >
-          <div style={{ overflow: "hidden" }}>
-            <motion.span variants={span} className="motion-span">
-              MEET THE VISIONARIES BEHIND OUR
-            </motion.span>
-          </div>
-          <div style={{ overflow: "hidden" }}>
-            <motion.span variants={span} className="motion-span">
-              COMMITMENT TO
-              <span className="highlight">{" EMPOWERING "}</span>
-            </motion.span>
-          </div>
-          <div style={{ overflow: "hidden" }}>
-            <motion.span variants={span} className="motion-span highlight">
-              FILMAKERS WORLDWIDE.
-            </motion.span>
-          </div>
+          {isMobile ? (
+            <>
+              <div style={{ overflow: "hidden" }}>
+                <motion.span variants={span} className="motion-span">
+                  MEET THE VISIONARIES
+                </motion.span>
+              </div>
+              <div style={{ overflow: "hidden" }}>
+                <motion.span variants={span} className="motion-span">
+                  BEHIND OUR COMMITMENT
+                </motion.span>
+              </div>
+              <div style={{ overflow: "hidden" }}>
+                <motion.span variants={span} className="motion-span">
+                  TO
+                  <span className="highlight">{" EMPOWERING "}</span>
+                </motion.span>
+              </div>
+              <div style={{ overflow: "hidden" }}>
+                <motion.span variants={span} className="motion-span highlight">
+                  FILMAKERS WORLDWIDE.
+                </motion.span>
+              </div>
+            </>
+          ) : (
+            <>
+              <div style={{ overflow: "hidden" }}>
+                <motion.span variants={span} className="motion-span">
+                  MEET THE VISIONARIES BEHIND OUR
+                </motion.span>
+              </div>
+              <div style={{ overflow: "hidden" }}>
+                <motion.span variants={span} className="motion-span">
+                  COMMITMENT TO
+                  <span className="highlight">{" EMPOWERING "}</span>
+                </motion.span>
+              </div>
+              <div style={{ overflow: "hidden" }}>
+                <motion.span variants={span} className="motion-span highlight">
+                  FILMAKERS WORLDWIDE.
+                </motion.span>
+              </div>
+            </>
+          )}
         </motion.div>
       </div>
       <motion.img
