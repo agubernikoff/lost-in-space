@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { inView, motion } from "framer-motion";
 import SVGButton from "./SVGButton";
+import SVGCorner from "./SVGCorner";
 
 function AboutHero() {
   const [inViewIDs, setInViewIDs] = useState([]);
@@ -25,6 +26,14 @@ function AboutHero() {
       });
     }
   }, [timeDiv.current]); // Ensure it runs when timeDiv is available
+
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    window
+      .matchMedia("(max-width:990px)")
+      .addEventListener("change", (e) => setIsMobile(e.matches));
+    if (window.matchMedia("(max-width:990px)").matches) setIsMobile(true);
+  }, []);
 
   const span = {
     initial: { y: "100%" },
@@ -66,6 +75,7 @@ function AboutHero() {
 
   return (
     <div className="about-hero-container">
+      {isMobile ? <SVGCorner /> : null}
       <p className="about-header">ABOUT US</p>
       <div className="home-header">
         <motion.div

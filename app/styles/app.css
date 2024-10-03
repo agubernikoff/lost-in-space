@@ -1129,20 +1129,23 @@ footer {
 .vos-cover > svg,
 .vos-video-bg > svg,
 .contact-form-container > svg,
-.crafting-div > svg {
+.crafting-div > svg,
+.about-hero-container > svg {
   width: 1vw;
   height: 1vw;
   position: absolute;
+}
+.about-hero-container > svg {
+  width: 5vw;
+  height: 5vw;
+  margin-right: 1rem;
 }
 .svg-button > svg {
   width: 0.5vw;
   height: 0.5vw;
 }
 @media (max-width: 990px) {
-  .svg-button > svg {
-    width: 2vw;
-    height: 2vw;
-  }
+  .svg-button > svg,
   .clients-container > svg,
   .svg-button > svg,
   .vos-cover > svg,
@@ -1278,6 +1281,16 @@ footer {
 
 .about-hero-container {
   padding: 1rem;
+  position: relative;
+}
+
+.about-hero-container > svg > path {
+  fill: white;
+}
+.about-hero-container > svg {
+  transform: rotate(90deg);
+  top: 0;
+  right: 0;
 }
 
 .about-hero-image-container {

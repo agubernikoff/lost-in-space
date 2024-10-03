@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import SVGButton from "./SVGButton";
+import SVGCorner from "./SVGCorner";
 
 function AboutHero() {
   const timeDiv = useRef(null);
@@ -30,8 +31,17 @@ function AboutHero() {
     animate: { y: 0, transition: { duration: 0.4, ease: "easeInOut" } },
   };
 
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    window
+      .matchMedia("(max-width:990px)")
+      .addEventListener("change", (e) => setIsMobile(e.matches));
+    if (window.matchMedia("(max-width:990px)").matches) setIsMobile(true);
+  }, []);
+
   return (
     <div className="about-hero-container">
+      {isMobile ? <SVGCorner /> : null}
       <p className="about-header" style={{ transform: offsets.offset3 }}>
         CORE VALUES
       </p>
