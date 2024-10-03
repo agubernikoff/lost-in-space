@@ -1217,7 +1217,7 @@ footer {
   :root {
     --card-width: 44vw;
     --card-adjustment: 33vw;
-    --home-header: 9vw;
+    --home-header: 8.8vw;
   }
   .hero-container {
     height: auto;
