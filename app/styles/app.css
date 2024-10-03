@@ -286,8 +286,8 @@ textarea {
   font-family: "agc-bold";
   font-size: var(--home-header);
   line-height: 100%;
-  margin-top: 4%;
-  margin-bottom: 4%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .motion-span {
   display: block;
@@ -757,6 +757,9 @@ textarea {
   }
   .services-toggle-buttons {
     gap: 1rem;
+  }
+  .team-hero-container .home-header {
+    margin-top: 1rem;
   }
 }
 
