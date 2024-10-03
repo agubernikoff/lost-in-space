@@ -1350,6 +1350,10 @@ footer {
     font-size: 6vw;
     margin-bottom: 1rem;
   }
+  .service-box {
+    font-size: 0.85rem;
+    padding: 3%;
+  }
 }
 
 @media (max-width: 800px) {
