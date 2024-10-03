@@ -109,7 +109,7 @@ function TeamContainer() {
               }}
               className="motion-span"
             >
-              THE MINDS BEHIND{" "}
+              THE SQUAD BEHIND{" "}
             </span>
           </div>
           <div style={{ overflow: "hidden" }}>
