@@ -1351,8 +1351,8 @@ footer {
     margin-bottom: 1rem;
   }
   .service-box {
-    font-size: 0.85rem;
-    padding: 3%;
+    font-size: 0.95rem !important;
+    padding: 3% !important;
   }
 }
 
