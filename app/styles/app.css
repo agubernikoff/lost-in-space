@@ -11,6 +11,7 @@
   --card-width: 25vw;
   --card-adjustment: 3rem;
   --home-header: 5.6vw;
+  --biggest: 9vw;
   /* I THINK THIS METHOD BELOW WILL WORK FOR TOGGLING LIGHT AND DARK MODE
   have some kind of js method that triggers a a change in the css variable
   need to research further*/
@@ -503,7 +504,7 @@ textarea {
 .centered-team-container > h2,
 .contact-form-container > h2 {
   font-family: "agc-bold";
-  font-size: 9vw;
+  font-size: var(--biggest);
   margin: 0;
   margin-top: 1.5rem;
   line-height: 100%;
@@ -614,7 +615,7 @@ textarea {
   align-items: center;
 }
 .vos-video-bg > h2 {
-  font-size: 9vw;
+  font-size: var(--biggest);
   text-align: center;
 }
 .vos-video-bg span {
@@ -645,7 +646,7 @@ textarea {
   margin-block: 1rem;
 }
 .services-hompage > h2 {
-  font-size: 9vw;
+  font-size: var(--biggest);
   font-weight: bold;
   margin: 0;
   color: var(--charcoal);
@@ -1215,6 +1216,7 @@ footer {
     --card-width: 44vw;
     --card-adjustment: 33vw;
     --home-header: 8.8vw;
+    --biggest: 15vw;
   }
   .hero-container {
     height: auto;
