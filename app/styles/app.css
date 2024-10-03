@@ -923,7 +923,7 @@ textarea {
     font-size: 2.25rem !important;
   }
   .services-grid-page {
-    margin-top: 0rem !important;
+    margin-top: 3rem !important;
   }
 }
 
@@ -1352,6 +1352,10 @@ footer {
   .crafting-div > p {
     font-size: 6vw;
     margin-bottom: 1rem;
+  }
+  .service-box {
+    font-size: 0.95rem !important;
+    padding: 3% !important;
   }
 }
 
