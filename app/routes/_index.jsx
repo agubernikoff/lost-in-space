@@ -8,6 +8,7 @@ import VideoOnScroll from "../components/VideoOnScroll";
 import ServicesContainer from "../components/ServicesContainer";
 import TeamContainer from "../components/TeamContainer";
 import ContactFormContainer from "../components/ContactFormContainer";
+import React, { useState, useEffect } from "react";
 
 export const meta = () => {
   return [
@@ -39,10 +40,23 @@ export default function Index() {
 }
 
 function HomepageHeader() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width:990px)");
+    const handleMediaChange = (e) => setIsMobile(e.matches);
+
+    mediaQuery.addEventListener("change", handleMediaChange);
+    if (mediaQuery.matches) setIsMobile(true);
+
+    return () => mediaQuery.removeEventListener("change", handleMediaChange);
+  }, []);
+
   const span = {
     animate: { opacity: 1, y: 0, transition: { duration: 0.4 } },
     initial: { opacity: 0, y: "100%" },
   };
+
   return (
     <div className="home-header">
       <motion.div
@@ -50,23 +64,63 @@ function HomepageHeader() {
         animate="animate"
         transition={{ staggerChildren: 0.4 }}
       >
-        <div style={{ overflow: "hidden" }}>
-          <motion.span variants={span} className="motion-span">
-            {"BOUTIQUE END-TO-END "}
-            <span className="highlight">PRODUCTION & POST-</span>
-          </motion.span>
-        </div>
-        <div style={{ overflow: "hidden" }}>
-          <motion.span variants={span} className="motion-span">
-            <span className="highlight">{" PRODUCTION EXCELLENCE "}</span>FOR
-            FILMMAKERS
-          </motion.span>
-        </div>
-        <div style={{ overflow: "hidden" }}>
-          <motion.span variants={span} className="motion-span">
-            {" AND INDEPENDENT CREATORS."}
-          </motion.span>
-        </div>
+        {isMobile ? (
+          <>
+            {/* Mobile Version (5 lines) */}
+            <div style={{ overflow: "hidden" }}>
+              <motion.span variants={span} className="motion-span">
+                {"BOUTIQUE END-TO-END "}
+              </motion.span>
+            </div>
+
+            <div style={{ overflow: "hidden" }}>
+              <motion.span variants={span} className="motion-span">
+                <span className="highlight">PRODUCTION & POST-</span>
+              </motion.span>
+            </div>
+
+            <div style={{ overflow: "hidden" }}>
+              <motion.span variants={span} className="motion-span">
+                <span className="highlight">{" PRODUCTION EXCELLENCE "}</span>
+              </motion.span>
+            </div>
+
+            <div style={{ overflow: "hidden" }}>
+              <motion.span variants={span} className="motion-span">
+                {"FOR FILMMAKERS AND"}
+              </motion.span>
+            </div>
+
+            <div style={{ overflow: "hidden" }}>
+              <motion.span variants={span} className="motion-span">
+                {" INDEPENDENT CREATORS."}
+              </motion.span>
+            </div>
+          </>
+        ) : (
+          <>
+            {/* Desktop Version (3 lines) */}
+            <div style={{ overflow: "hidden" }}>
+              <motion.span variants={span} className="motion-span">
+                {"BOUTIQUE END-TO-END "}
+                <span className="highlight">PRODUCTION & POST-</span>
+              </motion.span>
+            </div>
+
+            <div style={{ overflow: "hidden" }}>
+              <motion.span variants={span} className="motion-span">
+                <span className="highlight">{" PRODUCTION EXCELLENCE "}</span>
+                FOR FILMMAKERS
+              </motion.span>
+            </div>
+
+            <div style={{ overflow: "hidden" }}>
+              <motion.span variants={span} className="motion-span">
+                {" AND INDEPENDENT CREATORS."}
+              </motion.span>
+            </div>
+          </>
+        )}
       </motion.div>
     </div>
   );
