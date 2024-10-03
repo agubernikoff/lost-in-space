@@ -7,7 +7,7 @@ function Footer() {
   const location = useLocation();
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width:44em)");
+    const mediaQuery = window.matchMedia("(max-width:990px)");
     mediaQuery.addEventListener("change", (e) => setIsMobile(e.matches));
     if (mediaQuery.matches) setIsMobile(true);
 
