@@ -3,6 +3,7 @@ import { AnimatePresence, motion, useInView } from "framer-motion";
 import React, { useState, useRef } from "react";
 import SVGButton from "./SVGButton";
 import SVGCorner from "./SVGCorner";
+import emailjs from "emailjs-com";
 
 function ContactFormContainer() {
   const [firstName, setFirstName] = useState("");
@@ -14,16 +15,14 @@ function ContactFormContainer() {
   const [submissionMessage, setSubmissionMessage] = useState();
 
   function setAndResetSubmissionMessage(error, message) {
-    setSubmissionMessage({
-      error,
-      message,
-    });
+    setSubmissionMessage({ error, message });
     setTimeout(() => setSubmissionMessage(), 5000);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (
       !firstName ||
       !lastName ||
@@ -37,16 +36,43 @@ function ContactFormContainer() {
         "Please double-check that all fields are entered correctly."
       );
     } else {
-      setAndResetSubmissionMessage(
-        false,
-        "Your submission has been recieved. We'll be in touch soon!"
-      );
+      // Prepare the data to send
+      const templateParams = {
+        firstName,
+        lastName,
+        email,
+        company,
+        phone,
+        message,
+      };
+
+      // Send email via EmailJS
+      emailjs
+        .send(
+          "your_service_id", // Replace with your service ID
+          "your_template_id", // Replace with your template ID
+          templateParams,
+          "your_user_id" // Replace with your user ID
+        )
+        .then(
+          (response) => {
+            setAndResetSubmissionMessage(
+              false,
+              "Your submission has been received. We'll be in touch soon!"
+            );
+          },
+          (error) => {
+            setAndResetSubmissionMessage(
+              true,
+              "There was an error sending your message. Please try again."
+            );
+          }
+        );
     }
   }
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, amount: 0.4 });
-
   const { pathname } = useLocation();
 
   return (
@@ -55,15 +81,6 @@ function ContactFormContainer() {
       <SVGCorner hidden={pathname === "/contact"} />
       <SVGCorner />
       <SVGCorner />
-      {/* <p
-        style={{
-          opacity: inView ? 1 : 0,
-          transform: inView ? "none" : "translateY(100px)",
-          transition: "all .4s ease",
-        }}
-      >
-        CONTACT US
-      </p> */}
       {pathname !== "/contact" && <p>CONTACT US</p>}
       {pathname === "/contact" ? (
         <h2>
@@ -78,7 +95,6 @@ function ContactFormContainer() {
               TO CONTACT US <span className="highlight">FOR PROJECT</span>
             </span>
           </div>
-
           <div style={{ overflow: "hidden" }}>
             <span
               className="motion-span"
@@ -104,7 +120,6 @@ function ContactFormContainer() {
               <span className="highlight">FOR PROJECT INQUIRIES</span>, PLEASE
             </span>
           </div>
-
           <div style={{ overflow: "hidden" }}>
             <span
               className="motion-span"
@@ -166,7 +181,7 @@ function ContactFormContainer() {
             }}
           ></input>
           <input
-            placeholder="Your Email"
+            placeholder="Phone"
             onChange={(e) => setPhone(e.target.value)}
             type="text"
             style={{
