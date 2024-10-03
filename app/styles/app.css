@@ -1352,9 +1352,15 @@ footer {
   }
 }
 
+@media (max-width: 800px) {
+  .crafting-div > p {
+    line-height: 2.5rem;
+  }
+}
+
 @media (max-width: 650px) {
   .crafting-div > p {
-    line-height: 2rem;
+    line-height: 1.75rem;
   }
 }
 
