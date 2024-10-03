@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import SVGButton from "./SVGButton";
 import alexImage from "../assets/images/alex.png";
 import caroImage from "../assets/images/caro.png";
@@ -11,6 +11,17 @@ import nawImage from "../assets/images/naw.png";
 import spaceImage from "../assets/images/spaceman.png";
 
 function TeamContainer() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width:990px)");
+    const handleMediaChange = (e) => setIsMobile(e.matches);
+
+    mediaQuery.addEventListener("change", handleMediaChange);
+    if (mediaQuery.matches) setIsMobile(true);
+
+    return () => mediaQuery.removeEventListener("change", handleMediaChange);
+  }, []);
   const text = useRef(null);
   const inView = useInView(text, { once: true, amount: 0.25 });
 
@@ -101,29 +112,70 @@ function TeamContainer() {
           MEET THE TEAM
         </p>
         <h2>
-          <div style={{ overflow: "hidden" }}>
-            <span
-              style={{
-                transform: inView ? "none" : "translateY(150px)",
-                transition: "all .4s ease .4s",
-              }}
-              className="motion-span"
-            >
-              THE SQUAD BEHIND{" "}
-            </span>
-          </div>
-          <div style={{ overflow: "hidden" }}>
-            <span
-              style={{
-                opacity: inView ? 1 : 0,
-                transform: inView ? "none" : "translateY(150px)",
-                transition: "all .4s ease .8s",
-              }}
-              className="highlight motion-span"
-            >
-              OUR SUCCESS
-            </span>
-          </div>
+          {isMobile ? (
+            <>
+              <div style={{ overflow: "hidden" }}>
+                <span
+                  style={{
+                    transform: inView ? "none" : "translateY(150px)",
+                    transition: "all .4s ease .4s",
+                  }}
+                  className="motion-span"
+                >
+                  THE SQUAD
+                </span>
+              </div>
+              <div style={{ overflow: "hidden" }}>
+                <span
+                  style={{
+                    transform: inView ? "none" : "translateY(150px)",
+                    transition: "all .4s ease .8s",
+                  }}
+                  className="motion-span"
+                >
+                  BEHIND <span className="highlight">OUR</span>
+                </span>
+              </div>
+              <div style={{ overflow: "hidden" }}>
+                <span
+                  style={{
+                    opacity: inView ? 1 : 0,
+                    transform: inView ? "none" : "translateY(150px)",
+                    transition: "all .4s ease 1.2s",
+                  }}
+                  className="highlight motion-span"
+                >
+                  SUCCESS
+                </span>
+              </div>
+            </>
+          ) : (
+            <>
+              <div style={{ overflow: "hidden" }}>
+                <span
+                  style={{
+                    transform: inView ? "none" : "translateY(150px)",
+                    transition: "all .4s ease .4s",
+                  }}
+                  className="motion-span"
+                >
+                  THE SQUAD BEHIND{" "}
+                </span>
+              </div>
+              <div style={{ overflow: "hidden" }}>
+                <span
+                  style={{
+                    opacity: inView ? 1 : 0,
+                    transform: inView ? "none" : "translateY(150px)",
+                    transition: "all .4s ease .8s",
+                  }}
+                  className="highlight motion-span"
+                >
+                  OUR SUCCESS
+                </span>
+              </div>
+            </>
+          )}
         </h2>
       </div>
 
