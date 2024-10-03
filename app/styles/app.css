@@ -1346,6 +1346,9 @@ footer {
   .home-header {
     margin-bottom: 3rem !important;
   }
+  .crafting-div > p {
+    font-size: 5vw;
+  }
 }
 
 .about-hero-container .home-header {
