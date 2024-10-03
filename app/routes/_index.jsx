@@ -57,6 +57,15 @@ function HomepageHeader() {
     initial: { opacity: 0, y: "100%" },
   };
 
+  const span2 = {
+    animate: (custom) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.4, delay: custom * 0.4 },
+    }),
+    initial: { opacity: 0, y: "100%" },
+  };
+
   return (
     <div className="home-header">
       <motion.div
@@ -68,31 +77,31 @@ function HomepageHeader() {
           <>
             {/* Mobile Version (5 lines) */}
             <div style={{ overflow: "hidden" }}>
-              <motion.span variants={span} className="motion-span">
+              <motion.span variants={span2} custom={0} className="motion-span">
                 {"BOUTIQUE END-TO-END "}
               </motion.span>
             </div>
 
             <div style={{ overflow: "hidden" }}>
-              <motion.span variants={span} className="motion-span">
+              <motion.span variants={span2} custom={1} className="motion-span">
                 <span className="highlight">PRODUCTION & POST-</span>
               </motion.span>
             </div>
 
             <div style={{ overflow: "hidden" }}>
-              <motion.span variants={span} className="motion-span">
+              <motion.span variants={span2} custom={2} className="motion-span">
                 <span className="highlight">{" PRODUCTION EXCELLENCE "}</span>
               </motion.span>
             </div>
 
             <div style={{ overflow: "hidden" }}>
-              <motion.span variants={span} className="motion-span">
+              <motion.span variants={span2} custom={3} className="motion-span">
                 {"FOR FILMMAKERS AND"}
               </motion.span>
             </div>
 
             <div style={{ overflow: "hidden" }}>
-              <motion.span variants={span} className="motion-span">
+              <motion.span variants={span2} custom={4} className="motion-span">
                 {" INDEPENDENT CREATORS."}
               </motion.span>
             </div>

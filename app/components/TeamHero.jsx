@@ -19,6 +19,15 @@ export default function TeamPage() {
     animate: { opacity: 1, y: 0, transition: { duration: 0.4 } },
     initial: { opacity: 0, y: "100%" },
   };
+
+  const span2 = {
+    animate: (custom) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.4, delay: custom * 0.4 },
+    }),
+    initial: { opacity: 0, y: "100%" },
+  };
   return (
     <div className="team-hero-container">
       <div className="home-header">
@@ -30,23 +39,39 @@ export default function TeamPage() {
           {isMobile ? (
             <>
               <div style={{ overflow: "hidden" }}>
-                <motion.span variants={span} className="motion-span">
+                <motion.span
+                  variants={span2}
+                  custom={0}
+                  className="motion-span"
+                >
                   MEET THE VISIONARIES
                 </motion.span>
               </div>
               <div style={{ overflow: "hidden" }}>
-                <motion.span variants={span} className="motion-span">
+                <motion.span
+                  variants={span2}
+                  custom={1}
+                  className="motion-span"
+                >
                   BEHIND OUR COMMITMENT
                 </motion.span>
               </div>
               <div style={{ overflow: "hidden" }}>
-                <motion.span variants={span} className="motion-span">
+                <motion.span
+                  variants={span2}
+                  custom={2}
+                  className="motion-span"
+                >
                   TO
                   <span className="highlight">{" EMPOWERING "}</span>
                 </motion.span>
               </div>
               <div style={{ overflow: "hidden" }}>
-                <motion.span variants={span} className="motion-span highlight">
+                <motion.span
+                  variants={span2}
+                  custom={3}
+                  className="motion-span highlight"
+                >
                   FILMAKERS WORLDWIDE.
                 </motion.span>
               </div>
