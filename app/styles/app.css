@@ -1340,6 +1340,7 @@ footer {
   .about-hero-container .home-header {
     width: 100% !important;
     margin-left: 0 !important;
+    margin-bottom: 2rem !important;
   }
   .about-hero-container .home-header div {
     transform: none !important;
