@@ -1348,8 +1348,13 @@ footer {
   }
   .crafting-div > p {
     font-size: 6vw;
-
     margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .crafting-div > p {
+    line-height: 2rem;
   }
 }
 
