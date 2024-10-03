@@ -111,14 +111,14 @@ textarea {
   height: auto;
 }
 
-@media (max-width: 44em) {
+@media (max-width: 990px) {
   .static-logo {
     width: 7rem !important;
     height: auto !important;
   }
 }
 
-@media (max-width: 44em) {
+@media (max-width: 990px) {
   .header-left-and-right {
     display: flex;
     justify-content: space-between;
@@ -1131,7 +1131,7 @@ footer {
   width: 0.5vw;
   height: 0.5vw;
 }
-@media (max-width: 44em) {
+@media (max-width: 990px) {
   .svg-button > svg {
     width: 2vw;
     height: 2vw;
@@ -1304,7 +1304,7 @@ footer {
   max-height: 100vh;
 }
 
-@media (max-width: 44em) {
+@media (max-width: 990px) {
   .about-hero-image-container {
     height: auto;
     margin-bottom: 2rem;
@@ -1325,7 +1325,7 @@ footer {
   font-family: "dm mono";
 }
 
-@media (max-width: 44em) {
+@media (max-width: 990px) {
   .about-header {
     text-align: left;
     transform: none !important;
@@ -1451,7 +1451,7 @@ footer {
   margin: auto;
 }
 
-@media (max-width: 44em) {
+@media (max-width: 990px) {
   .fourohfour-overlay {
     line-height: 1rem;
     font-size: 2rem;
