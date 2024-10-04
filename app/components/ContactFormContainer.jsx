@@ -77,8 +77,8 @@ function ContactFormContainer() {
 
   return (
     <div className="contact-form-container" ref={ref}>
-      <SVGCorner hidden={pathname === "/contact"} />
-      <SVGCorner hidden={pathname === "/contact"} />
+      {/* <SVGCorner hidden={pathname === "/contact"} /> */}
+      {/* <SVGCorner hidden={pathname === "/contact"} /> */}
       <SVGCorner />
       <SVGCorner />
       {pathname !== "/contact" && <p>CONTACT US</p>}
