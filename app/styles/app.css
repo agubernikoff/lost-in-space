@@ -129,6 +129,13 @@ body::after {
     top: 13%;
     right: -100px;
   }
+
+  .galaxy-3 {
+    top: 50px;
+    right: 75px;
+    width: 400px;
+    height: 150px;
+  }
 }
 
 main {
