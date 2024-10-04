@@ -31,15 +31,16 @@ function TeamContainer() {
 
   const teamMembers = [
     {
-      image: alexImage,
-      name: "Alexander Santoro",
-      title: "CEO & Co-Founder",
-    },
-    {
       image: caroImage,
       name: "Carolyn LaVeglia",
       title: "CEO & Co-Founder",
     },
+    {
+      image: alexImage,
+      name: "Alexander Santoro",
+      title: "CEO & Co-Founder",
+    },
+
     {
       image: artieImage,
       name: "Artie Dossick",
