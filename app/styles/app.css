@@ -46,7 +46,7 @@ body {
   position: relative;
 }
 
-body::before {
+.galaxy-1 {
   content: "";
   position: fixed;
   top: 350px;
@@ -68,7 +68,7 @@ body::before {
   pointer-events: none;
 }
 
-body::after {
+.galaxy-4 {
   content: "";
   position: fixed;
   top: 0;

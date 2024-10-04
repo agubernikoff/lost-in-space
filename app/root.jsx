@@ -9,7 +9,12 @@ import {
   json,
   useLoaderData,
 } from "@remix-run/react";
-import { AnimatePresence, motion } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import appStyles from "./styles/app.css?url";
@@ -75,6 +80,27 @@ export default function App() {
     if (data?.ran === "true") completeAnimation();
   }, []);
 
+  const { scrollYProgress } = useScroll();
+  const scale = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.5, 1],
+    [1, 0.2, 1.1, 0.6]
+  );
+  const scale2 = useTransform(
+    scrollYProgress,
+    [0, 0.37, 0.6, 1],
+    [1, 0.2, 1.4, 0.9]
+  );
+  const scale3 = useTransform(scrollYProgress, [0, 1], [1, 1.8]);
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, 222]);
+  const x = useTransform(scrollYProgress, [0, 1], [0, -222]);
+
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, -432]);
+  const x2 = useTransform(scrollYProgress, [0, 1], [0, 222]);
+
+  const x3 = useTransform(scrollYProgress, [0, 0.4, 0.6, 1], [0, -50, 0, 422]);
+
   return (
     <html lang="en">
       <head>
@@ -88,8 +114,41 @@ export default function App() {
         ></link>
       </head>
       <body>
-        <div class="galaxy-2"></div>
-        <div class="galaxy-3"></div>
+        {runAnimation ? null : (
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, delay: 1.2 }}
+            className="galaxy-1"
+            style={{ scale, y, x }}
+          ></motion.div>
+        )}
+        {runAnimation ? null : (
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, delay: 1.2 }}
+            className="galaxy-2"
+            style={{ scale: scale2, x: x2, y: y2 }}
+          ></motion.div>
+        )}
+        {runAnimation ? null : (
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, delay: 1.2 }}
+            className="galaxy-3"
+            style={{ scale: scale3, x: x3 }}
+          ></motion.div>
+        )}
+        {runAnimation ? null : (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.2, delay: 0.4 }}
+            className="galaxy-4"
+          ></motion.div>
+        )}
         {runAnimation ? null : <Modal />}
         {runAnimation ? null : <Header />}
         <AnimatePresence mode="wait" initial={false}>

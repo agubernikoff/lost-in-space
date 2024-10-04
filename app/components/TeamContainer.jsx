@@ -292,7 +292,6 @@ function TeamMember({ member }) {
 }
 
 function TeamMemberMobile({ member }) {
-  console.log(member);
   const [isFlipped, setIsFlipped] = useState(false);
   const ref = useRef(null);
 
