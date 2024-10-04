@@ -9,6 +9,7 @@ import elfImage from "../assets/images/elf.png";
 import gusImage from "../assets/images/gus.png";
 import nawImage from "../assets/images/naw.png";
 import spaceImage from "../assets/images/spaceman.png";
+import { useNavigate } from "@remix-run/react";
 
 function TeamContainer() {
   const [isMobile, setIsMobile] = useState(false);
@@ -82,25 +83,6 @@ function TeamContainer() {
 
   return (
     <div className="team-container">
-      {activeModal !== null && (
-        <>
-          <div
-            className="modal-overlay"
-            onClick={() => setActiveModal(null)}
-          ></div>
-          <div className="modal">
-            <button
-              className="modal-close"
-              onClick={() => setActiveModal(null)}
-            >
-              -
-            </button>
-            <div className="modal-content">
-              <p>Details about {teamMembers[activeModal].name}</p>
-            </div>
-          </div>
-        </>
-      )}
       <div ref={text} className="centered-team-container">
         <p
           style={{
@@ -191,7 +173,7 @@ function TeamContainer() {
             <TeamMember
               key={index}
               member={member}
-              onClick={() => setActiveModal(index)}
+              // onClick={() => setActiveModal(index)}
             />
           ))}
         </motion.div>
@@ -201,11 +183,17 @@ function TeamContainer() {
 }
 
 function TeamMember({ member, onClick }) {
+  const nav = useNavigate();
   return (
     <div className="team-member">
       <div className="image-container">
         <img src={member.image} alt={member.name} />
-        <div className="toggle-button" onClick={onClick}>
+        <div
+          className="toggle-button"
+          onClick={() => {
+            nav(`/team?member=${member.name}#aside`);
+          }}
+        >
           +
         </div>
       </div>

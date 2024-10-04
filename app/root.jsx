@@ -16,6 +16,7 @@ import appStyles from "./styles/app.css?url";
 import { getSession, commitSession, destroySession } from "./sessions";
 import { useEffect, useState, useRef } from "react";
 import Loading from "./components/Loading";
+import Modal from "./components/Modal";
 
 export function links() {
   return [{ rel: "stylesheet", href: appStyles }];
@@ -88,6 +89,7 @@ export default function App() {
       </head>
       <body>
         <div class="galaxy-2"></div>
+        {runAnimation ? null : <Modal />}
         {runAnimation ? null : <Header />}
         <AnimatePresence mode="wait" initial={false}>
           <motion.main
