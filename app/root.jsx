@@ -87,6 +87,7 @@ export default function App() {
         ></link>
       </head>
       <body>
+        <div class="galaxy-2"></div>
         {runAnimation ? null : <Header />}
         <AnimatePresence mode="wait" initial={false}>
           <motion.main

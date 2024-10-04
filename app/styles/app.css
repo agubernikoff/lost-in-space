@@ -40,7 +40,84 @@ body {
   overflow-x: hidden;
   background: var(--charcoal);
   color: white;
+  position: relative;
 }
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 350px;
+  left: -150px;
+  width: 600px;
+  height: 600px;
+  z-index: -1;
+  background: radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 69, 0, 0.2),
+      transparent 60%
+    ),
+    radial-gradient(circle at 50% 50%, rgba(138, 43, 226, 0.3), transparent 70%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 0, 0.15), transparent 80%),
+    radial-gradient(circle at 50% 50%, rgba(72, 61, 139, 0.1), transparent 90%);
+  opacity: 0.7;
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background: radial-gradient(
+      circle at 70% 60%,
+      rgba(72, 61, 139, 0.1),
+      transparent
+    ),
+    radial-gradient(circle at 30% 40%, rgba(147, 112, 219, 0.1), transparent);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.galaxy-2 {
+  position: fixed;
+  top: 50px;
+  right: 100px;
+  width: 500px;
+  height: 500px;
+  z-index: -1;
+  background: radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 165, 0, 0.3),
+      transparent 60%
+    ),
+    radial-gradient(circle at 50% 50%, rgba(255, 69, 0, 0.2), transparent 70%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 0, 0.15), transparent 80%),
+    radial-gradient(circle at 50% 50%, rgba(255, 140, 0, 0.1), transparent 90%);
+  opacity: 0.7;
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+@media (max-width: 990px) {
+  body::before {
+    width: 250px;
+    height: 250px;
+    top: 200px;
+    left: -50px;
+  }
+
+  .galaxy-2 {
+    width: 250px;
+    height: 250px;
+    top: 40%;
+    right: -100px;
+  }
+}
+
 main {
   min-height: 100vh;
 }
@@ -958,7 +1035,7 @@ textarea {
 
 footer {
   padding: 1rem;
-  background-color: var(--charcoal);
+  background-color: transparent;
   color: #ffffff;
   font-family: "helvetica";
 }
