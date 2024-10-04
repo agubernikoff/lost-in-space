@@ -582,6 +582,7 @@ aside p {
 .team-container {
   margin: auto;
   margin-top: 3%;
+  overflow-x: hidden;
 }
 .team-container > .team-button {
   text-align: center;
@@ -593,7 +594,6 @@ aside p {
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
-  overflow-x: auto;
   margin-top: 3%;
   margin-left: 2%;
   margin-right: 2%;
