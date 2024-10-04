@@ -49,7 +49,7 @@ body::before {
   position: fixed;
   top: 350px;
   left: -150px;
-  width: 600px;
+  width: 650px;
   height: 600px;
   z-index: -1;
 
@@ -91,7 +91,22 @@ body::after {
   width: 500px;
   height: 500px;
   z-index: -1;
-  background: radial-gradient(circle at 50% 50%, #04489c, transparent 60%),
+  background: radial-gradient(circle at 50% 50%, #1263c7, transparent 60%),
+    radial-gradient(circle at 50% 50%, rgba(255, 69, 0, 0.2), transparent 70%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 0, 0.15), transparent 80%),
+    radial-gradient(circle at 50% 50%, rgba(255, 140, 0, 0.1), transparent 90%);
+  opacity: 0.7;
+  filter: blur(50px);
+  pointer-events: none;
+}
+.galaxy-3 {
+  position: fixed;
+  top: -50px;
+  right: 700px;
+  width: 300px;
+  height: 450px;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 50%, #9c9999, transparent 60%),
     radial-gradient(circle at 50% 50%, rgba(255, 69, 0, 0.2), transparent 70%),
     radial-gradient(circle at 50% 50%, rgba(255, 255, 0, 0.15), transparent 80%),
     radial-gradient(circle at 50% 50%, rgba(255, 140, 0, 0.1), transparent 90%);
