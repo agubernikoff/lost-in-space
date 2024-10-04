@@ -1462,6 +1462,7 @@ footer {
     width: fit-content;
     transform: translateX(calc(var(--card-adjustment) - 2rem));
     margin-inline: 0;
+    overflow-x: hidden;
   }
   .team-member {
     width: var(--card-width);
