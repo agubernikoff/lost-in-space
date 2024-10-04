@@ -2,7 +2,10 @@ import React from "react";
 
 function PrivacyPolicy() {
   return (
-    <div style={{ padding: "1rem", width: "40%", margin: "auto" }}>
+    <div
+      className="privacy-policy-container"
+      style={{ padding: "1rem", width: "40%", margin: "auto" }}
+    >
       <h2>Effective Date: 9/26/24</h2>
       <p>
         Lost In Space ("we," "us," or "our") is committed to protecting your

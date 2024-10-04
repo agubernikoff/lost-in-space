@@ -1672,3 +1672,8 @@ footer {
     z-index: -100;
   }
 }
+@media (max-width: 990px) {
+  .privacy-policy-container {
+    width: calc(100% - 2rem);
+  }
+}
