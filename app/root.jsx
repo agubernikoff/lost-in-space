@@ -89,6 +89,7 @@ export default function App() {
       </head>
       <body>
         <div class="galaxy-2"></div>
+        <div class="galaxy-3"></div>
         {runAnimation ? null : <Modal />}
         {runAnimation ? null : <Header />}
         <AnimatePresence mode="wait" initial={false}>

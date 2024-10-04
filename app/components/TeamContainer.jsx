@@ -31,19 +31,20 @@ function TeamContainer() {
 
   const teamMembers = [
     {
-      image: alexImage,
-      name: "Alexander Santoro",
+      image: caroImage,
+      name: "Carolyn LaVeglia",
       title: "CEO & Co-Founder",
       bio1: "",
       bio2: "",
     },
     {
-      image: caroImage,
-      name: "Carolyn LaVeglia",
+      image: alexImage,
+      name: "Alexander Santoro",
       title: "CEO & Co-Founder",
       bio1: "Carolyn LaVeglia is the CEO and co-founder of Lost in Space. Since starting her career at RadicalMedia, she has worked as a producer across documentary films and unscripted television series for clients such as Apple TV+, Netflix, Hulu, ESPN and MSNBC. Carolyn has also worked on live television events like Miley’s New Years Eve Party - as well as events, immersive experiences, and content for brands like Target and American Express. In 2024, she became an Emmy Award Winning Post-Producer for her work on Super League: The War for Football. She has a passion for bringing stories to life in different ways and strives to understand every part of the process. Owning this business is her dream come true. Carolyn is a Queens native, knows how to read tarot cards, and has a picture of pasta as her email background.",
       bio2: "",
     },
+
     {
       image: artieImage,
       name: "Artie Dossick",
