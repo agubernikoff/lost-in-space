@@ -594,6 +594,7 @@ aside p {
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
+  overflow-x: hidden;
   margin-top: 3%;
   margin-left: 2%;
   margin-right: 2%;
@@ -1481,7 +1482,7 @@ footer {
     width: fit-content;
     transform: translateX(calc(var(--card-adjustment) - 2rem));
     margin-inline: 0;
-    overflow-x: hidden;
+    overflow-x: visible;
   }
   .team-member {
     width: var(--card-width);
