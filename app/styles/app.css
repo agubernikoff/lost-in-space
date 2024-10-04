@@ -107,14 +107,14 @@ body::after {
   body::before {
     width: 250px;
     height: 250px;
-    top: 200px;
+    top: 400px;
     left: -50px;
   }
 
   .galaxy-2 {
     width: 250px;
     height: 250px;
-    top: 40%;
+    top: 13%;
     right: -100px;
   }
 }
