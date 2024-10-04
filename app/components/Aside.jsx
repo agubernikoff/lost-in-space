@@ -135,7 +135,7 @@ export function Aside({ children, heading, id = "aside" }) {
         <main>
           {teamMember ? (
             <>
-              <div>
+              <div className="team-member-deatils-container">
                 <img src={teamMember.image} alt={teamMember.name} />
                 <div className="team-member-name">{teamMember.name}</div>
                 <div className="team-member-title">
