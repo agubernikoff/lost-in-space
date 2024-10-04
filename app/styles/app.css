@@ -170,8 +170,14 @@ aside {
   height: calc(100vh - 2rem);
   transform: translateX(calc(1rem + var(--aside-width)));
   transition: transform 400ms ease-in-out;
-  padding: 1rem;
+  padding: 2rem;
   box-sizing: border-box;
+}
+aside main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
 }
 aside img {
   width: 40%;
@@ -194,8 +200,8 @@ aside p {
   color: #1e176a;
   margin: 0 !important;
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 2rem;
+  right: 2rem;
 }
 .overlay {
   background: rgba(0, 0, 0, 0.2);
