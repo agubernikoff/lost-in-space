@@ -96,6 +96,19 @@ aside {
   padding: 1rem;
   box-sizing: border-box;
 }
+aside img {
+  width: 40%;
+}
+aside .team-member-name {
+  color: var(--charcoal);
+}
+aside .team-member-title {
+  color: var(--seal);
+}
+aside p {
+  font-family: "helvetica";
+  color: var(--soft-pebble);
+}
 .close {
   border-color: #1e176a;
   color: #1e176a;
