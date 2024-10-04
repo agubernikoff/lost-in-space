@@ -11,6 +11,8 @@
   --seal: #393939;
   --card-width: 25vw;
   --card-adjustment: 3rem;
+  --card-width-team: calc(100vw - 2rem);
+  --card-adjustment-team: 3rem;
   --home-header: 5.6vw;
   --biggest: 9vw;
   /* I THINK THIS METHOD BELOW WILL WORK FOR TOGGLING LIGHT AND DARK MODE
@@ -1478,14 +1480,14 @@ footer {
     box-sizing: border-box;
   }
   .team-members-container {
-    gap: var(--card-adjustment);
+    gap: var(--card-adjustment-team);
     width: fit-content;
     transform: translateX(calc(var(--card-adjustment) - 2rem));
     margin-inline: 0;
     overflow-x: visible;
   }
   .team-member {
-    width: var(--card-width);
+    width: var(--card-width-team);
   }
 }
 

@@ -105,9 +105,9 @@ function TeamContainer() {
     animate(
       carousel.current,
       {
-        x: `calc((((var(--card-width) * ${
+        x: `calc((((var(--card-width-team) * ${
           cardDisplayed - 2
-        }) + var(--card-adjustment) * ${cardDisplayed - 3}) * -1) - 2rem)`,
+        }) + var(--card-adjustment-team) * ${cardDisplayed - 3}) * -1) - 2rem)`,
       },
       { transition: "easeInOut" }
     );
@@ -118,7 +118,7 @@ function TeamContainer() {
     animate(
       carousel.current,
       {
-        x: `calc((((var(--card-width) * ${cardDisplayed}) + var(--card-adjustment) * ${
+        x: `calc((((var(--card-width-team) * ${cardDisplayed}) + var(--card-adjustment-team) * ${
           cardDisplayed - 1
         }) * -1) - 2rem)`,
       },
@@ -209,10 +209,10 @@ function TeamContainer() {
       {isMobile ? (
         <>
           <motion.div
-            initial={{ opacity: 0, x: "97vw" }}
+            initial={{ opacity: 0, x: "94vw" }}
             whileInView={{
               opacity: 1,
-              x: "calc(var(--card-adjustment) - 2rem",
+              x: "1rem",
             }}
             viewport={{ once: true, amount: 0.005 }}
             transition={{ duration: 0.8 }}
