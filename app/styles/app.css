@@ -1457,6 +1457,15 @@ footer {
     width: calc(100vw - 2rem);
     box-sizing: border-box;
   }
+  .team-members-container {
+    gap: var(--card-adjustment);
+    width: fit-content;
+    transform: translateX(calc(var(--card-adjustment) - 2rem));
+    margin-inline: 0;
+  }
+  .team-member {
+    width: var(--card-width);
+  }
 }
 
 /* ABOUT PAGE */

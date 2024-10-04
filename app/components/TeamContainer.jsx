@@ -1,4 +1,4 @@
-import { motion, useInView } from "framer-motion";
+import { animate, motion, useInView } from "framer-motion";
 import React, { useRef, useState, useEffect } from "react";
 import SVGButton from "./SVGButton";
 import alexImage from "../assets/images/alex.png";
@@ -25,8 +25,9 @@ function TeamContainer() {
   }, []);
   const text = useRef(null);
   const inView = useInView(text, { once: true, amount: 0.25 });
+  const carousel = useRef(null);
 
-  const [activeModal, setActiveModal] = useState(null);
+  const [cardDisplayed, setCardDisplayed] = useState(1);
 
   const teamMembers = [
     {
@@ -81,6 +82,38 @@ function TeamContainer() {
     return result;
   }
 
+  function slideRight() {
+    setCardDisplayed(cardDisplayed - 1);
+    animate(
+      carousel.current,
+      {
+        x: `calc(((var(--card-width) * ${
+          cardDisplayed - 1
+        }) + var(--card-adjustment) * ${cardDisplayed}) * -1)`,
+      },
+      { transition: "easeInOut" }
+    );
+  }
+
+  function slideLeft() {
+    console.log(carousel.current);
+    setCardDisplayed(cardDisplayed + 1);
+    animate(
+      carousel.current,
+      {
+        x: `calc(((var(--card-width) * ${
+          cardDisplayed + 1
+        }) + var(--card-adjustment) * ${cardDisplayed}) * -1)`,
+      },
+      { transition: "easeInOut" }
+    );
+  }
+  useEffect(() => {
+    if (isMobile && carousel.current) {
+      // Carousel should be available only in mobile view
+      console.log("Carousel is set for mobile:", carousel.current);
+    }
+  }, [isMobile, carousel.current]);
   return (
     <div className="team-container">
       <div ref={text} className="centered-team-container">
@@ -161,28 +194,71 @@ function TeamContainer() {
         </h2>
       </div>
 
-      {splitArray(teamMembers).map((arrayOf4) => (
-        <motion.div
-          initial={{ opacity: 0, x: "97vw" }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.005 }}
-          transition={{ duration: 0.8 }}
-          className="team-members-container"
-        >
-          {arrayOf4.map((member, index) => (
-            <TeamMember
-              key={index}
-              member={member}
-              // onClick={() => setActiveModal(index)}
-            />
-          ))}
-        </motion.div>
-      ))}
+      {isMobile ? (
+        <>
+          <motion.div
+            initial={{ opacity: 0, x: "97vw" }}
+            whileInView={{
+              opacity: 1,
+              x: "calc(var(--card-adjustment) - 2rem",
+            }}
+            viewport={{ once: true, amount: 0.005 }}
+            transition={{ duration: 0.8 }}
+            style={{ transition: "transform .4s ease" }}
+            className="team-members-container"
+            ref={carousel}
+          >
+            {teamMembers.map((member, index) => (
+              <TeamMember
+                key={member.name}
+                member={member}
+                // onClick={() => setActiveModal(index)}
+              />
+            ))}
+          </motion.div>
+          <motion.div
+            style={{ margin: "auto", width: "fit-content" }}
+            initial={{ opacity: 0, y: 100, x: 0 }}
+            animate={{ opacity: 1, y: 0, x: 0 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="clients-arrow-buttons-container"
+          >
+            <button onClick={slideRight} disabled={cardDisplayed === 1}>
+              ←
+            </button>
+            <button
+              onClick={slideLeft}
+              disabled={cardDisplayed === teamMembers.length - 1}
+            >
+              →
+            </button>
+          </motion.div>
+        </>
+      ) : (
+        splitArray(teamMembers).map((arrayOf4) => (
+          <motion.div
+            initial={{ opacity: 0, x: "97vw" }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.005 }}
+            transition={{ duration: 0.8 }}
+            className="team-members-container"
+            key={arrayOf4[0].name}
+          >
+            {arrayOf4.map((member, index) => (
+              <TeamMember
+                key={index}
+                member={member}
+                // onClick={() => setActiveModal(index)}
+              />
+            ))}
+          </motion.div>
+        ))
+      )}
     </div>
   );
 }
 
-function TeamMember({ member, onClick }) {
+function TeamMember({ member }) {
   const nav = useNavigate();
   return (
     <div className="team-member">
@@ -199,6 +275,76 @@ function TeamMember({ member, onClick }) {
       </div>
       <div className="team-member-name">{member.name}</div>
       <div className="team-member-title">{member.title.toUpperCase()}</div>
+    </div>
+  );
+}
+
+function TeamMemberMobile({ member }) {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleFlip = () => {
+    setIsFlipped((prev) => !prev);
+  };
+
+  return (
+    <div className="team-member">
+      {/* Rotating Image */}
+      <motion.div
+        className="image-container"
+        animate={{ rotateY: isFlipped ? 180 : 0 }} // Spin 180 degrees on Y axis
+        transition={{ duration: 0.8 }}
+      >
+        {isFlipped ? (
+          // Show bio when flipped
+          <div className="bio-content">
+            <button
+              className="close"
+              onClick={(e) => {
+                e.preventDefault();
+                nav("/team", { preventScrollReset: true });
+              }}
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.859221 1.02159L0.935478 0.935234C1.26592 0.60479 1.78588 0.579371 2.14548 0.858977L2.23184 0.935234L8.00033 6.703L13.7688 0.935234C14.1268 0.577253 14.7072 0.577253 15.0652 0.935234C15.4232 1.29321 15.4232 1.87362 15.0652 2.2316L9.29741 8.00008L15.0652 13.7686C15.3956 14.099 15.421 14.619 15.1414 14.9786L15.0652 15.0649C14.7347 15.3954 14.2148 15.4208 13.8552 15.1412L13.7688 15.0649L8.00033 9.29716L2.23184 15.0649C1.87386 15.4229 1.29346 15.4229 0.935478 15.0649C0.577497 14.7069 0.577497 14.1265 0.935478 13.7686L6.70324 8.00008L0.935478 2.2316C0.605034 1.90115 0.579615 1.38119 0.859221 1.02159L0.935478 0.935234L0.859221 1.02159Z"
+                  fill="#5B516D"
+                />
+              </svg>
+            </button>
+            <p>{member.bio}</p>
+          </div>
+        ) : (
+          // Show image, name, and position when not flipped
+          <>
+            <div className="image-container">
+              <img src={member.image} alt={member.name} />
+              <div
+                className="toggle-button"
+                onClick={() => {
+                  nav(`/team?member=${member.name}#aside`);
+                }}
+              >
+                +
+              </div>
+            </div>
+            <div className="team-member-name">{member.name}</div>
+            <div className="team-member-title">
+              {member.title.toUpperCase()}
+            </div>
+          </>
+        )}
+      </motion.div>
+
+      {/* Button to trigger the flip */}
+      <button className="flip-button" onClick={handleFlip}>
+        {isFlipped ? "Hide Bio" : "Show Bio"}
+      </button>
     </div>
   );
 }
