@@ -87,23 +87,22 @@ function TeamContainer() {
     animate(
       carousel.current,
       {
-        x: `calc(((var(--card-width) * ${
-          cardDisplayed - 1
-        }) + var(--card-adjustment) * ${cardDisplayed}) * -1)`,
+        x: `calc((((var(--card-width) * ${
+          cardDisplayed - 2
+        }) + var(--card-adjustment) * ${cardDisplayed - 3}) * -1) - 2rem)`,
       },
       { transition: "easeInOut" }
     );
   }
 
   function slideLeft() {
-    console.log(carousel.current);
     setCardDisplayed(cardDisplayed + 1);
     animate(
       carousel.current,
       {
-        x: `calc(((var(--card-width) * ${
-          cardDisplayed + 1
-        }) + var(--card-adjustment) * ${cardDisplayed}) * -1)`,
+        x: `calc((((var(--card-width) * ${cardDisplayed}) + var(--card-adjustment) * ${
+          cardDisplayed - 1
+        }) * -1) - 2rem)`,
       },
       { transition: "easeInOut" }
     );
@@ -228,7 +227,7 @@ function TeamContainer() {
             </button>
             <button
               onClick={slideLeft}
-              disabled={cardDisplayed === teamMembers.length - 1}
+              disabled={cardDisplayed === teamMembers.length}
             >
               →
             </button>
