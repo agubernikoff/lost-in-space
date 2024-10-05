@@ -91,10 +91,14 @@ export default function App() {
     [0, 0.37, 0.6, 1],
     [1, 0.2, 1.4, 0.9]
   );
-  const scale3 = useTransform(scrollYProgress, [0, 1], [1, 1.8]);
+  const scale3 = useTransform(
+    scrollYProgress,
+    [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+    [0.4, 0.7, 0.1, 0.65, 0.21, 0.55, 0.11, 0.69, 0.23, 0.67, 0.33]
+  );
 
   const y = useTransform(scrollYProgress, [0, 1], [0, 222]);
-  const x = useTransform(scrollYProgress, [0, 1], [0, -222]);
+  const x = useTransform(scrollYProgress, [0, 0.5, 1], [0, 111, -111]);
 
   const y2 = useTransform(scrollYProgress, [0, 1], [0, -432]);
   const x2 = useTransform(scrollYProgress, [0, 1], [0, 222]);
@@ -135,7 +139,7 @@ export default function App() {
         {runAnimation ? null : (
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
+            animate={{ opacity: 1, scale: 0.4 }}
             transition={{ duration: 1.2, delay: 1.2 }}
             className="galaxy-3"
             style={{ scale: scale3, x: x3 }}

@@ -50,7 +50,7 @@ body {
   content: "";
   position: fixed;
   top: 350px;
-  left: -150px;
+  left: -360px;
   width: 650px;
   height: 600px;
   z-index: -1;
