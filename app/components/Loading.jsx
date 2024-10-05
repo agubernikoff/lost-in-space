@@ -383,7 +383,7 @@ function CoverDiv({ randomInt2 }) {
   return (
     <motion.div
       style={{
-        height: "100%",
+        height: "calc(100% + 2rem)",
         width: "100%",
         background: "#151515",
         position: "absolute",

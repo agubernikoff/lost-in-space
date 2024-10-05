@@ -141,7 +141,9 @@ body {
 }
 
 main {
+  min-height: 100vh;
   min-height: -webkit-fill-available;
+  /* height: -webkit-fill-available; */
 }
 h1,
 h2,
@@ -422,6 +424,7 @@ aside p {
   background-color: var(--charcoal);
   padding: 1rem;
   position: absolute;
+  height: max-content;
 }
 .loading-bar-bg {
   background: rgba(255, 255, 255, 0.26);
@@ -467,7 +470,7 @@ aside p {
 .percent,
 .loading-welcome {
   position: absolute;
-  bottom: 0;
+  bottom: 2rem;
 }
 .percent {
   right: 1rem;
