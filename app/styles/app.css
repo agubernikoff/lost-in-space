@@ -142,8 +142,6 @@ body {
 
 main {
   min-height: 100vh;
-  min-height: -webkit-fill-available;
-  /* height: -webkit-fill-available; */
 }
 h1,
 h2,
