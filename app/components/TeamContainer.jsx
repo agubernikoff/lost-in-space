@@ -296,20 +296,29 @@ function TeamMemberMobile({ member }) {
   const ref = useRef(null);
 
   const handleFlip = () => {
-    animate(ref.current, { rotateY: 90 }, { ease: "easeInOut", duration: 0.4 });
+    animate(
+      ref.current,
+      { rotateY: -90 },
+      { ease: "easeInOut", duration: 0.4 }
+    );
     setTimeout(() => setIsFlipped((prev) => !prev), 400);
   };
 
   useEffect(() => {
     animate(
       ref.current,
-      { rotateY: isFlipped ? 180 : 0 },
+      { rotateY: isFlipped ? -180 : 0 },
       { ease: "easeInOut", duration: 0.4 }
     );
   }, [isFlipped]);
 
   return (
-    <div className="team-member" style={{ perspective: "1000px" }}>
+    <div
+      className="team-member"
+      style={{
+        perspective: "1000px",
+      }}
+    >
       {/* Rotating Image */}
       <motion.div
         className="image-container"
