@@ -61,9 +61,9 @@ function ClientsContainer() {
     animate(
       carousel.current,
       {
-        x: `calc(((var(--card-width) * ${
+        x: `calc((var(--card-width) + var(--card-adjustment) - 2rem) * ${
           cardDisplayed - 1
-        }) + var(--card-adjustment) * ${cardDisplayed - 1}) * -1)`,
+        } * -1)`,
       },
       { transition: "easeInOut" }
     );
@@ -81,9 +81,9 @@ function ClientsContainer() {
     animate(
       carousel.current,
       {
-        x: `calc(((var(--card-width) * ${
+        x: `calc((var(--card-width) + var(--card-adjustment) - 2rem) * ${
           cardDisplayed + 1
-        }) + var(--card-adjustment) * ${cardDisplayed + 1}) * -1)`,
+        } * -1)`,
       },
       { transition: "easeInOut" }
     );
@@ -160,7 +160,7 @@ function ClientsContainer() {
           style={{
             left: inView
               ? isMobile
-                ? "calc(3 * var(--card-width) - var(--card-adjustment) * .5)"
+                ? "calc(var(--card-width) * 1.5 + 1.5rem)"
                 : "100%"
               : "200%",
             opacity: inView ? 1 : 0,

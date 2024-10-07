@@ -732,6 +732,7 @@ aside p {
   background: var(--lt-gray);
   width: var(--card-width);
   padding: 1rem;
+  box-sizing: border-box;
 }
 .client-card > img {
   aspect-ratio: 1/1;
@@ -1428,8 +1429,7 @@ footer {
 /* MEDIA QUERIES */
 @media (max-width: 990px) {
   :root {
-    --card-width: 44vw;
-    --card-adjustment: 33vw;
+    --card-width: calc(100vw - 2rem);
     --home-header: 8.8vw;
     --biggest: 15vw;
   }
@@ -1463,7 +1463,7 @@ footer {
   .client-cards-carousel {
     position: relative;
     left: 121%;
-    gap: calc(33vw - 2rem);
+    gap: calc(var(--card-adjustment) - 2rem);
   }
   .clients-arrow-buttons-container {
     position: static;
