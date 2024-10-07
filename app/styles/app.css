@@ -213,9 +213,6 @@ aside p {
   font-family: "helvetica";
   color: var(--soft-pebble);
 }
-.team-member-details-container {
-  margin-bottom: 4rem;
-}
 .close {
   border-color: #1e176a;
   color: #1e176a;

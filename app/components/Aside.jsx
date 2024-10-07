@@ -24,6 +24,18 @@ import { useLocation, useNavigate } from "@remix-run/react";
  * }}
  */
 export function Aside({ children, heading, id = "aside" }) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width:990px)");
+    const handleMediaChange = (e) => setIsMobile(e.matches);
+
+    mediaQuery.addEventListener("change", handleMediaChange);
+    if (mediaQuery.matches) setIsMobile(true);
+
+    return () => mediaQuery.removeEventListener("change", handleMediaChange);
+  }, []);
+
   const teamMembers = [
     {
       image: caroImage,
@@ -95,7 +107,7 @@ export function Aside({ children, heading, id = "aside" }) {
   const [teamMember, setTeamMember] = useState(null);
 
   useEffect(() => {
-    if (hash.includes(id)) {
+    if (hash.includes(id) && !isMobile) {
       setTimeout(() => {
         const scrollPosition = window.scrollY;
         document.body.style.position = "fixed";
@@ -118,7 +130,7 @@ export function Aside({ children, heading, id = "aside" }) {
       document.body.style.top = "";
       window.scrollTo(0, scrollPosition);
     }
-  }, [hash, id]);
+  }, [hash, id, isMobile]);
 
   return (
     <div aria-modal className="overlay" id={id} role="dialog">
