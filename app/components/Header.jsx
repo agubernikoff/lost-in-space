@@ -128,7 +128,7 @@ function Header() {
               <StaticLogo />
             </Link>
           </div>
-          <div id="time">{time}</div>
+          {/* <div id="time">{time}</div> */}
           <div className="header-left-and-right header-right">
             <Link to="/">Home</Link>
             <Link to="/services">Services</Link>
