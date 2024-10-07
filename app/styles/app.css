@@ -915,6 +915,8 @@ aside p {
   font-size: 1.3vw;
   margin: 0;
   font-family: helvetica;
+  border-radius: 5px;
+  opacity: 95%;
 }
 
 .services-right-section {
