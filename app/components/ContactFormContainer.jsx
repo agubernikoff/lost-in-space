@@ -60,6 +60,12 @@ function ContactFormContainer() {
               false,
               "Your submission has been received. We'll be in touch soon!"
             );
+            setFirstName("");
+            setLastName("");
+            setEmail("");
+            setCompany("");
+            setPhone("");
+            setMessage("");
           },
           (error) => {
             setAndResetSubmissionMessage(
