@@ -1050,7 +1050,7 @@ aside p {
 }
 .submission-message {
   font-family: "helvetica";
-  color: var(--blue);
+  color: white;
 }
 .error {
   color: #e96150;
