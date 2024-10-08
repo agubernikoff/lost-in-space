@@ -291,6 +291,9 @@ aside p {
   justify-content: flex-end;
   gap: 1rem;
 }
+.header-right > a:hover {
+  text-decoration: underline;
+}
 /* .logo-link {
   height: calc(12vw * (414 / 1400));
   display: block;
