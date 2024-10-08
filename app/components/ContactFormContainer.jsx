@@ -49,10 +49,10 @@ function ContactFormContainer() {
       // Send email via EmailJS
       emailjs
         .send(
-          "your_service_id", // Replace with your service ID
-          "your_template_id", // Replace with your template ID
+          "service_v05dv5u", // Replace with your service ID
+          "template_5lcwwg8", // Replace with your template ID
           templateParams,
-          "your_user_id" // Replace with your user ID
+          "qdZqA3qNBiUgYKqdF" // Replace with your user ID
         )
         .then(
           (response) => {
