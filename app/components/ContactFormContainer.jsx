@@ -151,6 +151,7 @@ function ContactFormContainer() {
           <input
             placeholder="First Name"
             onChange={(e) => setFirstName(e.target.value)}
+            value={firstName}
             type="text"
             style={{
               transform: inView ? "none" : "translateX(-100%)",
@@ -160,6 +161,7 @@ function ContactFormContainer() {
           <input
             placeholder="Last Name"
             onChange={(e) => setLastName(e.target.value)}
+            value={lastName}
             type="text"
             style={{
               transform: inView ? "none" : "translateY(100%)",
@@ -169,6 +171,7 @@ function ContactFormContainer() {
           <input
             placeholder="Your Email"
             onChange={(e) => setEmail(e.target.value)}
+            value={email}
             type="text"
             style={{
               transform: inView ? "none" : "translateX(100%)",
@@ -180,6 +183,7 @@ function ContactFormContainer() {
           <input
             placeholder="Company"
             onChange={(e) => setCompany(e.target.value)}
+            value={company}
             type="text"
             style={{
               transform: inView ? "none" : "translateY(100%)",
@@ -189,6 +193,7 @@ function ContactFormContainer() {
           <input
             placeholder="Phone"
             onChange={(e) => setPhone(e.target.value)}
+            value={phone}
             type="text"
             style={{
               transform: inView ? "none" : "translateX(100%)",
@@ -200,6 +205,7 @@ function ContactFormContainer() {
           <textarea
             placeholder="Your Message (Optional)"
             onChange={(e) => setMessage(e.target.value)}
+            value={message}
             rows={8}
             style={{
               transform: inView ? "none" : "translateY(105%)",
