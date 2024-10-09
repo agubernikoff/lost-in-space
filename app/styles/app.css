@@ -68,7 +68,7 @@ body {
   pointer-events: none;
 }
 
-.galaxy-4 {
+/* .galaxy-4 {
   content: "";
   position: fixed;
   top: 0;
@@ -84,7 +84,7 @@ body {
     radial-gradient(circle at 30% 40%, rgba(147, 112, 219, 0.1), transparent);
   opacity: 0.3;
   pointer-events: none;
-}
+} */
 
 .galaxy-2 {
   position: fixed;

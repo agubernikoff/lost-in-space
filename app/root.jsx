@@ -98,12 +98,12 @@ export default function App() {
   );
 
   const y = useTransform(scrollYProgress, [0, 1], [0, 222]);
-  const x = useTransform(scrollYProgress, [0, 0.5, 1], [0, 111, -111]);
+  const x = useTransform(scrollYProgress, [0, 0.5, 1], [0, 111, 250]);
 
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, -432]);
-  const x2 = useTransform(scrollYProgress, [0, 1], [0, 222]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, 132]);
+  const x2 = useTransform(scrollYProgress, [0, 1], [0, 122]);
 
-  const x3 = useTransform(scrollYProgress, [0, 0.4, 0.6, 1], [0, -50, 0, 422]);
+  const x3 = useTransform(scrollYProgress, [0, 0.4, 0.6, 1], [0, -25, 0, 222]);
 
   return (
     <html lang="en">
