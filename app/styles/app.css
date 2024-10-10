@@ -211,7 +211,7 @@ aside .team-member-title {
 }
 aside p {
   font-family: "helvetica";
-  color: var(--soft-pebble);
+  color: black;
 }
 .close {
   border-color: #1e176a;
