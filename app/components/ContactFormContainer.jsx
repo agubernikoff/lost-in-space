@@ -5,7 +5,7 @@ import SVGButton from "./SVGButton";
 import SVGCorner from "./SVGCorner";
 import emailjs from "emailjs-com";
 
-function ContactFormContainer() {
+function ContactFormContainer({ homepage }) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -79,12 +79,11 @@ function ContactFormContainer() {
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, amount: 0.4 });
-  const { pathname } = useLocation();
 
   return (
     <div className="contact-form-container" ref={ref}>
-      {pathname !== "/contact" && <p>CONTACT US</p>}
-      {pathname === "/contact" ? (
+      {homepage && <p>CONTACT US</p>}
+      {!homepage ? (
         <h2>
           <div style={{ overflow: "hidden" }}>
             <span

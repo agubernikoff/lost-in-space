@@ -36,7 +36,7 @@ export default function Index() {
       {/* <VideoOnScroll /> */}
       {/* <ServicesContainer /> */}
       {/* <TeamContainer /> */}
-      <ContactFormContainer />
+      <ContactFormContainer homepage={true} />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import ContactFormContainer from "../components/ContactFormContainer";
 
 function contact() {
-  return <ContactFormContainer />;
+  return <ContactFormContainer homepage={false} />;
 }
 
 export default contact;
