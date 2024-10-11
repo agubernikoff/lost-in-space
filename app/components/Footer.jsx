@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import StaticLogo from "./StaticLogo";
+import { NavLink } from "@remix-run/react";
 
 function Footer() {
   const [isMobile, setIsMobile] = useState(false);
@@ -48,19 +49,19 @@ function Footer() {
                 <p>NAVIGATION</p>
                 <ul>
                   <li>
-                    <a href="/">Home</a>
+                    <NavLink to="/">Home</NavLink>
                   </li>
                   <li>
-                    <a href="/services">Services</a>
+                    <NavLink to="/services">Services</NavLink>
                   </li>
                   <li>
-                    <a href="/about">About</a>
+                    <NavLink to="/about">About</NavLink>
                   </li>
                   <li>
-                    <a href="/team">Team</a>
+                    <NavLink to="/team">Team</NavLink>
                   </li>
                   <li>
-                    <a href="/contact">Contact</a>
+                    <NavLink to="/contact">Contact</NavLink>
                   </li>
                 </ul>
               </div>
