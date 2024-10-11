@@ -335,11 +335,13 @@ function TeamMemberMobile({ member }) {
             }}
           >
             <button
-              className="close"
+              className="toggle-button"
               onClick={handleFlip}
               style={{
                 position: "static",
                 float: "right",
+                marginBottom: ".5rem",
+                marginLeft: ".5rem",
               }}
             >
               <svg
