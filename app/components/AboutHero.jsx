@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { inView, motion } from "framer-motion";
+import { inView, motion, useInView } from "framer-motion";
 import SVGButton from "./SVGButton";
 import SVGCorner from "./SVGCorner";
 
@@ -41,14 +41,14 @@ function AboutHero() {
   };
 
   const dynamicDelay = {
-    initial: { opacity: 0, y: "100%" },
+    initial: { opacity: 0, y: 100 },
     whileInView: (custom) => ({
       opacity: 1,
       y: 0,
       transition: {
         ease: "easeInOut",
         duration: 0.4,
-        delay: inViewIDs.find((id) => id.id === custom).initial
+        delay: inViewIDs.find((id) => id.id === custom)?.initial
           ? 0.4 + 0.4 * custom
           : 0,
       },
@@ -72,6 +72,10 @@ function AboutHero() {
           { id: info.target.id, initial: false },
         ]);
   });
+
+  const ref1 = useRef(null);
+  const isInView1 = useInView(ref1);
+  console.log(isInView1);
 
   return (
     <div className="about-hero-container">
@@ -111,14 +115,15 @@ function AboutHero() {
         </motion.div>
       </div>
 
-      <hr className="footer-divider" />
+      <hr className="footer-divider" ref={ref1} />
 
       <div className="mission-section">
         {inViewIDs.find((id) => id.id === "1") && (
           <motion.div
             className="mission-content"
             initial="initial"
-            whileInView="whileInView"
+            animate="whileInView"
+            // whileInView="whileInView"
             viewport={{ once: true }}
             variants={dynamicDelay}
             transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -149,7 +154,7 @@ function AboutHero() {
           <motion.div
             className="mission-content"
             initial="initial"
-            whileInView="whileInView"
+            animate="whileInView"
             viewport={{ once: true }}
             variants={dynamicDelay}
             transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -180,7 +185,7 @@ function AboutHero() {
           <motion.div
             className="mission-content"
             initial="initial"
-            whileInView="whileInView"
+            animate="whileInView"
             viewport={{ once: true }}
             variants={dynamicDelay}
             transition={{ duration: 0.4, ease: "easeInOut" }}
