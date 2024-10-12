@@ -8,6 +8,7 @@ import {
   useOutlet,
   json,
   useLoaderData,
+  useMatches,
 } from "@remix-run/react";
 import {
   AnimatePresence,
@@ -22,14 +23,26 @@ import { getSession, commitSession, destroySession } from "./sessions";
 import { useEffect, useState, useRef } from "react";
 import Loading from "./components/Loading";
 import Modal from "./components/Modal";
+import { client } from "./sanity/SanityClient";
 
 export function links() {
   return [{ rel: "stylesheet", href: appStyles }];
 }
 
+export const useRootLoaderData = () => {
+  const [root] = useMatches();
+  return root?.data;
+};
+
 export async function loader({ request }) {
   const session = await getSession(request.headers.get("cookie"));
-  const data = { ran: session.get("ran") };
+
+  const clients = await client
+    .fetch("*[_type == 'client']|order(rank asc)")
+    .then((response) => response);
+
+  const data = { ran: session.get("ran"), clients };
+
   return json(data);
   return json(data, {
     headers: {

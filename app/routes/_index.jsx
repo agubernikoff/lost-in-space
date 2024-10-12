@@ -9,6 +9,8 @@ import ServicesContainer from "../components/ServicesContainer";
 import TeamContainer from "../components/TeamContainer";
 import ContactFormContainer from "../components/ContactFormContainer";
 import React, { useState, useEffect } from "react";
+import { useLoaderData } from "react-router";
+import { useRootLoaderData } from "../root";
 // import Spline from "@splinetool/react-spline";
 
 export const meta = () => {
@@ -67,6 +69,8 @@ function HomepageHeader() {
     }),
     initial: { opacity: 0, y: "100%" },
   };
+
+  console.log(useRootLoaderData());
 
   return (
     <div className="home-header">
