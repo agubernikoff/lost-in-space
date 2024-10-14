@@ -1591,7 +1591,7 @@ footer {
     width: 100% !important;
     margin-left: 0 !important;
     margin-bottom: 2rem !important;
-    font-size: calc(var(--home-header) * 0.9);
+    font-size: calc(var(--home-header) * 0.88);
   }
   .about-hero-container .home-header div {
     transform: none !important;
