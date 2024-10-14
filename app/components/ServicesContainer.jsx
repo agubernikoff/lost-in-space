@@ -160,7 +160,11 @@ function ServicesContainer() {
 
               <motion.div
                 initial={{ opacity: 0, x: 100 }}
-                whileInView={{ opacity: 1, x: 0, transition: { delay: 0 } }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                  transition: { delay: 0, duration: 0.4, ease: "easeInOut" },
+                }}
                 viewport={{ once: true }}
                 exit={{
                   opacity: 0,
@@ -184,7 +188,11 @@ function ServicesContainer() {
 
               <motion.div
                 initial={{ opacity: 0, x: -100 }}
-                whileInView={{ opacity: 1, x: 0, transition: { delay: 0 } }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                  transition: { delay: 0.4, duration: 0.4, ease: "easeInOut" },
+                }}
                 viewport={{ once: true }}
                 transition={{ delay: 1.8, duration: 0.4, ease: "easeInOut" }}
               >
