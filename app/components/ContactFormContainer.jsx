@@ -101,7 +101,7 @@ function ContactFormContainer({ homepage }) {
               className="motion-span"
               style={{
                 transform: inView ? "none" : "translateY(100%)",
-                transition: "all .4s ease .5s",
+                transition: "all .4s ease .8s",
               }}
             >
               INQUIRIES, USE THIS FORM
