@@ -1553,6 +1553,14 @@ footer {
   font-family: "dm mono";
 }
 
+.about-hero-container .home-header {
+  width: 50%;
+  margin-left: auto !important;
+  text-align: left;
+  font-size: 4vw;
+  margin-top: 1rem;
+}
+
 @media (max-width: 990px) {
   .about-header {
     text-align: left;
@@ -1583,12 +1591,10 @@ footer {
     width: 100% !important;
     margin-left: 0 !important;
     margin-bottom: 2rem !important;
+    font-size: calc(var(--home-header) * 0.9);
   }
   .about-hero-container .home-header div {
     transform: none !important;
-  }
-  .home-header .text-wrapper {
-    font-size: 3.75rem;
   }
   .home-header {
     margin-bottom: 3rem !important;
@@ -1613,14 +1619,6 @@ footer {
   .crafting-div > p {
     line-height: 1.7rem;
   }
-}
-
-.about-hero-container .home-header {
-  width: 50%;
-  margin-left: auto !important;
-  text-align: left;
-  font-size: 4rem;
-  margin-top: 1rem;
 }
 
 .mission-section {
