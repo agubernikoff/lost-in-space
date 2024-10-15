@@ -26,7 +26,7 @@ export async function action({ request }) {
 
 function team() {
   const { teamMembers, teamPage } = useLoaderData();
-  console.log(teamMembers[0]);
+
   return (
     <div>
       <TeamHero data={teamPage} />
