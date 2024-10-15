@@ -1241,6 +1241,7 @@ footer {
 .footer-follow li > a {
   color: var(--white);
   text-decoration: none;
+  cursor: pointer;
 }
 .footer-nav li > a:hover,
 .footer-follow li > a:hover {

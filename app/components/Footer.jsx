@@ -4,7 +4,7 @@ import StaticLogo from "./StaticLogo";
 import { Links, NavLink } from "@remix-run/react";
 
 function Footer({ links }) {
-  console.log(links);
+  console.log(links.linkedin);
   const [isMobile, setIsMobile] = useState(false);
   const location = useLocation();
 
@@ -71,7 +71,7 @@ function Footer({ links }) {
                 <ul>
                   <li>
                     <a
-                      href="https://instagram.com"
+                      href={links.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -84,12 +84,12 @@ function Footer({ links }) {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Linkedin
+                      Linked In
                     </a>
                   </li>
                   <li>
                     <a
-                      href="https://twitter.com"
+                      href={links.twitter}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -98,7 +98,7 @@ function Footer({ links }) {
                   </li>
                   <li>
                     <a
-                      href="https://youtube.com"
+                      href={links.youtube}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -161,7 +161,7 @@ function Footer({ links }) {
                 <ul>
                   <li>
                     <a
-                      href="https://instagram.com"
+                      href={links.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -170,16 +170,16 @@ function Footer({ links }) {
                   </li>
                   <li>
                     <a
-                      href="https://linkedin.com"
+                      href={links.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Linkedin
+                      Linked In
                     </a>
                   </li>
                   <li>
                     <a
-                      href="https://twitter.com"
+                      href={links.twitter}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -188,7 +188,7 @@ function Footer({ links }) {
                   </li>
                   <li>
                     <a
-                      href="https://youtube.com"
+                      href={links.youtube}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
