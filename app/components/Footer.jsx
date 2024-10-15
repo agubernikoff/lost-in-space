@@ -4,7 +4,6 @@ import StaticLogo from "./StaticLogo";
 import { Links, NavLink } from "@remix-run/react";
 
 function Footer({ links }) {
-  console.log(links.linkedin);
   const [isMobile, setIsMobile] = useState(false);
   const location = useLocation();
 
