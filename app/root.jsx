@@ -41,17 +41,32 @@ export async function loader({ request }) {
     .fetch("*[_type == 'client']{...,image{asset->{url}}}|order(rank asc)")
     .then((response) => response);
 
+  const aboutPage = await client
+    .fetch("*[_type == 'aboutPage'][0]{...,image{asset->{url}}}")
+    .then((response) => response);
+
   const teamMembers = await client
     .fetch(
       "*[_type == 'teamMember']{...,image{asset->{url}}} | order(rank asc)"
     )
     .then((response) => response);
 
+  const teamPage = await client
+    .fetch("*[_type == 'teamPage'][0]{...,image{asset->{url}}}")
+    .then((response) => response);
+
   const socialLinks = await client
     .fetch("*[_type == 'socialLinks'][0]")
     .then((response) => response);
 
-  const data = { ran: session.get("ran"), clients, teamMembers, socialLinks };
+  const data = {
+    ran: session.get("ran"),
+    clients,
+    aboutPage,
+    teamMembers,
+    teamPage,
+    socialLinks,
+  };
 
   return json(data);
   return json(data, {

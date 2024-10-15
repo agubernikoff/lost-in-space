@@ -1,16 +1,18 @@
 import React from "react";
 import AboutHero from "../components/AboutHero";
 import AboutHero2 from "../components/AboutHero2";
-import placeholder from "../assets/images/about.png";
+import { useRootLoaderData } from "../root";
 
 function about() {
+  const { aboutPage } = useRootLoaderData();
+
   return (
     <div>
       <AboutHero />
       <div className="about-hero-image-container">
-        <img className="about-hero-image" src={placeholder} />
+        <img className="about-hero-image" src={aboutPage?.image.asset.url} />
       </div>
-      <AboutHero2 />
+      <AboutHero2 bullets={aboutPage?.aboutBulletsBottomSection} />
     </div>
   );
 }
