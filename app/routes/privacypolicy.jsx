@@ -1,5 +1,12 @@
 import React from "react";
 
+export const meta = () => {
+  return [
+    { title: "Lost in Space" },
+    { name: "description", content: "Lost in Space" },
+  ];
+};
+
 function PrivacyPolicy() {
   return (
     <div

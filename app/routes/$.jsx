@@ -2,6 +2,13 @@ import React, { useEffect } from "react";
 import movie from "../assets/images/404.mp4";
 import SVGButton from "../components/SVGButton";
 
+export const meta = () => {
+  return [
+    { title: "Lost in Space" },
+    { name: "description", content: "Lost in Space" },
+  ];
+};
+
 function BackgroundVideo() {
   useEffect(() => {
     window.scrollTo(0, 0);

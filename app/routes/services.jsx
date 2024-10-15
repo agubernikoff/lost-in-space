@@ -4,6 +4,13 @@ import ServicesHero from "../components/ServicesHero";
 import ServicesGoals from "../components/ServicesGoals";
 import { useRootLoaderData } from "../root";
 
+export const meta = () => {
+  return [
+    { title: "Lost in Space" },
+    { name: "description", content: "Lost in Space" },
+  ];
+};
+
 function services() {
   const { servicesPage } = useRootLoaderData();
 

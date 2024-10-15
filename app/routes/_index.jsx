@@ -15,8 +15,8 @@ import { useRootLoaderData } from "../root";
 
 export const meta = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "Lost in Space" },
+    { name: "description", content: "Lost in Space" },
   ];
 };
 

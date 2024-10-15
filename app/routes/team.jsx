@@ -4,6 +4,13 @@ import TeamHero from "../components/TeamHero";
 import JoinTheTeam from "../components/JoinTheTeam";
 import { useRootLoaderData } from "../root";
 
+export const meta = () => {
+  return [
+    { title: "Lost in Space" },
+    { name: "description", content: "Lost in Space" },
+  ];
+};
+
 function team() {
   const { teamPage, teamMembers } = useRootLoaderData();
 

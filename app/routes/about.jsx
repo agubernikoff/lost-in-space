@@ -3,6 +3,13 @@ import AboutHero from "../components/AboutHero";
 import AboutHero2 from "../components/AboutHero2";
 import { useRootLoaderData } from "../root";
 
+export const meta = () => {
+  return [
+    { title: "Lost in Space" },
+    { name: "description", content: "Lost in Space" },
+  ];
+};
+
 function about() {
   const { aboutPage } = useRootLoaderData();
   console.log(aboutPage);
