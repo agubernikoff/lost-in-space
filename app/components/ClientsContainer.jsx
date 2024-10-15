@@ -1,11 +1,8 @@
 import { animate, AnimatePresence, motion, useInView } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
-import smoothScroll from "../helpers/SmoothScroll";
 import SVGCorner from "./SVGCorner";
-import p1 from "../assets/images/placeholder1.png";
-import p2 from "../assets/images/placeholder2.png";
 
-function ClientsContainer() {
+function ClientsContainer({ clients }) {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     window
@@ -16,34 +13,7 @@ function ClientsContainer() {
 
   const [cardDisplayed, setCardDisplayed] = useState(0);
 
-  const data = [
-    {
-      title: "A SEAMLESS COLLABORATION WITH OUTSTANDING RESULTS",
-      img: p1,
-      company: "lacoste",
-      year: 2024,
-    },
-    {
-      title: "BRINGING MAGIC TO EVERY PROJECT",
-      img: p2,
-      company: "disney",
-      year: 2024,
-    },
-    {
-      title: "A SEAMLESS COLLABORATION WITH OUTSTANDING RESULTS",
-      img: p1,
-      company: "lacoste",
-      year: 2024,
-    },
-    {
-      title: "BRINGING MAGIC TO EVERY PROJECT",
-      img: p2,
-      company: "disney",
-      year: 2024,
-    },
-  ];
-
-  const mappedCards = data.map((d, index) => (
+  const mappedCards = clients?.map((d, index) => (
     <ClientCard key={index} data={d} />
   ));
 
@@ -55,7 +25,7 @@ function ClientsContainer() {
   const arrowButton = useRef(null);
 
   function slideRight() {
-    const opacityUnitOfChange = 90 / data.length;
+    const opacityUnitOfChange = 90 / clients.length;
     const opacity = (100 - opacityUnitOfChange * (cardDisplayed - 1)) / 100;
     setCardDisplayed(cardDisplayed - 1);
     animate(
@@ -75,7 +45,7 @@ function ClientsContainer() {
   }
 
   function slideLeft() {
-    const opacityUnitOfChange = 90 / data.length;
+    const opacityUnitOfChange = 90 / clients.length;
     const opacity = (100 - opacityUnitOfChange * (cardDisplayed + 1)) / 100;
     setCardDisplayed(cardDisplayed + 1);
     animate(
@@ -187,8 +157,8 @@ function ClientsContainer() {
           onClick={slideLeft}
           disabled={
             !isMobile
-              ? cardDisplayed === data.length
-              : cardDisplayed === data.length - 1
+              ? cardDisplayed === clients.length
+              : cardDisplayed === clients.length - 1
           }
           ref={arrowButton}
         >
@@ -202,12 +172,12 @@ function ClientsContainer() {
 function ClientCard({ data }) {
   return (
     <div className="client-card">
-      <img src={data.img} />
+      <img src={data.image.asset.url} />
       {/* <div>
           <span>{data.company}</span>
           <span>{data.year}</span>
         </div> */}
-      <p>{data.title}</p>
+      <p>{data.name}</p>
     </div>
   );
 }

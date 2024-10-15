@@ -28,13 +28,15 @@ export async function loader({ request }) {
 }
 
 export default function Index() {
+  const { clients } = useRootLoaderData();
+
   return (
     <div className="homepage">
       {/* <Spline scene="https://prod.spline.design/PI54LbI34K7c1YvZ/scene.splinecode" /> */}
       <HomepageHeader />
       <Buttons />
       <HeroContainer />
-      <ClientsContainer />
+      <ClientsContainer clients={clients} />
       {/* <VideoOnScroll /> */}
       {/* <ServicesContainer /> */}
       {/* <TeamContainer /> */}
@@ -69,8 +71,6 @@ function HomepageHeader() {
     }),
     initial: { opacity: 0, y: "100%" },
   };
-
-  console.log(useRootLoaderData());
 
   return (
     <div className="home-header">
