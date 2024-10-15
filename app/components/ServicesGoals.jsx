@@ -8,9 +8,25 @@ import hat from "../assets/images/hat.png";
 import settings from "../assets/images/settings.png";
 import chart from "../assets/images/chart.png";
 
-function ServicesGoals() {
+function ServicesGoals({ squares }) {
   const text = useRef(null);
   const inView = useInView(text, { once: true, amount: 0.25 });
+  function findIcon(index) {
+    switch (index) {
+      case 0:
+        return settings;
+      case 1:
+        return chart;
+      case 2:
+        return warning;
+      case 3:
+        return shape;
+      case 4:
+        return shape2;
+      case 5:
+        return hat;
+    }
+  }
   const content = [
     {
       title: "Streamlined Project Workflows",
@@ -120,7 +136,7 @@ function ServicesGoals() {
         />
       </motion.div>
       <div className="goals-grid">
-        {content.map((item, index) => (
+        {squares.map((item, index) => (
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -130,7 +146,7 @@ function ServicesGoals() {
             className="goal-item"
           >
             <div className="grey-box">
-              <img src={item.icon} alt="icon" />
+              <img src={findIcon(index)} alt="icon" />
             </div>
             <h3 className="goal-title">{item.title}</h3>
             <p className="goal-description">{item.description}</p>

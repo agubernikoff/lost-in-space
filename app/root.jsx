@@ -41,6 +41,12 @@ export async function loader({ request }) {
     .fetch("*[_type == 'client']{...,image{asset->{url}}}|order(rank asc)")
     .then((response) => response);
 
+  const servicesPage = await client
+    .fetch(
+      "*[_type == 'servicesPage'][0]{...,services[]{...,image{asset->{url}}}}"
+    )
+    .then((response) => response);
+
   const aboutPage = await client
     .fetch("*[_type == 'aboutPage'][0]{...,image{asset->{url}}}")
     .then((response) => response);
@@ -62,6 +68,7 @@ export async function loader({ request }) {
   const data = {
     ran: session.get("ran"),
     clients,
+    servicesPage,
     aboutPage,
     teamMembers,
     teamPage,
