@@ -25,6 +25,14 @@ import Loading from "./components/Loading";
 import Modal from "./components/Modal";
 import { client } from "./sanity/SanityClient";
 
+export const meta = () => {
+  return [
+    { title: "Lost in Space" },
+    { name: "description", content: "Lost in Space" },
+    { rel: "icon", type: "image/png", href: "/favicon.ico", sizes: "32x32" },
+  ];
+};
+
 export function links() {
   return [{ rel: "stylesheet", href: appStyles }];
 }
