@@ -38,7 +38,7 @@ export async function loader({ request }) {
   const session = await getSession(request.headers.get("cookie"));
 
   const clients = await client
-    .fetch("*[_type == 'client']|order(rank asc)")
+    .fetch("*[_type == 'client']{...,image{asset->{url}}}|order(rank asc)")
     .then((response) => response);
 
   const teamMembers = await client
@@ -47,7 +47,11 @@ export async function loader({ request }) {
     )
     .then((response) => response);
 
-  const data = { ran: session.get("ran"), clients, teamMembers };
+  const socialLinks = await client
+    .fetch("*[_type == 'socialLinks'][0]")
+    .then((response) => response);
+
+  const data = { ran: session.get("ran"), clients, teamMembers, socialLinks };
 
   return json(data);
   return json(data, {
@@ -190,7 +194,7 @@ export default function App() {
             )}
           </motion.main>
         </AnimatePresence>
-        {runAnimation ? null : <Footer />}
+        {runAnimation ? null : <Footer links={data?.socialLinks} />}
         <ScrollRestoration />
         <Scripts />
       </body>

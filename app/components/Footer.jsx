@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import StaticLogo from "./StaticLogo";
-import { NavLink } from "@remix-run/react";
+import { Links, NavLink } from "@remix-run/react";
 
-function Footer() {
+function Footer({ links }) {
+  console.log(links);
   const [isMobile, setIsMobile] = useState(false);
   const location = useLocation();
 
@@ -79,7 +80,7 @@ function Footer() {
                   </li>
                   <li>
                     <a
-                      href="https://linkedin.com"
+                      href={links.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
