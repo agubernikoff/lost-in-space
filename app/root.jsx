@@ -41,7 +41,13 @@ export async function loader({ request }) {
     .fetch("*[_type == 'client']|order(rank asc)")
     .then((response) => response);
 
-  const data = { ran: session.get("ran"), clients };
+  const teamMembers = await client
+    .fetch(
+      "*[_type == 'teamMember']{...,image{asset->{url}}} | order(rank asc)"
+    )
+    .then((response) => response);
+
+  const data = { ran: session.get("ran"), clients, teamMembers };
 
   return json(data);
   return json(data, {
