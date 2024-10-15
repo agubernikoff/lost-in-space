@@ -7,10 +7,16 @@ import { useLoaderData } from "@remix-run/react";
 
 export async function loader() {
   const teamMembers = await client
-    .fetch("*[_type == 'teamMember']|order(rank asc)")
+    .fetch(
+      "*[_type == 'teamMember']{...,image{asset->{url}}} | order(rank asc)"
+    )
     .then((response) => response);
 
-  return teamMembers;
+  const teamPage = await client
+    .fetch("*[_type == 'teamPage'][0]{...,image{asset->{url}}}")
+    .then((response) => response);
+
+  return { teamMembers, teamPage };
 }
 
 export async function action({ request }) {
@@ -19,13 +25,13 @@ export async function action({ request }) {
 }
 
 function team() {
-  const data = useLoaderData();
-  console.log(data);
+  const { teamMembers, teamPage } = useLoaderData();
+  console.log(teamMembers[0]);
   return (
     <div>
-      <TeamHero />
-      <TeamContainer />
-      {/* <JoinTheTeam /> */}
+      <TeamHero data={teamPage} />
+      <TeamContainer teamMembers={teamMembers} />
+      {teamPage?.hiring ? <JoinTheTeam /> : null}
     </div>
   );
 }

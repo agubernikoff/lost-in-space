@@ -10,8 +10,9 @@ import gusImage from "../assets/images/gus.png";
 import nawImage from "../assets/images/naw.png";
 import spaceImage from "../assets/images/spaceman.png";
 import { useNavigate } from "@remix-run/react";
+import { PortableText } from "@portabletext/react";
 
-function TeamContainer() {
+function TeamContainer({ teamMembers }) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -28,67 +29,6 @@ function TeamContainer() {
   const carousel = useRef(null);
 
   const [cardDisplayed, setCardDisplayed] = useState(1);
-
-  const teamMembers = [
-    {
-      image: caroImage,
-      name: "Carolyn LaVeglia",
-      title: "CEO & Co-Founder",
-      bio1: "",
-      bio2: "",
-    },
-    {
-      image: alexImage,
-      name: "Alexander Santoro",
-      title: "CEO & Co-Founder",
-      bio1: "Carolyn LaVeglia is the CEO and co-founder of Lost in Space. Since starting her career at RadicalMedia, she has worked as a producer across documentary films and unscripted television series for clients such as Apple TV+, Netflix, Hulu, ESPN and MSNBC. Carolyn has also worked on live television events like Miley’s New Years Eve Party - as well as events, immersive experiences, and content for brands like Target and American Express. In 2024, she became an Emmy Award Winning Post-Producer for her work on Super League: The War for Football. She has a passion for bringing stories to life in different ways and strives to understand every part of the process. Owning this business is her dream come true. Carolyn is a Queens native, knows how to read tarot cards, and has a picture of pasta as her email background.",
-      bio2: "",
-    },
-
-    {
-      image: artieImage,
-      name: "Artie Dossick",
-      title: "Co-Producer",
-      bio1: "Artie Dossick is a Los Angeles native and graduate of Syracuse University, where he majored in Communications and Film Studies. During his time at Syracuse, he held internships at Sony Pictures and Viacom, both in Production Management. After graduation, Artie started his career in the mailroom at Entertainment 360, a talent management and production company based in Beverly Hills. He was promoted and worked for the Managing Partner in the Literary Division.",
-      bio2: "During Covid, Artie moved to New York to pursue a career in documentary filmmaking and worked at RadicalMedia as a coordinator for two Executive Producers that specialized in immersive experiences and documentary production. Artie has taken his learnings from his vast experience across development, production and post-production; he is currently a Co-Producer at Lost in Space. During his free time, he enjoys hanging out with friends, going to the beach, watching sports, and playing pickle ball.",
-    },
-    {
-      image: monishaImage,
-      name: "Monisha Roychoudhury",
-      title: "Associate Producer",
-      bio1: "Monisha Roychoudhury is a filmmaker and producer born and raised in New York City (Queens get the money!). She recently received her MFA in Film Directing from the Feirstein Graduate School of Cinema and graduated with a BS from the University of Illinois at Urbana-Champaign in Human Development and Family Studies. This intersection of seemingly disparate interests - filmmaking and child development / sociology - has made her very passionate about telling person-centered stories from unique and genuine perspectives.",
-      bio2: "Monisha has worked as a producer at Cape Town TV (a community-based television station based in Cape Town, South Africa), as an editor of instructional videos for AGCOCorp, and directed / produced numerous independent short films. She is currently an Associate Producer at Lost in Space and it’s her favorite job to date (and she’s not just saying that!) She loves watching TV (of course), going to concerts, and playing Stardew Valley in her free time.",
-    },
-    {
-      image: elfImage,
-      name: "Efrain Rivera",
-      title: "Post Production Liaison",
-      bio1: "",
-      bio2: "",
-    },
-    {
-      image: gusImage,
-      name: "Giuseppe de Matteis",
-      title: "Assistant Editor",
-      bio1: "Giuseppe de Matteis is an Assistant Engineer at Lost in Space. Mainly, helping the company with media management and providing technical support for their clients. Currently, Giuseppe graduated from the Fierstein School of Cinema with a concentration in film editing. Throughout the course of his school, he has worked on multiple student and professional projects but lately as a DIT and assistant editor. When he’s not going to school or work, he enjoys going out with his friends, going to the movies, watching video essays on Youtube on random subjects, and playing League of Legends.",
-      bio2: "",
-    },
-    {
-      image: nawImage,
-      name: "Nawal Mubin",
-      title: "Post Coordinator",
-      bio1: "Nawal Mubin is a filmmaker and producer. She graduated The College of New Jersey in 2019 where she studied Communications and Pre-Law and decided her goal was to become an Entertainment Lawyer. After working in a law firm for a couple years, Nawal quit right before COVID. As she sat at home during lockdown she had a eureka moment where she realized the part she loved the most about being an Entertainment Lawyer, was the entertainment part.",
-      bio2: "In Spring 2023, Nawal received her MFA in Producing at Feirstein Graduate School of Cinema. She has worked as a Development and Production intern at FilmNation, a producer for numerous short films, and is currently a social media coordinator for a non-profit organization.",
-      bio3: "Nawal joined the team at Lost in Space in Summer 2023 as a Post Coordinator. In her free time, she continues to work as a freelance producer, spends way too much time on TikTok, and continues to write stories that uplift and represent her communities.",
-    },
-    {
-      image: spaceImage,
-      name: "Next Space Cadet",
-      title: "This Could Be You",
-      bio1: "",
-      bio2: "",
-    },
-  ];
 
   function splitArray(arr, chunkSize = 4) {
     const result = [];
@@ -275,7 +215,7 @@ function TeamMember({ member }) {
   return (
     <div className="team-member">
       <div className="image-container">
-        <img src={member.image} alt={member.name} />
+        <img src={member.image.asset.url} alt={member.name} />
         <div
           className="toggle-button"
           onClick={() => {
@@ -286,7 +226,7 @@ function TeamMember({ member }) {
         </div>
       </div>
       <div className="team-member-name">{member.name}</div>
-      <div className="team-member-title">{member.title.toUpperCase()}</div>
+      <div className="team-member-title">{member.position.toUpperCase()}</div>
     </div>
   );
 }
@@ -357,22 +297,20 @@ function TeamMemberMobile({ member }) {
                 />
               </svg>
             </button>
-            <p>{member.bio1}</p>
-            <p>{member.bio2}</p>
-            <p>{member.bio3}</p>
+            <PortableText value={member.bio} />
           </div>
         ) : (
           // Show image, name, and position when not flipped
           <>
             <div className="image-container">
-              <img src={member.image} alt={member.name} />
+              <img src={member.image.asset.url} alt={member.name} />
               <div className="toggle-button" onClick={handleFlip}>
                 +
               </div>
             </div>
             <div className="team-member-name">{member.name}</div>
             <div className="team-member-title">
-              {member.title.toUpperCase()}
+              {member.position.toUpperCase()}
             </div>
           </>
         )}

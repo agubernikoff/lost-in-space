@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import team from "../assets/images/team.png";
 
-export default function TeamPage() {
+export default function TeamPage({ data }) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -28,6 +28,7 @@ export default function TeamPage() {
     }),
     initial: { opacity: 0, y: "100%" },
   };
+
   return (
     <div className="team-hero-container">
       <div className="home-header">
@@ -99,7 +100,7 @@ export default function TeamPage() {
         </motion.div>
       </div>
       <motion.img
-        src={team}
+        src={data?.image?.asset?.url}
         alt="The team at Lost In Space"
         className="team-hero"
         initial={{ opacity: 0, y: 200 }}
