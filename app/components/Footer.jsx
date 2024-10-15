@@ -68,42 +68,50 @@ function Footer({ links }) {
               <div className="footer-follow">
                 <p>FOLLOW US</p>
                 <ul>
-                  <li>
-                    <a
-                      href={links.instagram}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Instagram
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={links.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Linked In
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={links.twitter}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Twitter
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={links.youtube}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Youtube
-                    </a>
-                  </li>
+                  {links.instagram && (
+                    <li>
+                      <a
+                        href={links.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Instagram
+                      </a>
+                    </li>
+                  )}
+                  {links.linkedin && (
+                    <li>
+                      <a
+                        href={links.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        LinkedIn
+                      </a>
+                    </li>
+                  )}
+                  {links.twitter && (
+                    <li>
+                      <a
+                        href={links.twitter}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Twitter
+                      </a>
+                    </li>
+                  )}
+                  {links.youtube && (
+                    <li>
+                      <a
+                        href={links.youtube}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Youtube
+                      </a>
+                    </li>
+                  )}
                 </ul>
               </div>
             </div>
@@ -158,42 +166,50 @@ function Footer({ links }) {
               <div className="footer-follow">
                 <p>FOLLOW US</p>
                 <ul>
-                  <li>
-                    <a
-                      href={links.instagram}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Instagram
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={links.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Linked In
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={links.twitter}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Twitter
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={links.youtube}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Youtube
-                    </a>
-                  </li>
+                  {links.instagram && links.instagram.length > 0 && (
+                    <li>
+                      <a
+                        href={links.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Instagram
+                      </a>
+                    </li>
+                  )}
+                  {links.linkedin && links.linkedin.length > 0 && (
+                    <li>
+                      <a
+                        href={links.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        LinkedIn
+                      </a>
+                    </li>
+                  )}
+                  {links.twitter && links.twitter.length > 0 && (
+                    <li>
+                      <a
+                        href={links.twitter}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Twitter
+                      </a>
+                    </li>
+                  )}
+                  {links.youtube && links.youtube.length > 0 && (
+                    <li>
+                      <a
+                        href={links.youtube}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Youtube
+                      </a>
+                    </li>
+                  )}
                 </ul>
               </div>
             </div>
