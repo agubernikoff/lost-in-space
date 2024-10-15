@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import SVGButton from "./SVGButton";
 import SVGCorner from "./SVGCorner";
 
-function AboutHero() {
+function AboutHero({ bullets }) {
   const timeDiv = useRef(null);
   const [offsets, setOffsets] = useState({
     offset: "0px",
@@ -39,6 +39,33 @@ function AboutHero() {
     if (window.matchMedia("(max-width:990px)").matches) setIsMobile(true);
   }, []);
 
+  const mappedBullets = bullets.map((b, i) => (
+    <div key={b.title}>
+      <hr className="footer-divider" />
+
+      <div className="mission-section">
+        <motion.div
+          className="mission-content"
+          initial={{ opacity: 0, y: "100%" }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+        >
+          <span className="mission-number">{`0${i + 1}`}</span>
+          <div
+            className="mission-text"
+            style={{
+              transform: offsets.offset2,
+            }}
+          >
+            <h2>{b.title}</h2>
+            <p>{b.description}</p>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  ));
+
   return (
     <div className="about-hero-container">
       {isMobile ? <SVGCorner /> : null}
@@ -72,109 +99,8 @@ function AboutHero() {
         </motion.div>
       </div>
 
-      <hr className="footer-divider" />
+      {mappedBullets}
 
-      <div className="mission-section">
-        <motion.div
-          className="mission-content"
-          initial={{ opacity: 0, y: "100%" }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
-        >
-          <span className="mission-number">01</span>
-          <div
-            className="mission-text"
-            style={{
-              transform: offsets.offset2,
-            }}
-          >
-            <h2>INNOVATION</h2>
-            <p>
-              Embracing cutting-edge technology and creative solutions to stay
-              ahead in the post-production industry.
-            </p>
-          </div>
-        </motion.div>
-      </div>
-
-      <hr className="footer-divider" />
-
-      <div className="mission-section">
-        <motion.div
-          className="mission-content"
-          initial={{ opacity: 0, y: "100%" }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
-        >
-          <span className="mission-number">02</span>
-          <div
-            className="mission-text"
-            style={{
-              transform: offsets.offset2,
-            }}
-          >
-            <h2>QUALITY</h2>
-            <p>
-              Delivering top-notch post-production services that meet the
-              highest industry standards.
-            </p>
-          </div>
-        </motion.div>
-      </div>
-
-      <hr className="footer-divider" />
-
-      <div className="mission-section">
-        <motion.div
-          className="mission-content"
-          initial={{ opacity: 0, y: "100%" }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
-        >
-          <span className="mission-number">03</span>
-          <div
-            className="mission-text"
-            style={{
-              transform: offsets.offset2,
-            }}
-          >
-            <h2>CUSTOMER CENTRICITY</h2>
-            <p>
-              Prioritizing the needs and preferences of our clients to provide a
-              personalized experience.
-            </p>
-          </div>
-        </motion.div>
-      </div>
-
-      <hr className="footer-divider" />
-
-      <div className="mission-section">
-        <motion.div
-          className="mission-content"
-          initial={{ opacity: 0, y: "100%" }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
-        >
-          <span className="mission-number">04</span>
-          <div
-            className="mission-text"
-            style={{
-              transform: offsets.offset2,
-            }}
-          >
-            <h2>INCLUSIVITY</h2>
-            <p>
-              Supporting a diverse range of creatives, we offer inclusive
-              services for all project sizes.
-            </p>
-          </div>
-        </motion.div>
-      </div>
       <hr className="footer-divider" />
       <SVGButton
         text={"Contact Us"}

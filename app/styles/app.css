@@ -1552,6 +1552,9 @@ footer {
   text-align: center;
   color: white;
   font-family: "dm mono";
+  transform: translateX(50%);
+  width: fit-content;
+  margin: auto;
 }
 
 .about-hero-container .home-header {
@@ -1560,6 +1563,7 @@ footer {
   text-align: left;
   font-size: 4vw;
   margin-top: 1rem;
+  transform: translateX(1rem);
 }
 
 @media (max-width: 990px) {

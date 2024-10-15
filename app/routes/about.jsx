@@ -5,10 +5,10 @@ import { useRootLoaderData } from "../root";
 
 function about() {
   const { aboutPage } = useRootLoaderData();
-
+  console.log(aboutPage);
   return (
     <div>
-      <AboutHero />
+      <AboutHero bullets={aboutPage?.aboutBulletsTopSection} />
       <div className="about-hero-image-container">
         <img className="about-hero-image" src={aboutPage?.image.asset.url} />
       </div>
