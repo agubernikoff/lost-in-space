@@ -11,7 +11,6 @@ import ContactFormContainer from "../components/ContactFormContainer";
 import React, { useState, useEffect } from "react";
 import { useLoaderData } from "react-router";
 import { useRootLoaderData } from "../root";
-// import Spline from "@splinetool/react-spline";
 
 export const meta = () => {
   return [
@@ -32,7 +31,6 @@ export default function Index() {
 
   return (
     <div className="homepage">
-      {/* <Spline scene="https://prod.spline.design/PI54LbI34K7c1YvZ/scene.splinecode" /> */}
       <HomepageHeader />
       <Buttons />
       <HeroContainer />
