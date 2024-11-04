@@ -104,7 +104,7 @@ export async function action({ request }) {
   return json(data, {
     headers: {
       "Set-Cookie": await commitSession(session, {
-        domain: "lostinspace", // Omit this line
+        domain: "lostinspace.studio", // Omit this line
         path: "/",
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
