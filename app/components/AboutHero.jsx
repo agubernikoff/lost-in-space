@@ -72,7 +72,7 @@ function AboutHero({ bullets }) {
           >
             <span className="mission-number">{`0${i + 1}`}</span>
             <div className="mission-text">
-              <h2>{b.title}</h2>
+              <p className="mission-title">{b.title}</p>
               <p>{b.description}</p>
             </div>
           </motion.div>

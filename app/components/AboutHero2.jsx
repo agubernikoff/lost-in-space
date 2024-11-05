@@ -58,7 +58,7 @@ function AboutHero({ bullets }) {
               transform: offsets.offset2,
             }}
           >
-            <h2>{b.title}</h2>
+            <p className="mission-title">{b.title}</p>
             <p>{b.description}</p>
           </div>
         </motion.div>

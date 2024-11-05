@@ -1586,6 +1586,9 @@ footer {
     margin-left: 0 !important;
     padding-left: 0;
   }
+  .mission-title {
+    font-size: 1.75rem !important;
+  }
   .mission-text p {
     width: 100% !important;
   }
