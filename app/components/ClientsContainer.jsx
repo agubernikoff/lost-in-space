@@ -130,9 +130,13 @@ function ClientsContainer({ clients }) {
           style={{
             left: inView
               ? isMobile
-                ? "calc(var(--card-width) * 1.5 + 1.5rem)"
+                ? `calc(var(--card-width) * ${(clients.length - 1) * 0.5} + ${
+                    (clients.length - 1) * 0.5
+                  }rem)`
                 : "100%"
-              : "200%",
+              : `calc(var(--card-width) * ${clients.length - 1} + ${
+                  clients.length - 1
+                }rem)`,
             opacity: inView ? 1 : 0,
             transition: "left .4s ease 1.55s, opacity .4s ease 1.55s",
           }}

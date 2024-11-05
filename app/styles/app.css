@@ -1469,7 +1469,7 @@ footer {
   }
   .client-cards-carousel {
     position: relative;
-    left: 121%;
+    left: 1000%;
     gap: calc(var(--card-adjustment) - 2rem);
   }
   .clients-arrow-buttons-container {
