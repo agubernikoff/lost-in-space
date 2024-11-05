@@ -1588,7 +1588,7 @@ footer {
   }
   .mission-title {
     font-size: 1.75rem !important;
-    font-family: "agc-bold";
+    font-family: "agc-bold" !important;
   }
   .mission-text p {
     width: 100% !important;
