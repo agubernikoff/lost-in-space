@@ -1566,6 +1566,12 @@ footer {
   transform: translateX(1rem);
 }
 
+.mission-title {
+  font-size: 1.75rem !important;
+  font-family: "agc-bold" !important;
+  margin-top: 0 !important;
+}
+
 @media (max-width: 990px) {
   .about-header {
     text-align: left;
