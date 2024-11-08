@@ -739,7 +739,7 @@ aside p {
   box-sizing: border-box;
 }
 .client-card > img {
-  aspect-ratio: 1/1;
+  aspect-ratio: 1/1.4;
   width: 100%;
 }
 .client-card > p {
