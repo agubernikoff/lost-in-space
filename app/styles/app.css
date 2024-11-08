@@ -20,6 +20,9 @@
   need to research further*/
   /* --svg-fill: var(--charcoal) */
 }
+img {
+  object-fit: cover;
+}
 
 @font-face {
   font-family: "dunbar";
@@ -936,6 +939,7 @@ aside p {
 
 .services-right-section img {
   max-width: 100%;
+  aspect-ratio: 1/1;
 }
 
 .services-toggle-buttons {
