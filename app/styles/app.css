@@ -545,7 +545,7 @@ aside p {
 }
 .hero-container {
   height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
   margin-block: 1rem;
   position: relative;
   display: flex;
