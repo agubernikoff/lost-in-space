@@ -11,6 +11,7 @@ import ContactFormContainer from "../components/ContactFormContainer";
 import React, { useState, useEffect } from "react";
 import { useLoaderData } from "react-router";
 import { useRootLoaderData } from "../root";
+import DynamicallyAnimatedHeader from "../sanity/DynamicallyAnimatedHeader";
 
 export const meta = () => {
   return [
@@ -27,11 +28,11 @@ export async function loader({ request }) {
 }
 
 export default function Index() {
-  const { clients } = useRootLoaderData();
+  const { clients, homePage } = useRootLoaderData();
 
   return (
     <div className="homepage">
-      <HomepageHeader />
+      <HomepageHeader header={homePage.header} />
       <Buttons />
       <HeroContainer />
       <ClientsContainer clients={clients} />
@@ -43,7 +44,7 @@ export default function Index() {
   );
 }
 
-function HomepageHeader() {
+function HomepageHeader({ header }) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -72,69 +73,7 @@ function HomepageHeader() {
 
   return (
     <div className="home-header">
-      <motion.div
-        initial="initial"
-        animate="animate"
-        transition={{ staggerChildren: 0.4 }}
-      >
-        {isMobile ? (
-          <>
-            {/* Mobile Version (5 lines) */}
-            <div style={{ overflow: "hidden" }}>
-              <motion.span variants={span2} custom={0} className="motion-span">
-                {"BOUTIQUE END-TO-END "}
-              </motion.span>
-            </div>
-
-            <div style={{ overflow: "hidden" }}>
-              <motion.span variants={span2} custom={1} className="motion-span">
-                <span className="highlight">PRODUCTION & POST-</span>
-              </motion.span>
-            </div>
-
-            <div style={{ overflow: "hidden" }}>
-              <motion.span variants={span2} custom={2} className="motion-span">
-                <span className="highlight">{" PRODUCTION EXCELLENCE "}</span>
-              </motion.span>
-            </div>
-
-            <div style={{ overflow: "hidden" }}>
-              <motion.span variants={span2} custom={3} className="motion-span">
-                {"FOR FILMMAKERS AND"}
-              </motion.span>
-            </div>
-
-            <div style={{ overflow: "hidden" }}>
-              <motion.span variants={span2} custom={4} className="motion-span">
-                {" INDEPENDENT CREATORS."}
-              </motion.span>
-            </div>
-          </>
-        ) : (
-          <>
-            {/* Desktop Version (3 lines) */}
-            <div style={{ overflow: "hidden" }}>
-              <motion.span variants={span} className="motion-span">
-                {"BOUTIQUE END-TO-END "}
-                <span className="highlight">PRODUCTION & POST-</span>
-              </motion.span>
-            </div>
-
-            <div style={{ overflow: "hidden" }}>
-              <motion.span variants={span} className="motion-span">
-                <span className="highlight">{" PRODUCTION EXCELLENCE "}</span>
-                FOR FILMMAKERS
-              </motion.span>
-            </div>
-
-            <div style={{ overflow: "hidden" }}>
-              <motion.span variants={span} className="motion-span">
-                {" AND INDEPENDENT CREATORS."}
-              </motion.span>
-            </div>
-          </>
-        )}
-      </motion.div>
+      <DynamicallyAnimatedHeader header={header} />
     </div>
   );
 }

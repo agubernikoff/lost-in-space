@@ -45,6 +45,10 @@ export const useRootLoaderData = () => {
 export async function loader({ request }) {
   const session = await getSession(request.headers.get("cookie"));
 
+  const homePage = await client
+    .fetch("*[_type == 'homePage'][0]{...,image{asset->{url}}}")
+    .then((response) => response);
+
   const clients = await client
     .fetch("*[_type == 'client']{...,image{asset->{url}}}|order(rank asc)")
     .then((response) => response);
@@ -81,6 +85,7 @@ export async function loader({ request }) {
     teamMembers,
     teamPage,
     socialLinks,
+    homePage,
   };
 
   return json(data);
