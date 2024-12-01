@@ -94,7 +94,11 @@ function DynamicallyAnimatedHeader({ header, inView = true }) {
                       <React.Fragment key={i}>
                         <span
                           className={element.className}
-                          style={element.style}
+                          style={
+                            element.innerText === ","
+                              ? { marginLeft: "-.8rem" }
+                              : null
+                          }
                         >
                           {element.innerText}
                         </span>
