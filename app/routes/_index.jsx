@@ -35,11 +35,11 @@ export default function Index() {
       <HomepageHeader header={homePage.header} />
       <Buttons />
       <HeroContainer />
-      <ClientsContainer clients={clients} />
+      <ClientsContainer clients={clients} header={homePage.clients_header} />
       {/* <VideoOnScroll /> */}
       {/* <ServicesContainer /> */}
       {/* <TeamContainer /> */}
-      <ContactFormContainer homepage={true} />
+      <ContactFormContainer homepage={true} header={homePage.contact_header} />
     </div>
   );
 }

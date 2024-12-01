@@ -1,8 +1,9 @@
 import { animate, AnimatePresence, motion, useInView } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import DynamicallyAnimatedHeader from "../sanity/DynamicallyAnimatedHeader";
 import SVGCorner from "./SVGCorner";
 
-function ClientsContainer({ clients }) {
+function ClientsContainer({ clients, header }) {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     window
@@ -96,31 +97,8 @@ function ClientsContainer({ clients }) {
         >
           OUR WORK
         </p>
-        <h2>
-          <div style={{ overflow: "hidden" }}>
-            <span
-              style={{
-                transform: inView ? "none" : "translateY(100%)",
-                opacity: inView ? 1 : 0,
-                transition: "transform .4s ease .75s, opacity .4s ease .75s",
-              }}
-              className="motion-span"
-            >
-              CLIENTS WHO{" "}
-            </span>
-          </div>
-          <div style={{ overflow: "hidden" }}>
-            <span
-              style={{
-                transform: inView ? "none" : "translateY(100%)",
-                opacity: inView ? 1 : 0,
-                transition: "transform .4s ease 1.15s, opacity .4s ease 1.15s",
-              }}
-              className="highlight motion-span"
-            >
-              TRUST US
-            </span>
-          </div>
+        <h2 style={{ width: "50vw", position: "relative" }}>
+          <DynamicallyAnimatedHeader header={header} inView={inView} />
         </h2>
       </div>
       <AnimatePresence>

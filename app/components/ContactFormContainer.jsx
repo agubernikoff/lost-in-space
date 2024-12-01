@@ -4,8 +4,9 @@ import React, { useState, useRef } from "react";
 import SVGButton from "./SVGButton";
 import SVGCorner from "./SVGCorner";
 import emailjs from "emailjs-com";
+import DynamicallyAnimatedHeader from "../sanity/DynamicallyAnimatedHeader";
 
-function ContactFormContainer({ homepage }) {
+function ContactFormContainer({ homepage, header }) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -109,29 +110,8 @@ function ContactFormContainer({ homepage }) {
           </div>
         </h2>
       ) : (
-        <h2>
-          <div style={{ overflow: "hidden" }}>
-            <span
-              className="motion-span"
-              style={{
-                transform: inView ? "none" : "translateY(100%)",
-                transition: "all .4s ease .4s",
-              }}
-            >
-              <span className="highlight">FOR PROJECT INQUIRIES</span>, PLEASE
-            </span>
-          </div>
-          <div style={{ overflow: "hidden" }}>
-            <span
-              className="motion-span"
-              style={{
-                transform: inView ? "none" : "translateY(100%)",
-                transition: "all .4s ease .8s",
-              }}
-            >
-              USE THE CONTACT FORM
-            </span>
-          </div>
+        <h2 style={{ width: "80vw", position: "relative" }}>
+          <DynamicallyAnimatedHeader header={header} inView={inView} />
         </h2>
       )}
       <form

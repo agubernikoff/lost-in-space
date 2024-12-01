@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-function DynamicallyAnimatedHeader({ header }) {
+function DynamicallyAnimatedHeader({ header, inView = true }) {
   const containerRef = useRef(null);
   const [lines, setLines] = useState([]);
 
@@ -114,6 +114,7 @@ function DynamicallyAnimatedHeader({ header }) {
 
     return () => resizeObserver.disconnect();
   }, [header]);
+
   return (
     <>
       <div
@@ -126,13 +127,15 @@ function DynamicallyAnimatedHeader({ header }) {
           opacity: 0,
         }}
       ></div>
-      <motion.div
-        initial="initial"
-        animate="animate"
-        transition={{ staggerChildren: 0.4 }}
-      >
-        {lines}
-      </motion.div>
+      {inView && (
+        <motion.div
+          initial="initial"
+          animate="animate"
+          transition={{ staggerChildren: 0.4 }}
+        >
+          {lines}
+        </motion.div>
+      )}
     </>
   );
 }
