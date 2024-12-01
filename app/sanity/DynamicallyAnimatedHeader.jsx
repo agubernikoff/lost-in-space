@@ -92,7 +92,10 @@ function DynamicallyAnimatedHeader({ header, inView = true }) {
                       !element.innerText.endsWith("-") && !isLastInLine;
                     return (
                       <React.Fragment key={i}>
-                        <span className={element.className}>
+                        <span
+                          className={element.className}
+                          style={element.style}
+                        >
                           {element.innerText}
                         </span>
                         {addSpace && " "}
