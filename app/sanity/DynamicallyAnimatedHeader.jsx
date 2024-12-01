@@ -22,6 +22,7 @@ function DynamicallyAnimatedHeader({ header, inView = true }) {
         const span = document.createElement("span");
         if (marks.includes("highlight")) span.classList.add("highlight");
         span.innerText = word;
+        if (word === ",") span.style.marginLeft = "-.8rem";
         return span;
       }
 
