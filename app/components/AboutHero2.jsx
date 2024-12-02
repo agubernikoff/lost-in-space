@@ -2,8 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import SVGButton from "./SVGButton";
 import SVGCorner from "./SVGCorner";
+import DynamicallyAnimatedHeader from "../sanity/DynamicallyAnimatedHeader";
 
-function AboutHero({ bullets }) {
+function AboutHero({ bullets, header }) {
   const timeDiv = useRef(null);
   const [offsets, setOffsets] = useState({
     offset: "0px",
@@ -80,22 +81,7 @@ function AboutHero({ bullets }) {
           viewport={{ once: true }}
           style={{ transform: offsets.offset }}
         >
-          <div className="text-wrapper">
-            <motion.span variants={span} className="motion-span">
-              <span className="highlight">{" GUIDING PRINCIPLES "}</span>
-              THAT
-            </motion.span>
-          </div>
-          <div className="text-wrapper">
-            <motion.span variants={span} className="motion-span">
-              DEFINE OUR COMMITMENT TO
-            </motion.span>
-          </div>
-          <div className="text-wrapper">
-            <motion.span variants={span} className="motion-span ">
-              EXCELLENCE AND INNOVATION
-            </motion.span>
-          </div>
+          <DynamicallyAnimatedHeader header={header} />
         </motion.div>
       </div>
 
