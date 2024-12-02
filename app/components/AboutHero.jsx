@@ -2,8 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import { inView, motion, useInView } from "framer-motion";
 import SVGButton from "./SVGButton";
 import SVGCorner from "./SVGCorner";
+import DynamicallyAnimatedHeader from "../sanity/DynamicallyAnimatedHeader";
 
-function AboutHero({ bullets }) {
+function AboutHero({ bullets, header }) {
   const [inViewIDs, setInViewIDs] = useState([]);
 
   const [isMobile, setIsMobile] = useState(false);
@@ -92,28 +93,7 @@ function AboutHero({ bullets }) {
           animate="animate"
           transition={{ staggerChildren: 0.4 }}
         >
-          <div className="text-wrapper">
-            <motion.span variants={span} className="motion-span">
-              LOST IN SPACE:
-              <span className="highlight">{" TAILOR-MAID "}</span>
-            </motion.span>
-          </div>
-          <div className="text-wrapper">
-            <motion.span variants={span} className="motion-span">
-              <span className="highlight">{" EXPERIENCES "}</span>
-              SEAMLESSLY
-            </motion.span>
-          </div>
-          <div className="text-wrapper">
-            <motion.span variants={span} className="motion-span">
-              INTEGRATED INTO YOUR
-            </motion.span>
-          </div>
-          <div className="text-wrapper">
-            <motion.span variants={span} className="motion-span ">
-              WORKFLOW
-            </motion.span>
-          </div>
+          <DynamicallyAnimatedHeader header={header} />
         </motion.div>
       </div>
 
