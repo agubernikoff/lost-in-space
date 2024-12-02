@@ -97,7 +97,12 @@ function ClientsContainer({ clients, header, subheader }) {
         >
           {subheader}
         </p>
-        <h2 style={{ width: "50vw", position: "relative" }}>
+        <h2
+          style={{
+            width: isMobile ? "calc(100vw - 2rem)" : "50vw",
+            position: "relative",
+          }}
+        >
           <DynamicallyAnimatedHeader header={header} inView={inView} />
         </h2>
       </div>

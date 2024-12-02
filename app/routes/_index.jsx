@@ -33,7 +33,7 @@ export default function Index() {
     <div className="homepage">
       <HomepageHeader header={homePage.header} />
       <Buttons />
-      <HeroContainer header={homePage.subheader} image={homePage.hero_image} />
+      <HeroContainer header={homePage.subheader} image={homePage.image} />
       <ClientsContainer
         clients={clients}
         header={homePage.clients_header}
@@ -79,7 +79,7 @@ function HomepageHeader({ header }) {
   };
 
   return (
-    <div className="home-header">
+    <div className="home-header" style={{ position: "relative" }}>
       <DynamicallyAnimatedHeader header={header} />
     </div>
   );

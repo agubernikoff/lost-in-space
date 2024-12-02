@@ -17,11 +17,7 @@ function HeroContainer({ header, image }) {
       transition={{ duration: 0.4, delay: 1.2 }}
       className="hero-container"
     >
-      <img
-        src={image?.image?.asset?.url}
-        alt=""
-        style={{ width: `${image?.width}%` }}
-      />
+      <img src={image?.asset?.url} alt="" />
       <div className="crafting-div">
         <SVGCorner />
         <p>{header}</p>

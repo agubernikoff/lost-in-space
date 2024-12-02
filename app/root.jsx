@@ -46,7 +46,7 @@ export async function loader({ request }) {
   const session = await getSession(request.headers.get("cookie"));
 
   const homePage = await client
-    .fetch("*[_type == 'homePage'][0]{...,hero_image{...,image{asset->{url}}}}")
+    .fetch("*[_type == 'homePage'][0]{...,image{asset->{url}}}")
     .then((response) => response);
 
   const clients = await client

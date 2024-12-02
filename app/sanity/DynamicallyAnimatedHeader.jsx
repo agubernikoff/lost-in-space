@@ -4,6 +4,13 @@ import { motion } from "framer-motion";
 function DynamicallyAnimatedHeader({ header, inView = true }) {
   const containerRef = useRef(null);
   const [lines, setLines] = useState([]);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    window
+      .matchMedia("(max-width:990px)")
+      .addEventListener("change", (e) => setIsMobile(e.matches));
+    if (window.matchMedia("(max-width:990px)").matches) setIsMobile(true);
+  }, []);
 
   const span2 = {
     animate: (custom) => ({
@@ -22,7 +29,9 @@ function DynamicallyAnimatedHeader({ header, inView = true }) {
         const span = document.createElement("span");
         if (marks.includes("highlight")) span.classList.add("highlight");
         span.innerText = word;
-        if (word === ",") span.style.marginLeft = "-.8rem";
+        if (word === ",") {
+          span.style.marginLeft = isMobile ? "-.2rem" : "-.8rem";
+        }
         return span;
       }
 
@@ -95,7 +104,7 @@ function DynamicallyAnimatedHeader({ header, inView = true }) {
                           className={element.className}
                           style={
                             element.innerText === ","
-                              ? { marginLeft: "-.8rem" }
+                              ? { marginLeft: isMobile ? "-.2rem" : "-.8rem" }
                               : null
                           }
                         >
@@ -120,7 +129,7 @@ function DynamicallyAnimatedHeader({ header, inView = true }) {
     resizeObserver.observe(containerRef.current);
 
     return () => resizeObserver.disconnect();
-  }, [header]);
+  }, [header, isMobile]);
 
   return (
     <>
@@ -129,8 +138,6 @@ function DynamicallyAnimatedHeader({ header, inView = true }) {
         style={{
           position: "absolute",
           top: 0,
-          left: "1rem",
-          right: "1rem",
           opacity: 0,
         }}
       ></div>
