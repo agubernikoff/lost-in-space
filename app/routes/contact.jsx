@@ -1,5 +1,6 @@
 import React from "react";
 import ContactFormContainer from "../components/ContactFormContainer";
+import { useRootLoaderData } from "../root";
 
 export const meta = () => {
   return [
@@ -9,7 +10,13 @@ export const meta = () => {
 };
 
 function contact() {
-  return <ContactFormContainer homepage={false} />;
+  const { contactPage } = useRootLoaderData();
+  return (
+    <ContactFormContainer
+      homepage={false}
+      header={contactPage.primary_header}
+    />
+  );
 }
 
 export default contact;

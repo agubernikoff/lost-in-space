@@ -77,6 +77,10 @@ export async function loader({ request }) {
     .fetch("*[_type == 'socialLinks'][0]")
     .then((response) => response);
 
+  const contactPage = await client
+    .fetch("*[_type == 'contactPage'][0]")
+    .then((response) => response);
+
   const data = {
     ran: session.get("ran"),
     clients,
@@ -86,6 +90,7 @@ export async function loader({ request }) {
     teamPage,
     socialLinks,
     homePage,
+    contactPage,
   };
 
   return json(data);
