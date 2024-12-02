@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import team from "../assets/images/team.png";
 import DynamicallyAnimatedHeader from "../sanity/DynamicallyAnimatedHeader";
 
-export default function TeamPage({ data }) {
+export default function TeamPage({ data, header }) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
