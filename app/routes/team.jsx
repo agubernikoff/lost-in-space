@@ -16,8 +16,11 @@ function team() {
 
   return (
     <div>
-      <TeamHero data={teamPage} />
-      <TeamContainer teamMembers={teamMembers} />
+      <TeamHero data={teamPage} header={teamPage?.primary_header} />
+      <TeamContainer
+        teamMembers={teamMembers}
+        header={teamPage?.secondary_header}
+      />
       {teamPage?.hiring ? <JoinTheTeam /> : null}
     </div>
   );

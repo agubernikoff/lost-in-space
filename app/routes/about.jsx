@@ -15,11 +15,17 @@ function about() {
   console.log(aboutPage);
   return (
     <div>
-      <AboutHero bullets={aboutPage?.aboutBulletsTopSection} />
+      <AboutHero
+        bullets={aboutPage?.aboutBulletsTopSection}
+        header={aboutPage?.primary_header}
+      />
       <div className="about-hero-image-container">
         <img className="about-hero-image" src={aboutPage?.image.asset.url} />
       </div>
-      <AboutHero2 bullets={aboutPage?.aboutBulletsBottomSection} />
+      <AboutHero2
+        bullets={aboutPage?.aboutBulletsBottomSection}
+        header={aboutPage?.secondary_header}
+      />
     </div>
   );
 }
