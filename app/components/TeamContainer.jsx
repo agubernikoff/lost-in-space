@@ -80,70 +80,7 @@ function TeamContainer({ teamMembers = [] }) {
           MEET THE TEAM
         </p>
         <h2>
-          {isMobile ? (
-            <>
-              <div style={{ overflow: "hidden" }}>
-                <span
-                  style={{
-                    transform: inView ? "none" : "translateY(150px)",
-                    transition: "all .4s ease .4s",
-                  }}
-                  className="motion-span"
-                >
-                  THE SQUAD
-                </span>
-              </div>
-              <div style={{ overflow: "hidden" }}>
-                <span
-                  style={{
-                    transform: inView ? "none" : "translateY(150px)",
-                    transition: "all .4s ease .8s",
-                  }}
-                  className="motion-span"
-                >
-                  BEHIND <span className="highlight">OUR</span>
-                </span>
-              </div>
-              <div style={{ overflow: "hidden" }}>
-                <span
-                  style={{
-                    opacity: inView ? 1 : 0,
-                    transform: inView ? "none" : "translateY(150px)",
-                    transition: "all .4s ease 1.2s",
-                  }}
-                  className="highlight motion-span"
-                >
-                  SUCCESS
-                </span>
-              </div>
-            </>
-          ) : (
-            <>
-              <div style={{ overflow: "hidden" }}>
-                <span
-                  style={{
-                    transform: inView ? "none" : "translateY(150px)",
-                    transition: "all .4s ease .4s",
-                  }}
-                  className="motion-span"
-                >
-                  THE SQUAD BEHIND{" "}
-                </span>
-              </div>
-              <div style={{ overflow: "hidden" }}>
-                <span
-                  style={{
-                    opacity: inView ? 1 : 0,
-                    transform: inView ? "none" : "translateY(150px)",
-                    transition: "all .4s ease .8s",
-                  }}
-                  className="highlight motion-span"
-                >
-                  OUR SUCCESS
-                </span>
-              </div>
-            </>
-          )}
+          <DynamicallyAnimatedHeader header={header} inView={inView} />
         </h2>
       </div>
 
