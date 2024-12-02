@@ -9,7 +9,7 @@ import hero from "../assets/images/hero.png";
 import SVGButton from "./SVGButton";
 import SVGCorner from "./SVGCorner";
 
-function HeroContainer({ header }) {
+function HeroContainer({ header, image }) {
   return (
     <motion.div
       animate={{ opacity: 1, y: 0 }}
@@ -17,7 +17,11 @@ function HeroContainer({ header }) {
       transition={{ duration: 0.4, delay: 1.2 }}
       className="hero-container"
     >
-      <img src={hero} alt="" />
+      <img
+        src={image?.image?.asset?.url}
+        alt=""
+        style={{ width: `${image?.width}%` }}
+      />
       <div className="crafting-div">
         <SVGCorner />
         <p>{header}</p>

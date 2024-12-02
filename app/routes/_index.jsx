@@ -29,12 +29,11 @@ export async function loader({ request }) {
 
 export default function Index() {
   const { clients, homePage } = useRootLoaderData();
-
   return (
     <div className="homepage">
       <HomepageHeader header={homePage.header} />
       <Buttons />
-      <HeroContainer header={homePage.subheader} />
+      <HeroContainer header={homePage.subheader} image={homePage.hero_image} />
       <ClientsContainer
         clients={clients}
         header={homePage.clients_header}
