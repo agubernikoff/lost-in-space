@@ -13,7 +13,7 @@ import { useNavigate } from "@remix-run/react";
 import { PortableText } from "@portabletext/react";
 import DynamicallyAnimatedHeader from "../sanity/DynamicallyAnimatedHeader";
 
-function TeamContainer({ teamMembers = [] }) {
+function TeamContainer({ header, teamMembers = [] }) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
