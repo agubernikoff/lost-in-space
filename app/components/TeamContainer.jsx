@@ -11,6 +11,7 @@ import nawImage from "../assets/images/naw.png";
 import spaceImage from "../assets/images/spaceman.png";
 import { useNavigate } from "@remix-run/react";
 import { PortableText } from "@portabletext/react";
+import DynamicallyAnimatedHeader from "../sanity/DynamicallyAnimatedHeader";
 
 function TeamContainer({ teamMembers = [] }) {
   const [isMobile, setIsMobile] = useState(false);

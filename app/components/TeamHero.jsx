@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import team from "../assets/images/team.png";
+import DynamicallyAnimatedHeader from "../sanity/DynamicallyAnimatedHeader";
 
 export default function TeamPage({ data }) {
   const [isMobile, setIsMobile] = useState(false);
@@ -37,66 +38,7 @@ export default function TeamPage({ data }) {
           animate="animate"
           transition={{ staggerChildren: 0.4 }}
         >
-          {isMobile ? (
-            <>
-              <div style={{ overflow: "hidden" }}>
-                <motion.span
-                  variants={span2}
-                  custom={0}
-                  className="motion-span"
-                >
-                  MEET THE VISIONARIES
-                </motion.span>
-              </div>
-              <div style={{ overflow: "hidden" }}>
-                <motion.span
-                  variants={span2}
-                  custom={1}
-                  className="motion-span"
-                >
-                  BEHIND OUR COMMITMENT
-                </motion.span>
-              </div>
-              <div style={{ overflow: "hidden" }}>
-                <motion.span
-                  variants={span2}
-                  custom={2}
-                  className="motion-span"
-                >
-                  TO
-                  <span className="highlight">{" EMPOWERING "}</span>
-                </motion.span>
-              </div>
-              <div style={{ overflow: "hidden" }}>
-                <motion.span
-                  variants={span2}
-                  custom={3}
-                  className="motion-span highlight"
-                >
-                  FILMAKERS WORLDWIDE.
-                </motion.span>
-              </div>
-            </>
-          ) : (
-            <>
-              <div style={{ overflow: "hidden" }}>
-                <motion.span variants={span} className="motion-span">
-                  MEET THE VISIONARIES BEHIND OUR
-                </motion.span>
-              </div>
-              <div style={{ overflow: "hidden" }}>
-                <motion.span variants={span} className="motion-span">
-                  COMMITMENT TO
-                  <span className="highlight">{" EMPOWERING "}</span>
-                </motion.span>
-              </div>
-              <div style={{ overflow: "hidden" }}>
-                <motion.span variants={span} className="motion-span highlight">
-                  FILMAKERS WORLDWIDE.
-                </motion.span>
-              </div>
-            </>
-          )}
+          <DynamicallyAnimatedHeader header={header} />
         </motion.div>
       </div>
       <motion.img
