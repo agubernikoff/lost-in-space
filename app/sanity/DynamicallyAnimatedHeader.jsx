@@ -59,7 +59,6 @@ function DynamicallyAnimatedHeader({ header, inView = true }) {
 
       spans.forEach((span, i) => {
         let currentTop = spans[i - 1]?.offsetTop;
-        console.log(span, span.offsetTop, currentTop);
         if (span.offsetTop !== currentTop) {
           lines.push(currentLine);
           currentLine = [];
