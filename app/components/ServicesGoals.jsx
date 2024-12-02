@@ -7,8 +7,9 @@ import shape2 from "../assets/images/shape2.png";
 import hat from "../assets/images/hat.png";
 import settings from "../assets/images/settings.png";
 import chart from "../assets/images/chart.png";
+import DynamicallyAnimatedHeader from "../sanity/DynamicallyAnimatedHeader";
 
-function ServicesGoals({ squares }) {
+function ServicesGoals({ squares, header, subheader }) {
   const text = useRef(null);
   const inView = useInView(text, { once: true, amount: 0.25 });
   function findIcon(index) {
@@ -77,49 +78,13 @@ function ServicesGoals({ squares }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
-        style={{ textAlign: "center" }}
+        style={{ textAlign: "center", marginTop: "3rem" }}
       >
-        OUR GOALS
+        {subheader}
       </motion.p>
       <div className="home-header" style={{ textAlign: "center" }}>
         <motion.div ref={text}>
-          <div style={{ overflow: "hidden" }}>
-            <motion.span
-              style={{
-                transform: inView ? "none" : "translateY(100%)",
-                opacity: inView ? 1 : 0,
-                transition: "transform .4s ease , opacity .4s ease ",
-              }}
-              className="motion-span"
-            >
-              EMPOWERING CREATIVE
-            </motion.span>
-          </div>
-          <div style={{ overflow: "hidden" }}>
-            <motion.span
-              style={{
-                transform: inView ? "none" : "translateY(100%)",
-                opacity: inView ? 1 : 0,
-                transition: "transform .4s ease .4s, opacity .4s ease .2s",
-              }}
-              className="motion-span"
-            >
-              EXCELLENCE
-              <span className="highlight">{" THROUGH "}</span>
-            </motion.span>
-          </div>
-          <div style={{ overflow: "hidden" }}>
-            <motion.span
-              style={{
-                transform: inView ? "none" : "translateY(100%)",
-                opacity: inView ? 1 : 0,
-                transition: "transform .4s ease .8s, opacity .4s ease .4s",
-              }}
-              className="motion-span highlight"
-            >
-              TAILORED SOLUTIONS.
-            </motion.span>
-          </div>
+          <DynamicallyAnimatedHeader header={header} inView={inView} />
         </motion.div>
       </div>
       <motion.div

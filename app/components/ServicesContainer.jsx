@@ -2,8 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import SVGButton from "./SVGButton";
 import SVGCorner from "./SVGCorner";
 import { AnimatePresence, motion, useInView } from "framer-motion";
+import DynamicallyAnimatedHeader from "../sanity/DynamicallyAnimatedHeader";
 
-function ServicesContainer({ services }) {
+function ServicesContainer({ services, header }) {
   const ourPlace = [...services].find((s) => s.ourPlaceOrYours === "editorial");
   const yours = [...services].find((s) => s.ourPlaceOrYours === "consulting");
 
@@ -51,17 +52,7 @@ function ServicesContainer({ services }) {
   return (
     <div className="services-hompage" ref={ref}>
       <h2>
-        <div style={{ overflow: "hidden" }}>
-          <motion.span
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4, duration: 0.4, ease: "easeInOut" }}
-            className="motion-span"
-          >
-            SERVICES
-          </motion.span>
-        </div>
+        <DynamicallyAnimatedHeader header={header} />
       </h2>
       <div style={{ overflow: "hidden" }}>
         <motion.div

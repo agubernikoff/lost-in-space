@@ -34,12 +34,20 @@ export default function Index() {
     <div className="homepage">
       <HomepageHeader header={homePage.header} />
       <Buttons />
-      <HeroContainer />
-      <ClientsContainer clients={clients} header={homePage.clients_header} />
+      <HeroContainer header={homePage.subheader} />
+      <ClientsContainer
+        clients={clients}
+        header={homePage.clients_header}
+        subheader={homePage.client_subheader}
+      />
       {/* <VideoOnScroll /> */}
       {/* <ServicesContainer /> */}
       {/* <TeamContainer /> */}
-      <ContactFormContainer homepage={true} header={homePage.contact_header} />
+      <ContactFormContainer
+        homepage={true}
+        header={homePage.contact_header}
+        subheader={homePage.contact_subheader}
+      />
     </div>
   );
 }

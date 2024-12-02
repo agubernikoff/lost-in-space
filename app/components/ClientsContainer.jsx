@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import DynamicallyAnimatedHeader from "../sanity/DynamicallyAnimatedHeader";
 import SVGCorner from "./SVGCorner";
 
-function ClientsContainer({ clients, header }) {
+function ClientsContainer({ clients, header, subheader }) {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     window
@@ -95,7 +95,7 @@ function ClientsContainer({ clients, header }) {
             transition: "transform .4s ease .35s, opacity .4s ease .35s",
           }}
         >
-          OUR WORK
+          {subheader}
         </p>
         <h2 style={{ width: "50vw", position: "relative" }}>
           <DynamicallyAnimatedHeader header={header} inView={inView} />

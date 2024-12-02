@@ -17,8 +17,15 @@ function services() {
   return (
     <div>
       {/* <ServicesHero /> */}
-      <ServicesContainer services={servicesPage?.services} />
-      <ServicesGoals squares={servicesPage?.bottomSquares} />
+      <ServicesContainer
+        services={servicesPage?.services}
+        header={servicesPage?.primary_header}
+      />
+      <ServicesGoals
+        squares={servicesPage?.bottomSquares}
+        header={servicesPage?.secondary_header}
+        subheader={servicesPage?.subheader}
+      />
     </div>
   );
 }

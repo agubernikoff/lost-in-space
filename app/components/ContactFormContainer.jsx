@@ -6,7 +6,7 @@ import SVGCorner from "./SVGCorner";
 import emailjs from "emailjs-com";
 import DynamicallyAnimatedHeader from "../sanity/DynamicallyAnimatedHeader";
 
-function ContactFormContainer({ homepage, header }) {
+function ContactFormContainer({ homepage, header, subheader }) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -83,37 +83,11 @@ function ContactFormContainer({ homepage, header }) {
 
   return (
     <div className="contact-form-container" ref={ref}>
-      {homepage && <p>CONTACT US</p>}
-      {!homepage ? (
-        <h2>
-          <div style={{ overflow: "hidden" }}>
-            <span
-              className="motion-span"
-              style={{
-                transform: inView ? "none" : "translateY(100%)",
-                transition: "all .4s ease .4s",
-              }}
-            >
-              TO CONTACT US <span className="highlight">FOR PROJECT</span>
-            </span>
-          </div>
-          <div style={{ overflow: "hidden" }}>
-            <span
-              className="motion-span"
-              style={{
-                transform: inView ? "none" : "translateY(100%)",
-                transition: "all .4s ease .8s",
-              }}
-            >
-              INQUIRIES, USE THIS FORM
-            </span>
-          </div>
-        </h2>
-      ) : (
-        <h2 style={{ width: "80vw", position: "relative" }}>
-          <DynamicallyAnimatedHeader header={header} inView={inView} />
-        </h2>
-      )}
+      {homepage && <p>{subheader}</p>}
+
+      <h2 style={{ width: "80vw", position: "relative" }}>
+        <DynamicallyAnimatedHeader header={header} inView={inView} />
+      </h2>
       <form
         onSubmit={handleSubmit}
         style={{

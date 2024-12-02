@@ -9,7 +9,7 @@ import hero from "../assets/images/hero.png";
 import SVGButton from "./SVGButton";
 import SVGCorner from "./SVGCorner";
 
-function HeroContainer() {
+function HeroContainer({ header }) {
   return (
     <motion.div
       animate={{ opacity: 1, y: 0 }}
@@ -20,7 +20,7 @@ function HeroContainer() {
       <img src={hero} alt="" />
       <div className="crafting-div">
         <SVGCorner />
-        <p>CRAFTING EXCEPTIONAL EXPERIENCES FROM START TO FINISH</p>
+        <p>{header}</p>
         <SVGButton
           text={"Our Services"}
           isNavigational={true}
