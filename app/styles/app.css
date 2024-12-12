@@ -1452,6 +1452,7 @@ footer {
     height: auto;
     display: flex;
     flex-direction: column;
+    margin-bottom: calc(-10vh + 1rem);
   }
   /* .hero-container > img {
     width: 90%;
@@ -1463,6 +1464,7 @@ footer {
     inset-inline: 0;
     box-sizing: border-box;
     position: relative;
+    top: -10vh;
   }
   .crafting-div > svg > path,
   .crafting-div > .svg-button > svg > path {
