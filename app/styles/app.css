@@ -557,7 +557,7 @@ aside p {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  min-height: 60vh;
+  min-height: 30vh;
 }
 .crafting-div {
   position: absolute;
