@@ -9,7 +9,7 @@
   --pearl-river: #d9d9d9;
   --soft-pebble: #5b516d;
   --seal: #393939;
-  --card-width: 25vw;
+  --card-width: 20vw;
   --card-adjustment: 3rem;
   --card-width-team: calc(100vw - 2rem);
   --card-adjustment-team: 3rem;
@@ -746,7 +746,7 @@ aside p {
   box-sizing: border-box;
 }
 .client-card > img {
-  aspect-ratio: 1/1.4;
+  aspect-ratio: 9/16;
   width: 100%;
 }
 .client-card > p {
