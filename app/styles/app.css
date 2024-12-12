@@ -1453,9 +1453,9 @@ footer {
     display: flex;
     flex-direction: column;
   }
-  .hero-container > img {
+  /* .hero-container > img {
     width: 90%;
-  }
+  } */
   .crafting-div {
     width: 100%;
     background: var(--seal);
