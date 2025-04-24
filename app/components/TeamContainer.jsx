@@ -13,7 +13,7 @@ import { useNavigate } from "@remix-run/react";
 import { PortableText } from "@portabletext/react";
 import DynamicallyAnimatedHeader from "../sanity/DynamicallyAnimatedHeader";
 
-function TeamContainer({ header, teamMembers = [] }) {
+function TeamContainer({ header, teamMembers = [], isMember = true }) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -70,6 +70,7 @@ function TeamContainer({ header, teamMembers = [] }) {
   return (
     <div className="team-container">
       <div ref={text} className="centered-team-container">
+        {/* isMember conditional for this text */}
         <p
           style={{
             opacity: inView ? 1 : 0,
@@ -138,6 +139,7 @@ function TeamContainer({ header, teamMembers = [] }) {
               <TeamMember
                 key={index}
                 member={member}
+                isMember={isMember}
                 // onClick={() => setActiveModal(index)}
               />
             ))}
@@ -148,7 +150,7 @@ function TeamContainer({ header, teamMembers = [] }) {
   );
 }
 
-function TeamMember({ member }) {
+function TeamMember({ member, isMember }) {
   const nav = useNavigate();
   return (
     <div className="team-member">
@@ -157,14 +159,18 @@ function TeamMember({ member }) {
         <div
           className="toggle-button"
           onClick={() => {
-            nav(`/team?member=${member.name}#aside`);
+            nav(
+              `/${isMember ? "team" : "partners"}?${
+                isMember ? "member" : "client"
+              }=${member.name.replace("+", "%2B")}#aside`
+            );
           }}
         >
           +
         </div>
       </div>
       <div className="team-member-name">{member.name}</div>
-      <div className="team-member-title">{member.position.toUpperCase()}</div>
+      <div className="team-member-title">{member?.position?.toUpperCase()}</div>
     </div>
   );
 }
@@ -248,7 +254,7 @@ function TeamMemberMobile({ member }) {
             </div>
             <div className="team-member-name">{member.name}</div>
             <div className="team-member-title">
-              {member.position.toUpperCase()}
+              {member?.position?.toUpperCase()}
             </div>
           </>
         )}

@@ -8,7 +8,6 @@ import gusImage from "../assets/images/gus.png";
 import nawImage from "../assets/images/naw.png";
 import spaceImage from "../assets/images/spaceman.png";
 import { useLocation, useNavigate } from "@remix-run/react";
-import { client } from "../sanity/SanityClient";
 import { useRootLoaderData } from "../root";
 import { PortableText } from "@portabletext/react";
 /**
@@ -40,6 +39,7 @@ export function Aside({ children, heading, id = "aside" }) {
   }, []);
 
   const teamMembers = useRootLoaderData().teamMembers;
+  const clients = useRootLoaderData().clients;
 
   const { hash, search } = useLocation();
 
@@ -48,8 +48,10 @@ export function Aside({ children, heading, id = "aside" }) {
 
   // Get individual parameters
   const member = searchParams.get("member"); // Get 'param1' value
+  const client = searchParams.get("client");
 
   const [teamMember, setTeamMember] = useState(null);
+  const [partner, setPartner] = useState(null);
 
   useEffect(() => {
     if (hash.includes(id) && !isMobile) {
@@ -61,7 +63,8 @@ export function Aside({ children, heading, id = "aside" }) {
       document.querySelector(".overlay").classList.add("reveal");
       document.querySelector(".overlay").style.opacity = 1;
       document.querySelector("aside").style.transform = "translateX(0)";
-      setTeamMember(teamMembers.find((tm) => tm.name === member));
+      if (member) setTeamMember(teamMembers.find((tm) => tm.name === member));
+      if (client) setPartner(clients.find((tm) => tm.name === client));
     } else {
       setTimeout(
         () => document.querySelector(".overlay").classList.remove("reveal"),
@@ -89,7 +92,7 @@ export function Aside({ children, heading, id = "aside" }) {
         />
       )}
       <aside>
-        <CloseAside />
+        <CloseAside teamMember={teamMember} partner={partner} />
         <main>
           {teamMember ? (
             <>
@@ -105,13 +108,27 @@ export function Aside({ children, heading, id = "aside" }) {
               </div>
             </>
           ) : null}
+          {partner ? (
+            <>
+              <div className="team-member-details-container">
+                <img src={partner.image.asset.url} alt={partner.name} />
+                <div className="team-member-name">{partner.name}</div>
+                <div className="team-member-title">
+                  {partner?.position?.toUpperCase()}
+                </div>
+              </div>
+              <div>
+                <PortableText value={partner.bio} />
+              </div>
+            </>
+          ) : null}
         </main>
       </aside>
     </div>
   );
 }
 
-function CloseAside() {
+function CloseAside({ teamMember, partner }) {
   const nav = useNavigate();
   return (
     /* eslint-disable-next-line jsx-a11y/anchor-is-valid */
@@ -119,7 +136,8 @@ function CloseAside() {
       className="close"
       onClick={(e) => {
         e.preventDefault();
-        nav("/team", { preventScrollReset: true });
+        if (teamMember) nav("/team", { preventScrollReset: true });
+        if (partner) nav("/partners", { preventScrollReset: true });
       }}
     >
       <svg

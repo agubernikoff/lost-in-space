@@ -73,6 +73,10 @@ export async function loader({ request }) {
     .fetch("*[_type == 'teamPage'][0]{...,image{asset->{url}}}")
     .then((response) => response);
 
+  const partnersPage = await client
+    .fetch("*[_type == 'partnersPage'][0]{...,image{asset->{url}}}")
+    .then((response) => response);
+
   const socialLinks = await client
     .fetch("*[_type == 'socialLinks'][0]")
     .then((response) => response);
@@ -91,6 +95,7 @@ export async function loader({ request }) {
     socialLinks,
     homePage,
     contactPage,
+    partnersPage,
   };
 
   return json(data);
