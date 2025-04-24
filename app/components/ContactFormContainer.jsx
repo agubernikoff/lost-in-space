@@ -69,6 +69,7 @@ function ContactFormContainer({ homepage, header, subheader }) {
             setMessage("");
           },
           (error) => {
+            console.log(error);
             setAndResetSubmissionMessage(
               true,
               "There was an error sending your message. Please try again."
